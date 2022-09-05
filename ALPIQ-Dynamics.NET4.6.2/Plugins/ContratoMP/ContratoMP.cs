@@ -77,6 +77,10 @@ namespace ContratoMP
                 System.IO.File.AppendAllText(ficherolog, texto + "\r\n");
         }
 
+/*----------------------------*/
+/* Crea Pricing Output        */
+/*----------------------------*/
+
         private void copiaPricingOutput(Guid contratoId, Entity oferta)
         {
             Entity _contrato = service.Retrieve("atos_contrato", contratoId, new ColumnSet(new String[] { "atos_name" }));
@@ -129,6 +133,9 @@ namespace ContratoMP
             }
         }
 
+/*----------------------------*/
+/* Crea Contratos             */
+/*----------------------------*/
         private Guid creaContrato(Entity contratoPadre, Entity oferta)
         {
             writelog("Función creaContrato");
@@ -711,18 +718,24 @@ namespace ContratoMP
             return _resConsulta;
         }
 
+/*----------------------------*/
+/* Crea Contratos Hijos       */
+/*----------------------------*/
         private void creaContratosHijos(Entity _contratoPadre)
         {
             EntityCollection _resConsulta = ofertasHijas(((EntityReference)_contratoPadre.Attributes["atos_ofertaid"]).Id);
 
             for (int i = 0; i < _resConsulta.Entities.Count; i++)
             {
+                // Si es suboferta se sacan las ofertas
                 if (_resConsulta.Entities[i].Attributes.Contains("atos_tipooferta") &&
-                     ((OptionSetValue)_resConsulta.Entities[i].Attributes["atos_tipooferta"]).Value == 300000001) // Si es suboferta se sacan las ofertas
+                     ((OptionSetValue)_resConsulta.Entities[i].Attributes["atos_tipooferta"]).Value == 300000001) 
                 {
+
                     EntityCollection _ofertasSuboferta = ofertasHijas((Guid)_resConsulta.Entities[i].Attributes["atos_ofertaid"]);
                     for (int j = 0; j < _ofertasSuboferta.Entities.Count; j++)
                     {
+                        // Oferta
                         if (_ofertasSuboferta.Entities[j].Attributes.Contains("atos_tipooferta") &&
                          ((OptionSetValue)_ofertasSuboferta.Entities[j].Attributes["atos_tipooferta"]).Value == 300000002)
                         {
@@ -745,6 +758,7 @@ namespace ContratoMP
 
         }
 
+        /*-------------------------------------------------------------------------------------*/
         /// <summary>
         /// Executes the plug-in.
         /// </summary>
@@ -756,6 +770,7 @@ namespace ContratoMP
         /// could execute the plug-in at the same time. All per invocation state information 
         /// is stored in the context. This means that you should not use global variables in plug-ins.
         /// </remarks>
+        /*-------------------------------------------------------------------------------------*/
         public void Execute(IServiceProvider serviceProvider)
         {
             
@@ -773,17 +788,27 @@ namespace ContratoMP
             writelog(DateTime.Now.ToLocalTime().ToString());
             writelog("Plugin ContratoMP");
             writelog("Mensaje: " + PluginExecutionContext.MessageName);
+
+
             if (PluginExecutionContext.MessageName == "Create")
             {
                 Entity ef = (Entity)PluginExecutionContext.InputParameters["Target"];
-                if (ef.Attributes.Contains("atos_instalacionid") || ef.Attributes.Contains("atos_instalaciongasid")) // Si el contrato tiene instalación informada no es multipunto.
+
+                // Si el contrato tiene instalación informada no es multipunto.
+                if (ef.Attributes.Contains("atos_instalacionid") || ef.Attributes.Contains("atos_instalaciongasid")) 
                     return;
-                if (!ef.Attributes.Contains("atos_ofertaid")) // Debe colgar de una oferta
+
+                // Debe colgar de una oferta
+                if (!ef.Attributes.Contains("atos_ofertaid")) 
                     return;
+
+                // Si no tiene oferta padre
                 Entity ofertaPadre = service.Retrieve("atos_oferta", ((EntityReference)ef.Attributes["atos_ofertaid"]).Id, new Microsoft.Xrm.Sdk.Query.ColumnSet("atos_tipooferta"));
                 if (!ofertaPadre.Attributes.Contains("atos_tipooferta"))
                     return;
-                if (((OptionSetValue)ofertaPadre.Attributes["atos_tipooferta"]).Value != 300000000) // Si la oferta padre no es multipunto no tiene que hacer nada
+
+                // Si la oferta padre no es multipunto no tiene que hacer nada
+                if (((OptionSetValue)ofertaPadre.Attributes["atos_tipooferta"]).Value != 300000000) 
                     return;
                 //writelog("Antes de copiaPricingOutput");
 
