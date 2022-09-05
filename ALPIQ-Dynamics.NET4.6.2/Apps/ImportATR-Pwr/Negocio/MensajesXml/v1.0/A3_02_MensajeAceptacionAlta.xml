@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MensajeAceptacionAlta xmlns="http://localhost/elegibilidad">
+  <Cabecera>
+    <CodigoREEEmpresaEmisora>0024</CodigoREEEmpresaEmisora>
+    <CodigoREEEmpresaDestino>0522</CodigoREEEmpresaDestino>
+    <CodigoDelProceso>A3</CodigoDelProceso>
+    <CodigoDePaso>02</CodigoDePaso>
+    <CodigoDeSolicitud>000000001584</CodigoDeSolicitud>
+    <SecuencialDeSolicitud>01</SecuencialDeSolicitud>
+    <FechaSolicitud>2017-04-01T01:01:01+01:00</FechaSolicitud>
+    <CUPS>ES0021000007037653VH</CUPS>
+  </Cabecera>
+  <AceptacionAlta>
+    <DatosAceptacion>
+      <FechaAceptacion>2017-04-26</FechaAceptacion>
+      <ActuacionCampo>S</ActuacionCampo>
+    </DatosAceptacion>
+    <Contrato>
+      <CondicionesContractuales>
+        <TarifaATR>001</TarifaATR>
+        <PotenciasContratadas>
+          <Potencia Periodo="1">11</Potencia>
+          <Potencia Periodo="2">22</Potencia>
+          <Potencia Periodo="3">33</Potencia>
+          <Potencia Periodo="4">44</Potencia>
+          <Potencia Periodo="5">55</Potencia>
+          <Potencia Periodo="6">66</Potencia>
+        </PotenciasContratadas>
+        <ModoControlPotencia>1</ModoControlPotencia>
+      </CondicionesContractuales>
+      <TipoActivacionPrevista>A0</TipoActivacionPrevista>
+      <FechaActivacionPrevista>2017-04-26</FechaActivacionPrevista>
+    </Contrato>
+  </AceptacionAlta>
+</MensajeAceptacionAlta>

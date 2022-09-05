@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MensajeAceptacionAnulacion xmlns="http://localhost/elegibilidad">
+  <Cabecera>
+    <CodigoREEEmpresaEmisora>0021</CodigoREEEmpresaEmisora>
+    <CodigoREEEmpresaDestino>0522</CodigoREEEmpresaDestino>
+    <CodigoDelProceso>C1</CodigoDelProceso>
+    <CodigoDePaso>10</CodigoDePaso>
+    <CodigoDeSolicitud>400000000859</CodigoDeSolicitud>
+    <SecuencialDeSolicitud>01</SecuencialDeSolicitud>
+    <FechaSolicitud>2015-10-07T00:43:20</FechaSolicitud>
+    <CUPS>ES0031104550404001MQ</CUPS>
+  </Cabecera>
+  <AceptacionAnulacion>
+    <FechaAceptacion>2017-05-01</FechaAceptacion>
+  </AceptacionAnulacion>
+</MensajeAceptacionAnulacion>

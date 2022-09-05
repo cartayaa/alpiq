@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MensajeAceptacionBajaSuspension xmlns="http://localhost/elegibilidad">
+  <Cabecera>
+    <CodigoREEEmpresaEmisora>0024</CodigoREEEmpresaEmisora>
+    <CodigoREEEmpresaDestino>0522</CodigoREEEmpresaDestino>
+    <CodigoDelProceso>B1</CodigoDelProceso>
+    <CodigoDePaso>02</CodigoDePaso>
+    <CodigoDeSolicitud>000000001584</CodigoDeSolicitud>
+    <SecuencialDeSolicitud>01</SecuencialDeSolicitud>
+    <FechaSolicitud>2017-04-01T01:01:01+01:00</FechaSolicitud>
+    <CUPS>ES0021000007037653VH</CUPS>
+  </Cabecera>
+  <AceptacionBajaSuspension>
+    <DatosAceptacion>
+      <FechaAceptacion>2017-04-11</FechaAceptacion>
+      <ActuacionCampo>S</ActuacionCampo>
+      <FechaUltimaLectura>2017-04-01</FechaUltimaLectura>
+      <TipoActivacionPrevista>A0</TipoActivacionPrevista>
+      <FechaActivacionPrevista>2017-05-01</FechaActivacionPrevista>
+    </DatosAceptacion>
+  </AceptacionBajaSuspension>
+</MensajeAceptacionBajaSuspension>

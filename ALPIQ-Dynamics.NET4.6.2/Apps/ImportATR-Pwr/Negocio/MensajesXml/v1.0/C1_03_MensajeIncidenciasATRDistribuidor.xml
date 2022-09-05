@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MensajeIncidenciasATRDistribuidor xmlns="http://localhost/elegibilidad">
+  <Cabecera>
+    <CodigoREEEmpresaEmisora>0024</CodigoREEEmpresaEmisora>
+    <CodigoREEEmpresaDestino>0522</CodigoREEEmpresaDestino>
+    <CodigoDelProceso>C1</CodigoDelProceso>
+    <CodigoDePaso>03</CodigoDePaso>
+    <CodigoDeSolicitud>000000001584</CodigoDeSolicitud>
+    <SecuencialDeSolicitud>01</SecuencialDeSolicitud>
+    <FechaSolicitud>2017-05-03T01:01:01+01:00</FechaSolicitud>
+    <CUPS>ES0021000007037653VH</CUPS>
+  </Cabecera>
+  <IncidenciasATRDistribuidor>
+    <FechaIncidencia>2017-05-01</FechaIncidencia>
+    <FechaPrevistaAccion>2017-05-01</FechaPrevistaAccion>
+    <Incidencia>
+      <Secuencial>1</Secuencial>
+      <CodigoMotivo>01</CodigoMotivo>
+      <Comentarios>Comentarios1</Comentarios>
+    </Incidencia>
+    <Incidencia>
+      <Secuencial>2</Secuencial>
+      <CodigoMotivo>08</CodigoMotivo>
+      <Comentarios>Comentarios2</Comentarios>
+    </Incidencia>
+    <Incidencia>
+      <Secuencial>3</Secuencial>
+      <CodigoMotivo>09</CodigoMotivo>
+      <Comentarios>Comentarios3</Comentarios>
+    </Incidencia>
+  </IncidenciasATRDistribuidor>
+</MensajeIncidenciasATRDistribuidor>

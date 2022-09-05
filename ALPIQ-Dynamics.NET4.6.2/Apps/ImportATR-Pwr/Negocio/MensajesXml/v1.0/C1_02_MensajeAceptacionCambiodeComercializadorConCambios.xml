@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MensajeAceptacionCambiodeComercializadorConCambios xmlns="http://localhost/elegibilidad">
+  <Cabecera>
+    <CodigoREEEmpresaEmisora>0024</CodigoREEEmpresaEmisora>
+    <CodigoREEEmpresaDestino>0522</CodigoREEEmpresaDestino>
+    <CodigoDelProceso>C1</CodigoDelProceso>
+    <CodigoDePaso>02</CodigoDePaso>
+    <CodigoDeSolicitud>000000001584</CodigoDeSolicitud>
+    <SecuencialDeSolicitud>01</SecuencialDeSolicitud>
+    <FechaSolicitud>2017-04-01T01:01:01+01:00</FechaSolicitud>
+    <CUPS>ES0021000007037653VH</CUPS>
+  </Cabecera>
+  <AceptacionCambiodeComercializadorConCambios>
+    <DatosAceptacion>
+      <FechaAceptacion>2017-05-03</FechaAceptacion>
+      <PotenciaActual>0</PotenciaActual>
+      <ActuacionCampo>1</ActuacionCampo>
+      <FechaUltimaLecturaFirme>1900-01-01</FechaUltimaLecturaFirme>
+    </DatosAceptacion>
+    <Contrato>
+      <TipoContratoATR>01</TipoContratoATR>
+      <CondicionesContractuales>
+        <TarifaATR>001</TarifaATR>
+        <PotenciasContratadas>
+          <Potencia Periodo="11">11</Potencia>
+          <Potencia Periodo="22">22</Potencia>
+          <Potencia Periodo="33">33</Potencia>
+        </PotenciasContratadas>
+        <ModoControlPotencia>1</ModoControlPotencia>
+      </CondicionesContractuales>
+      <TipoActivacionPrevista>A0</TipoActivacionPrevista>
+      <FechaActivacionPrevista>2015-05-05</FechaActivacionPrevista>
+    </Contrato>
+  </AceptacionCambiodeComercializadorConCambios>
+</MensajeAceptacionCambiodeComercializadorConCambios>

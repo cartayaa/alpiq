@@ -1,0 +1,26 @@
+C:\Dynamics_DEV\Dynamics CRM\SRC\1.DEV\Alpiq_.NET4.5\App\ImportATR\bin\Debug\ImportATR.exe.config
+C:\Dynamics_DEV\Dynamics CRM\SRC\1.DEV\Alpiq_.NET4.5\App\ImportATR\bin\Debug\ImportATR.exe
+C:\Dynamics_DEV\Dynamics CRM\SRC\1.DEV\Alpiq_.NET4.5\App\ImportATR\bin\Debug\ImportATR.pdb
+C:\Dynamics_DEV\Dynamics CRM\SRC\1.DEV\Alpiq_.NET4.5\App\ImportATR\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+C:\Dynamics_DEV\Dynamics CRM\SRC\1.DEV\Alpiq_.NET4.5\App\ImportATR\bin\Debug\Microsoft.Xrm.Sdk.dll
+C:\Dynamics_DEV\Dynamics CRM\SRC\1.DEV\Alpiq_.NET4.5\App\ImportATR\bin\Debug\Microsoft.Xrm.Tooling.Connector.dll
+C:\Dynamics_DEV\Dynamics CRM\SRC\1.DEV\Alpiq_.NET4.5\App\ImportATR\bin\Debug\System.IO.FileSystem.Primitives.dll
+C:\Dynamics_DEV\Dynamics CRM\SRC\1.DEV\Alpiq_.NET4.5\App\ImportATR\bin\Debug\System.IO.Packaging.dll
+C:\Dynamics_DEV\Dynamics CRM\SRC\1.DEV\Alpiq_.NET4.5\App\ImportATR\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+C:\Dynamics_DEV\Dynamics CRM\SRC\1.DEV\Alpiq_.NET4.5\App\ImportATR\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll
+C:\Dynamics_DEV\Dynamics CRM\SRC\1.DEV\Alpiq_.NET4.5\App\ImportATR\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+C:\Dynamics_DEV\Dynamics CRM\SRC\1.DEV\Alpiq_.NET4.5\App\ImportATR\bin\Debug\Newtonsoft.Json.dll
+C:\Dynamics_DEV\Dynamics CRM\SRC\1.DEV\Alpiq_.NET4.5\App\ImportATR\obj\Debug\ImportATR.exe
+C:\Dynamics_DEV\Dynamics CRM\SRC\1.DEV\Alpiq_.NET4.5\App\ImportATR\obj\Debug\ImportATR.pdb
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR\obj\Debug\ImportATR-Gas.csprojAssemblyReference.cache
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR\obj\Debug\ImportATR-Gas.csproj.CoreCompileInputs.cache
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR\obj\Debug\ImportATR.exe
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR\obj\Debug\ImportATR.pdb
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Gas\obj\Debug\ImportATR-Gas.csproj.CoreCompileInputs.cache
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Gas\obj\Debug\ImportATR.exe
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Gas\obj\Debug\ImportATR.pdb
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Gas\bin\Debug\ImportATR.exe.config
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Gas\bin\Debug\ImportATR.exe
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Gas\bin\Debug\ImportATR.pdb
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Gas\obj\Debug\ImportATR-Gas.csproj.CopyComplete
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Gas\obj\Debug\ImportATR-Gas.csprojAssemblyReference.cache

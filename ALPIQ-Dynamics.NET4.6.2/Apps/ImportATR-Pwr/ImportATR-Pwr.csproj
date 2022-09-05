@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{546A7AB6-A8A8-4F04-8FDF-CE516630BB56}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ImportATR</RootNamespace>
+    <AssemblyName>ImportATR</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <PublishUrl>publicar\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\Libraries\SDK365\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\Libraries\SDK365\Microsoft.Xrm.Sdk.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Tooling.Connector, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\Libraries\SDK365\Microsoft.Xrm.Tooling.Connector.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.IO.Packaging.4.5.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Crypt.cs" />
+    <Compile Include="Negocio\Constantes\Configuracion.cs" />
+    <Compile Include="Negocio\Constantes\Mapper.cs" />
+    <Compile Include="Negocio\Constantes\Mensajes.cs" />
+    <Compile Include="Negocio\Constantes\Paso.cs" />
+    <Compile Include="Negocio\Constantes\Proceso.cs" />
+    <Compile Include="Negocio\EntidadesCrm\AccionaFacturacion.cs" />
+    <Compile Include="Negocio\EntidadesXsd\Facturacion.cs" />
+    <Compile Include="Negocio\Entidades\AtosLog.cs" />
+    <Compile Include="Negocio\Entidades\AtosXml.cs" />
+    <Compile Include="Negocio\Entidades\Datos.cs" />
+    <Compile Include="Negocio\Entidades\IProceso.cs" />
+    <Compile Include="Negocio\Entidades\Mapeo.cs" />
+    <Compile Include="Negocio\Entidades\ParametrosATR.cs" />
+    <Compile Include="Negocio\Entidades\ProcesoA3.cs" />
+    <Compile Include="Negocio\Entidades\ProcesoB1.cs" />
+    <Compile Include="Negocio\Entidades\ProcesoBase.cs" />
+    <Compile Include="Negocio\Entidades\ProcesoC1.cs" />
+    <Compile Include="Negocio\Entidades\ProcesoC2.cs" />
+    <Compile Include="Negocio\Entidades\ProcesoF1.cs" />
+    <Compile Include="Negocio\Entidades\ProcesoM1.cs" />
+    <Compile Include="Negocio\Entidades\ProcesoResultado.cs" />
+    <Compile Include="Negocio\Logica\ErrorHandler.cs" />
+    <Compile Include="Negocio\Logica\GestionFacturaEMS.cs" />
+    <Compile Include="Negocio\Logica\GestionInstalaciones.cs" />
+    <Compile Include="Negocio\Logica\GestionSolicitudesATR.cs" />
+    <Compile Include="Negocio\Logica\Mapper.cs" />
+    <Compile Include="Negocio\Logica\NegocioBase.cs" />
+    <Compile Include="Negocio\Logica\Operaciones.cs" />
+    <Compile Include="Negocio\Logica\ProcesoFactoria.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Negocio\Diagramas\ClassDiagram1.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Negocio\MensajesXml\v1.0\A3_02_MensajeAceptacionAlta.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\A3_02_MensajeRechazo.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\A3_03_MensajeIncidenciasATRDistribuidor.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\A3_04_MensajeRechazo.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\A3_05_MensajeActivacionAlta.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\A3_07_MensajeAceptacionAnulacion.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\A3_07_MensajeRechazo.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\B1_02_MensajeAceptacionBajaSuspension.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\B1_02_MensajeRechazo.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\B1_04_MensajeAceptacionAnulacionBaja.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\B1_04_MensajeRechazo.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\B1_05_MensajeActivacionBajaSuspension.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\B1_06_MensajeIncidenciasATRDistribuidor.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\B1_07_MensajeRechazo.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\C1_02_MensajeAceptacionCambiodeComercializadorConCambios.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\C1_02_MensajeRechazo.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\C1_03_MensajeIncidenciasATRDistribuidor.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\C1_04_MensajeRechazo.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\C1_05_MensajeActivacionCambiodeComercializadorSinCambios.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\C1_06_MensajeActivacionComercializadorSaliente.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\C1_09_MensajeAceptacionAnulacion.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\C1_09_MensajeRechazo.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\C1_10_MensajeAceptacionAnulacion.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\C1_11_MensajeAceptacionCambiodeComercializadorSaliente.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\C1_12_MensajeRechazoCambiodeComercializadorSaliente.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\C2_02_MensajeAceptacionCambiodeComercializadorConCambios.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\C2_02_MensajeRechazo.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\C2_03_MensajeIncidenciasATRDistribuidor.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\C2_04_MensajeRechazo.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\C2_05_MensajeActivacionCambiodeComercializadorSinCambios.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\C2_06_MensajeActivacionComercializadorSaliente.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\C2_09_MensajeAceptacionAnulacion.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\C2_09_MensajeRechazo.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\C2_10_MensajeAceptacionAnulacion.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\C2_11_MensajeAceptacionCambiodeComercializadorSaliente.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\C2_12_MensajeRechazoCambiodeComercializadorSaliente.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\M1_02_MensajeAceptacionModificacionDeATR.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\M1_02_MensajeRechazo.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\M1_03_MensajeIncidenciasATRDistribuidor.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\M1_04_MensajeRechazo.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\M1_05_MensajeActivacionModificacionDeATR.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\M1_07_MensajeAceptacionAnulacion.xml" />
+    <Content Include="Negocio\MensajesXml\v1.0\M1_07_MensajeRechazo.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
