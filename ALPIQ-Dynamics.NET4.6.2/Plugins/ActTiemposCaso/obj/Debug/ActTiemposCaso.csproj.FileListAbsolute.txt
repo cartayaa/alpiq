@@ -1,0 +1,4 @@
+C:\Dynamics_DEV\Dynamics CRM\SRC\1.DEV\Alpiq\Plugins\ActTiemposCaso\obj\Debug\ActTiemposCaso.csprojResolveAssemblyReference.cache
+C:\Users\A756555\OneDrive - Atos\Documents\Project-Open\Alpiq\Soluciones\FuentesALPIQ-04-03-2021\Alpiq\Plugins\ActTiemposCaso\obj\Debug\ActTiemposCaso.csproj.CoreCompileInputs.cache
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\0-readme\Fuentes\FuentesALPIQ-04-03-2021\Alpiq\Plugins\ActTiemposCaso\obj\Debug\ActTiemposCaso.csprojAssemblyReference.cache
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\0-readme\Fuentes\FuentesALPIQ-04-03-2021\Alpiq\Plugins\ActTiemposCaso\obj\Debug\ActTiemposCaso.csproj.CoreCompileInputs.cache
