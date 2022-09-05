@@ -1,0 +1,4 @@
+C:\Users\A756555\OneDrive - Atos\Documents\Project-Open\Alpiq\Soluciones\FuentesALPIQ-04-03-2021\Alpiq\Plugins\CopiarContactosWeb\obj\Debug\CopiarContactosWeb.csprojAssemblyReference.cache
+C:\Users\A756555\OneDrive - Atos\Documents\Project-Open\Alpiq\Soluciones\FuentesALPIQ-04-03-2021\Alpiq\Plugins\CopiarContactosWeb\obj\Debug\CopiarContactosWeb.csproj.CoreCompileInputs.cache
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\0-readme\Fuentes\FuentesALPIQ-04-03-2021\Alpiq\Plugins\CopiarContactosWeb\obj\Debug\CopiarContactosWeb.csprojAssemblyReference.cache
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\0-readme\Fuentes\FuentesALPIQ-04-03-2021\Alpiq\Plugins\CopiarContactosWeb\obj\Debug\CopiarContactosWeb.csproj.CoreCompileInputs.cache
