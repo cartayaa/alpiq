@@ -1,0 +1,5 @@
+C:\Dynamics_DEV\Dynamics CRM\SRC\1.DEV\Alpiq\Plugins\FechasPrevistasATR\obj\Debug\FechasPrevistasATR.csprojResolveAssemblyReference.cache
+C:\Users\A756555\OneDrive - Atos\Documents\Project-Open\Alpiq\Soluciones\FuentesALPIQ-04-03-2021\Alpiq\Plugins\FechasPrevistasATR\obj\Debug\FechasPrevistasATR.csprojAssemblyReference.cache
+C:\Users\A756555\OneDrive - Atos\Documents\Project-Open\Alpiq\Soluciones\FuentesALPIQ-04-03-2021\Alpiq\Plugins\FechasPrevistasATR\obj\Debug\FechasPrevistasATR.csproj.CoreCompileInputs.cache
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\0-readme\Fuentes\FuentesALPIQ-04-03-2021\Alpiq\Plugins\FechasPrevistasATR\obj\Debug\FechasPrevistasATR.csprojAssemblyReference.cache
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\0-readme\Fuentes\FuentesALPIQ-04-03-2021\Alpiq\Plugins\FechasPrevistasATR\obj\Debug\FechasPrevistasATR.csproj.CoreCompileInputs.cache
