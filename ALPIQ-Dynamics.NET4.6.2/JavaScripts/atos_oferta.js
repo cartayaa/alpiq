@@ -1,76 +1,174 @@
-/**
-// <summary>
-// Se ejecuta al abrir el formulario de la Oferta.
-// </summary>
-// <remarks>
-// Si se entra en modo nueva oferta, comprueba si se ha llamado desde la instalaciÃ³n<br/>
-// o desde la razÃ³n social o desde la cuenta negociadora.<br/>
-// Si ha sido llamado desde alguna de ellas llama a la funciÃ³n correspondiente (cargaDesdeInstalacion, cargaDesdeInstalacionGas,
-// cargaDesdeRazonSocial, cargaDesdeCtaNegociadora) para cargar datos de la oferta a partir de la entidad llamante.
-// Modificado para UI -  19.11.2020 - LÃ¡zaro Castro
-// </remarks>
+/*
+ File="atos_oferta.js" 
+ Copyright (c) Atos. All rights reserved.
+
+ Funciones compartidas entre varios formularios
+
+ Fecha 		Codigo  Version Descripcion                                     Autor
+  13.11.2020                Se ejecuta en la llamada para cargar la
+                            instalación segun instalacionid.                Lazaro Castro  
+ 16/03/2021  22323  1.0.1.1 Cambio el FechXml con sentencia no-lock='true'  ACR
+ 18.03.2021  22329          Correccion de lecturas cuando vienes de Instalaciones
+                            Razones sociales                                ACR
+                            creacion de un contrato desde oferta
+ 18.03.2021  22329          Documentacion                                   ACR   
+ 22.03.2021  22032021       Corrreciones Ofertas                            ACR
+ 01.10.2021  23251          Envio de datos de Coste al contrato 
+                            (Ribbon) Botón Contrato                         ACR 
+ 16.08.2022 16082022        Creacion de "Reapertura" en (Ribbon) Contrato   ACR 
 */
+
+//#region Variables Funciones Globales 22329
+var globalContext;
+var formContext;
+//#endregion Variables Funciones Globales 22329
+
+const POWER = 300000000;
+const GAS = 300000001;
+
+/*
+ * Se ejecuta en el OnLoad del formulario de primero
+ * 
+ * @param {executionContext} Contexto de ejecucion del formulario
+ */
+function LoadForm(executionContext) {
+
+    // Recupera contexto
+    formContext = executionContext.getFormContext();
+    // referencia de la API de cliente
+    globalContext = Xrm.Utility.getGlobalContext();
+    //Idioma
+    codeLang = globalContext.userSettings.languageId;
+}
+
+//#region General Functions
+
+function getGlobalContext() { return Xrm.Utility.getGlobalContext(); }
+function getContext() { return formContext; }
+//function getOrg() { return globalContext.getOrgUniqueName(); }
+//function getLcid() { return Xrm.Utility.getGlobalContext().userSettings.languageId.toString(); }
+function getUserId() { return globalContext.getUserId(); }
+function getUserRole() { return globalContext.getUserRoles(); }
+//function getValidateRole() { return validator; }    
+function getId() { return formContext.data.entity.getId(); }
+function IsEmptyId() { if (getId() == null || getId() == "") return true; else return false; }
+function getClient() { return globalContext.client.getClient(); }
+//function getStateCode() { return formContext.getAttribute("statecode").getValue(); }
+function getFieldValue(field) { return formContext.getAttribute(field).getValue(); }
+function getServerUrl() { return Xrm.Page.context.getClientUrl(); }
+function getFormType() { return Xrm.Page.ui.getFormType(); } // Form type  0-Undefined, 1-Create 2-Update 3-Read Only 4-Disabled  6-Bulk Edit
+function getFormId() { return formContext.ui.formSelector.getCurrentItem().getId(); }
+function getFormName() { return formContext.ui.formSelector.getCurrentItem().getLabel(); }
+
+//#endregion 
+
+
+/*
+ * Function from OfertaOnLoad event
+ * Se ejecuta en el OnLoad del formulario 
+ * 
+ * Si se entra en modo nueva oferta, comprueba si se ha llamado desde la instalación
+ * o desde la razón social o desde la cuenta negociadora.
+ * Si ha sido llamado desde alguna de ellas llama a la función correspondiente (cargaDesdeInstalacion, cargaDesdeInstalacionGas,
+ * cargaDesdeRazonSocial, cargaDesdeCtaNegociadora) para cargar datos de la oferta a partir de la entidad llamante.
+ * Modificado para UI -  19.11.2020 - LÃ¡zaro Castro
+ * 
+ * @param {*} executionContext 
+ */
 function OfertaOnLoad(executionContext) {
     // debugger;
-    var globalContext = Xrm.Utility.getGlobalContext();
-    var serverUrl = globalContext.getClientUrl();
-    var formContext = executionContext.getFormContext();
-    if (formContext.data.entity.getId() == null || formContext.data.entity.getId() == "") {
-        var xrmObject = globalContext.getQueryStringParameters();
+    /*2203-2021 */ // globalContext = getGlobalContext();
+    /*2203-2021 */ // formContext = getContext();
 
+    /* 22329 */ //var globalContext = Xrm.Utility.getGlobalContext();
+    //var serverUrl = globalContext.getClientUrl();
+    /* 22329 */ //var formContext = executionContext.getFormContext();
+    /* 22329 */ //if (formContext.data.entity.getId() == null || formContext.data.entity.getId() == "") {
+    if (IsEmptyId()) {
+
+        var xrmObject = globalContext.getQueryStringParameters();
         if (xrmObject != null) {
+
             if (xrmObject["llamado_desde"] != null) {
                 var llamado_desde = xrmObject["llamado_desde"].toString();
-                //if ( llamado_desde == "Instalacion" )
-                if (llamado_desde == "Instalacion Gas" || llamado_desde == "Instalacion"
-                    || llamado_desde == "Razon Social Power" || llamado_desde == "Razon Social Gas"
-                    || llamado_desde == "Cuenta Negociadora Power" || llamado_desde == "Cuenta Negociadora Gas") {
+
+                if (llamado_desde == "Instalacion Gas" || llamado_desde == "Instalacion" ||
+                    llamado_desde == "Razon Social Power" || llamado_desde == "Razon Social Gas" ||
+                    llamado_desde == "Cuenta Negociadora Power" || llamado_desde == "Cuenta Negociadora Gas") {
+
                     if (xrmObject["llamante_id"] != null) {
                         //var instalacionid = xrmObject["llamante_id"].toString();
                         var llamanteid = xrmObject["llamante_id"].toString();
 
                         // var serverUrl = Xrm.Page.context.getClientUrl();
 
-                        head.load(serverUrl + "/WebResources/atos_json2.js", serverUrl + "/WebResources/atos_jquery.js", function () {
-                            //cargaDesdeInstalacion(instalacionid);
-                            if (llamado_desde == "Instalacion") {
-                                cargaDesdeInstalacion(formContext, llamanteid, 300000000);
-                                //mostrarcampos();
-                            } else if (llamado_desde == "Instalacion Gas") {
-                                cargaDesdeInstalacionGas(formContext, llamanteid, 300000001);
-                                //mostrarcampos();
-                            } else if (llamado_desde == "Razon Social Power") {
-                                cargaDesdeRazonSocial(formContext, llamanteid, 300000000);
-                                //mostrarcampos();
-                            } else if (llamado_desde == "Razon Social Gas") {
-                                cargaDesdeRazonSocial(formContext, llamanteid, 300000001);
-                                //mostrarcampos();
-                            } else if (llamado_desde == "Cuenta Negociadora Power") {
-                                cargaDesdeCtaNegociadora(formContext, llamanteid, 300000000);
-                                habilitarCondiciones(formContext);
-                                //mostrarcampos();
-                            }
-                            else {
-                                cargaDesdeCtaNegociadora(formContext, llamanteid, 300000001);
-                                habilitarCondiciones(formContext);
-                                //mostrarcampos();
-                            }
-                            mostrarcampos(formContext);
-                            setCustomLookupProductoBase(formContext);
-                        });
+                        head.load(getServerUrl() + "/WebResources/atos_json2.js",
+                            getServerUrl() + "/WebResources/atos_jquery.js", function () {
+
+                                switch (llamado_desde) {
+                                    case "Instalacion":
+                                        cargaDesdeInstalacion(formContext, llamanteid, 300000000);
+                                        break;
+                                    case "Instalacion Gas":
+                                        cargaDesdeInstalacionGas(formContext, llamanteid, 300000001);
+                                        break;
+                                    case "Razon Social Power":
+                                        cargaDesdeRazonSocial(formContext, llamanteid, 300000000);
+                                        break;
+                                    case "Razon Social Gas":
+                                        cargaDesdeRazonSocial(formContext, llamanteid, 300000001);
+                                        break;
+                                    case "Cuenta Negociadora Power":
+                                        cargaDesdeCtaNegociadora(formContext, llamanteid, 300000000);
+                                        habilitarCondiciones(formContext);
+                                        break;
+                                    default:
+                                        cargaDesdeCtaNegociadora(formContext, llamanteid, 300000001);
+                                        habilitarCondiciones();
+                                }
+                                /*
+                                                            //cargaDesdeInstalacion(instalacionid);
+                                                            if (llamado_desde == "Instalacion") {
+                                                                cargaDesdeInstalacion(formContext, llamanteid, 300000000);
+                                                                //mostrarcampos();
+                                                            } else if (llamado_desde == "Instalacion Gas") {
+                                                                cargaDesdeInstalacionGas(formContext, llamanteid, 300000001);
+                                                                //mostrarcampos();
+                                                            } else if (llamado_desde == "Razon Social Power") {
+                                                                cargaDesdeRazonSocial(formContext, llamanteid, 300000000);
+                                                                //mostrarcampos();
+                                                            } else if (llamado_desde == "Razon Social Gas") {
+                                                                cargaDesdeRazonSocial(formContext, llamanteid, 300000001);
+                                                                //mostrarcampos();
+                                                            } else if (llamado_desde == "Cuenta Negociadora Power") {
+                                                                cargaDesdeCtaNegociadora(formContext, llamanteid, 300000000);
+                                                                habilitarCondiciones(formContext);
+                                                                //mostrarcampos();
+                                                            }
+                                                            else {
+                                                                cargaDesdeCtaNegociadora(formContext, llamanteid, 300000001);
+                                                                habilitarCondiciones();
+                                                                //mostrarcampos();
+                                                            } */
+                                mostrarcampos();
+                                setCustomLookupProductoBase();
+                            });
                     }
                 }
             }
         }
-    } else {
-        if (campoVacio(formContext, "atos_razonsocialid") == true && formContext.getAttribute("atos_tipooferta").getValue() == 300000000) { //300000000 --> Multipunto
-            habilitarCondiciones(formContext);
+    }
+    else {
+        if (campoVacio("atos_razonsocialid") == true &&
+            formContext.getAttribute("atos_tipooferta").getValue() == 300000000) { //300000000 --> Multipunto
+            habilitarCondiciones();
         }
-        setCustomLookupProductoBase(formContext);
+
+        setCustomLookupProductoBase();
     }
 }
 
-/**
+/*
 // <summary>
 // Carga datos desde la cuenta negociadora relacionada
 // </summary>
@@ -84,6 +182,12 @@ function OfertaOnLoad(executionContext) {
 // </ul>
 // </remarks>
 */
+/*
+ * OfertaOnLoad
+ * @param {*} formContext 
+ * @param {*} cuentanegociadoraid 
+ * @param {*} commodity 
+ */
 function cargaDesdeCtaNegociadora(formContext, cuentanegociadoraid, commodity) {
     // debugger;
 
@@ -95,10 +199,11 @@ function cargaDesdeCtaNegociadora(formContext, cuentanegociadoraid, commodity) {
     formContext.getAttribute("atos_tipooferta").setValue(300000000);
     formContext.getAttribute("atos_tipooferta").setSubmitMode("always");
 
-    // Realizamos fetchXml para obtener parametros de la cuenta negociadora
+    //Realizamos fetchXml para obtener parametros de la cuenta negociadora
     if (cuentanegociadoraid != null) {
         var fetchXml =
-           "<fetch mapping='logical'>"+
+            /* 22323 +1*/ //"<fetch mapping='logical'>"+
+            "<fetch mapping='logical' no-lock='true'>" +
             "<entity name='atos_cuentanegociadora' > " +
             "<attribute name='atos_cuentanegociadoraid' alias='cuentanegociadoraid' /> " +
             "<attribute name='atos_name' alias='cuentanegociadora' /> " +
@@ -111,8 +216,9 @@ function cargaDesdeCtaNegociadora(formContext, cuentanegociadoraid, commodity) {
             "</filter>" +
             "</entity> " +
             "</fetch>";
-        // var registros = XrmServiceToolkit.Soap.Fetch(fetchXml);
-        Xrm.WebApi.retrieveMultipleRecords("atos_cuentanegociadora", "?fetchXml=" + fetchXml).then(
+
+        var statement = "?fetchXml=" + encodeURIComponent(fetchXml);                                                        /*22032021 */
+        Xrm.WebApi.retrieveMultipleRecords("atos_cuentanegociadora", statement).then(                                       /*22032021 */
             function success(registros) {
                 if (registros != null && registros.entities != null && registros.entities.length > 0) {
                     var cuentanegociadora = registros.entities[0];
@@ -144,38 +250,34 @@ function cargaDesdeCtaNegociadora(formContext, cuentanegociadoraid, commodity) {
     }
 }
 
-/**
-// <summary>
-// Carga datos desde la razÃ³n social relacionada
-// </summary>
-// <param name="razonsocialid">Identificador de la razÃ³n social.</param>
-// <param name="commodity">Commodity 300000000: Power, 300000001: Gas.</param>
-// <remarks>
-// Accede a la razÃ³n social (account) con el identificador recibido por parÃ¡metro<br/>
-// y rellena los campos de la oferta a partir de los siguientes campos de la razÃ³n social:
-// <ul>
-// <li>RazÃ³n Social</li>
-// <li>Cuenta negociadora</li>
-// <li>Agente comercial</li>
-// <li>NÃºmero de documento</li>
-// Modificado para UI 19.11.2020. LÃ¡zaro Castro. 
-//  El grupo empresarial no estÃ¡ en el formulario ni viene como resultado en e Fetch.
-// </remarks>
-*/
+
+/*
+ * Function from OfertaOnLoad 
+ * 
+ * Carga datos desde la razÃ³n social relacionada
+ * Accede a la razon social (account) con el identificador recibido por parametro
+ * y rellena los campos de la oferta a partir de los siguientes campos de la razon social
+ * Modificado para UI 19.11.2020. Lazaro Castro. 
+ * El grupo empresarial no estÃ¡ en el formulario ni viene como resultado en e Fetch.
+ * @param {*} formContext 
+ * @param {*} razonsocialid 
+ * @param {*} commodity - Commodity 300000000: Power, 300000001: Gas
+ */
 function cargaDesdeRazonSocial(formContext, razonsocialid, commodity) {
 
-    //Cargamos commodity del formulario segun el tipo de oferta 
+    // Cargamos commodity del formulario segun el tipo de oferta 
     formContext.getAttribute("atos_commodity").setValue(commodity);
     formContext.getAttribute("atos_commodity").setSubmitMode("always");
 
-    //Cargamos tipo de oferta Multipunto del formulario
+    // Cargamos tipo de oferta Multipunto del formulario
     formContext.getAttribute("atos_tipooferta").setValue(300000000);
     formContext.getAttribute("atos_tipooferta").setSubmitMode("always");
 
-    //Realizamos fetchXml para obtener parametros de la razon social
+    // Realizamos fetchXml para obtener parametros de la razon social
     if (razonsocialid != null) {
         var fetchXml =
-           "<fetch mapping='logical'>"+
+            /* 223231 +1*/ //"<fetch mapping='logical'>"+
+            "<fetch mapping='logical' no-lock='true'>" +
             "<entity name='account' > " +
             "<attribute name='accountid' /> " +
             "<attribute name='name' alias='razonsocial' /> " +
@@ -202,8 +304,8 @@ function cargaDesdeRazonSocial(formContext, razonsocialid, commodity) {
             "</entity> " +
             "</fetch>";
 
-        // var registros = XrmServiceToolkit.Soap.Fetch(fetchXml);
-        Xrm.WebApi.retrieveMultipleRecords("account", "?fetchXml=" + fetchXml).then(
+        var statement = "?fetchXml=" + encodeURIComponent(fetchXml);                                                        /*22032021 */
+        Xrm.WebApi.retrieveMultipleRecords("account", statement).then(                                                      /*22032021 */
             function success(registros) {
                 // debugger;
                 if (registros != null && registros.entities != null && registros.entities.length > 0) {
@@ -279,6 +381,7 @@ function cargaDesdeRazonSocial(formContext, razonsocialid, commodity) {
                     }
 
                     if (razonsocial.razonsocial != null) {
+                        // Crear funcion general
                         var valorReferencia = new Array();
                         valorReferencia[0] = new Object();
                         valorReferencia[0].id = razonsocialid;
@@ -289,6 +392,7 @@ function cargaDesdeRazonSocial(formContext, razonsocialid, commodity) {
                     }
 
                     if (razonsocial.cuentanegociadoraid != null) {
+                        // Crear funcion general
                         var valorReferencia = new Array();
                         valorReferencia[0] = new Object();
                         valorReferencia[0].id = razonsocial.cuentanegociadoraid;
@@ -299,6 +403,7 @@ function cargaDesdeRazonSocial(formContext, razonsocialid, commodity) {
                     }
 
                     if (razonsocial._atos_agentecomercialid_value != null) {
+                        // Crear funcion general
                         var valorReferencia = new Array();
                         valorReferencia[0] = new Object();
                         valorReferencia[0].id = razonsocial._atos_agentecomercialid_value;
@@ -331,27 +436,18 @@ function cargaDesdeRazonSocial(formContext, razonsocialid, commodity) {
     }
 }
 
-/**
-// <summary>
-// Carga datos desde la instalaciÃ³n relacionada
-// </summary>
-// <param name="instalacionid">Identificador de la instalaciÃ³n.</param>
-// <remarks>
-// Accede a la instalaciÃ³n con el identificador recibido por parÃ¡metro<br/>
-// y rellena los campos de la oferta a partir de los siguientes campos de la instalaciÃ³n:
-// <ul>
-// <li>InstalaciÃ³n</li>
-// <li>RazÃ³n Social</li>
-// <li>Cuenta negociadora</li>
-// <li>Tarifa</li>
-// <li>Sistema elÃ©ctrico</li>
-// <li>Agente comercial</li>
-// <li>Lote</li>
-// <li>Consumo estimado total anual</li>
-// <li>NÃºmero de documento</li>
-// </ul>
-// </remarks>
-*/
+
+/*
+ * Function from OfertaOnLoad 
+ *
+ * Carga datos desde la instalacion relacionada
+ * Accede a la instalaciÃ³n con el identificador recibido por parÃ¡metro
+ * y rellena los campos de la oferta a partir de los siguientes campos de la instalaciÃ³n:
+ * 
+ * @param {*} formContext 
+ * @param {*} instalacionid - dentificador de la instalación
+ * @param {*} commodity 
+ */
 function cargaDesdeInstalacion(formContext, instalacionid, commodity) {
     // debugger;
 
@@ -361,7 +457,8 @@ function cargaDesdeInstalacion(formContext, instalacionid, commodity) {
 
     if (instalacionid != null) {
         var fetchXml =
-            "<fetch mapping='logical'>"+
+            /* 223231 +1*/ //"<fetch mapping='logical'>"+
+            "<fetch mapping='logical' no-lock='true'>" +
             "<entity name='atos_instalacion' > " +
             "<attribute name='atos_instalacionid' /> " +
             "<attribute name='atos_lote' /> " +
@@ -415,14 +512,15 @@ function cargaDesdeInstalacion(formContext, instalacionid, commodity) {
             "</entity> " +
             "</fetch>";
 
-        // var registros = XrmServiceToolkit.Soap.Fetch(fetchXml);
-        Xrm.WebApi.retrieveMultipleRecords("atos_instalacion", "?fetchXml=" + fetchXml).then(
+        var statement = "?fetchXml=" + encodeURIComponent(fetchXml);                                                        /*22032021 */
+        Xrm.WebApi.retrieveMultipleRecords("atos_instalacion", statement).then(                                             /*22032021 */
             function success(registros) {
                 // debugger;
                 // <aqui se pone la logica validaciones para registros>
                 if (registros != null && registros.entities != null && registros.entities.length > 0) {
                     var instalacion = registros.entities[0];
                     if (instalacion.atos_name != null) {
+                        // Crear funcion general
                         var valorReferencia = new Array();
                         valorReferencia[0] = new Object();
                         valorReferencia[0].id = instalacion.atos_instalacionid; // instalacion.atos_instalacionid"].id; 
@@ -433,6 +531,7 @@ function cargaDesdeInstalacion(formContext, instalacionid, commodity) {
                     }
 
                     if (instalacion._atos_razonsocialid_value != null) {
+                        // Crear funcion general
                         var valorReferencia = new Array();
                         valorReferencia[0] = new Object();
                         valorReferencia[0].id = instalacion._atos_razonsocialid_value;
@@ -443,6 +542,7 @@ function cargaDesdeInstalacion(formContext, instalacionid, commodity) {
                     }
 
                     if (instalacion.cuentanegociadoraid != null) {
+                        // Crear funcion general
                         var valorReferencia = new Array();
                         valorReferencia[0] = new Object();
                         valorReferencia[0].id = instalacion.cuentanegociadoraid;
@@ -453,6 +553,7 @@ function cargaDesdeInstalacion(formContext, instalacionid, commodity) {
                     }
 
                     if (instalacion._atos_tarifaid_value != null) {
+                        // Crear funcion general
                         var valorReferencia = new Array();
                         valorReferencia[0] = new Object();
                         valorReferencia[0].id = instalacion._atos_tarifaid_value;
@@ -463,6 +564,7 @@ function cargaDesdeInstalacion(formContext, instalacionid, commodity) {
                     }
 
                     if (instalacion._atos_sistemaelectricoid_value != null) {
+                        // Crear funcion general
                         var valorReferencia = new Array();
                         valorReferencia[0] = new Object();
                         valorReferencia[0].id = instalacion._atos_sistemaelectricoid_value;
@@ -473,6 +575,7 @@ function cargaDesdeInstalacion(formContext, instalacionid, commodity) {
                     }
 
                     if (instalacion._atos_subsistemaid_value != null) {
+                        // Crear funcion general
                         var valorReferencia = new Array();
                         valorReferencia[0] = new Object();
                         valorReferencia[0].id = instalacion._atos_subsistemaid_value;
@@ -483,6 +586,7 @@ function cargaDesdeInstalacion(formContext, instalacionid, commodity) {
                     }
 
                     if (instalacion._atos_agentecomercialid_value != null) {
+                        // Crear funcion general
                         var valorReferencia = new Array();
                         valorReferencia[0] = new Object();
                         valorReferencia[0].id = instalacion._atos_agentecomercialid_value;
@@ -510,6 +614,7 @@ function cargaDesdeInstalacion(formContext, instalacionid, commodity) {
                     }
 
                     if (instalacion._atos_grupoempresarialid_value != null) {
+                        // Crear funcion general
                         var valorReferencia = new Array();
                         valorReferencia[0] = new Object();
                         valorReferencia[0].id = instalacion._atos_grupoempresarialid_value;
@@ -526,6 +631,7 @@ function cargaDesdeInstalacion(formContext, instalacionid, commodity) {
                     }
 
                     if (instalacion.condicionpagoid != null) {
+                        // Crear funcion general
                         var valorReferencia = new Array();
                         valorReferencia[0] = new Object();
                         valorReferencia[0].id = instalacion.condicionpagoid;
@@ -597,25 +703,18 @@ function cargaDesdeInstalacion(formContext, instalacionid, commodity) {
     }
 }
 
-/**
-// <summary>
-// Carga datos desde la instalaciÃ³n gas relacionada
-// </summary>
-// <param name="instalaciongasid">Identificador de la instalaciÃ³n gas.</param>
-// <remarks>
-// Accede a la instalaciÃ³n gas con el identificador recibido por parÃ¡metro<br/>
-// y rellena los campos de la oferta a partir de los siguientes campos de la instalaciÃ³n:
-// <ul>
-// <li>InstalaciÃ³n gas</li>
-// <li>RazÃ³n Social</li>
-// <li>Cuenta negociadora</li>
-// <li>Tarifa "gas"</li>
-// <li>Agente comercial</li>
-// <li>Consumo estimado total anual</li> "Por meter"
-// <li>NÃºmero de documento</li> "CIF Razon Social"
-// </ul>
-// </remarks>
-*/
+
+
+/*
+ * Carga datos desde la instalaciÃ³n gas relacionada
+ * 
+ * Accede a la instalación gas con el identificador recibido por parámetro
+ * y rellena los campos de la oferta a partir de los siguientes campos de la instalación
+ * 
+ * @param {*} formContext 
+ * @param {*} instalaciongasid - Identificador de la instalaciÃ³n gas
+ * @param {*} commodity 
+ */
 function cargaDesdeInstalacionGas(formContext, instalaciongasid, commodity) {
     // debugger;
 
@@ -625,7 +724,8 @@ function cargaDesdeInstalacionGas(formContext, instalaciongasid, commodity) {
 
     if (instalaciongasid != null) {
         var fetchXml =
-            "<fetch mapping='logical'>" +
+            /* 223231 +1*/ //"<fetch mapping='logical'>"+
+            "<fetch mapping='logical' no-lock='true'>" +
             "<entity name='atos_instalaciongas' > " +
             "<attribute name='atos_instalaciongasid' /> " +
             "<attribute name='atos_usodelgasid' /> " +
@@ -669,14 +769,16 @@ function cargaDesdeInstalacionGas(formContext, instalaciongasid, commodity) {
             "</entity> " +
             "</fetch>";
 
-        // var registros = XrmServiceToolkit.Soap.Fetch(fetchXml);
-        Xrm.WebApi.retrieveMultipleRecords("atos_instalaciongas", "?fetchXml=" + fetchXml).then(
+        var statement = "?fetchXml=" + encodeURIComponent(fetchXml);                                                            /*22032021 */
+        Xrm.WebApi.retrieveMultipleRecords("atos_instalaciongas", statement).then(                                              /*22032021 */
             function success(registros) {
-               // debugger;
+
                 // <aqui se pone la logica validaciones para registros>
                 if (registros != null && registros.entities != null && registros.entities.length > 0) {
                     var instalaciongas = registros.entities[0];
+
                     if (instalaciongas.atos_name != null) {
+                        // Crear funcion general
                         var valorReferencia = new Array();
                         valorReferencia[0] = new Object();
                         valorReferencia[0].id = instalaciongas.atos_instalaciongasid; // instalaciongas.atos_instalaciongasid.id; 
@@ -687,6 +789,7 @@ function cargaDesdeInstalacionGas(formContext, instalaciongasid, commodity) {
                     }
 
                     if (instalaciongas._atos_usodelgasid_value != null) {
+                        // Crear funcion general
                         var valorReferencia = new Array();
                         valorReferencia[0] = new Object();
                         valorReferencia[0].id = instalaciongas._atos_usodelgasid_value;
@@ -697,6 +800,7 @@ function cargaDesdeInstalacionGas(formContext, instalaciongasid, commodity) {
                     }
 
                     if (instalaciongas._atos_peajeid_value != null) {
+                        // Crear funcion general
                         var valorReferencia = new Array();
                         valorReferencia[0] = new Object();
                         valorReferencia[0].id = instalaciongas._atos_peajeid_value;
@@ -707,6 +811,7 @@ function cargaDesdeInstalacionGas(formContext, instalaciongasid, commodity) {
                     }
 
                     if (instalaciongas._atos_razonsocialid_value != null) {
+                        // Crear funcion general
                         var valorReferencia = new Array();
                         valorReferencia[0] = new Object();
                         valorReferencia[0].id = instalaciongas._atos_razonsocialid_value;
@@ -717,6 +822,7 @@ function cargaDesdeInstalacionGas(formContext, instalaciongasid, commodity) {
                     }
 
                     if (instalaciongas.cuentanegociadoraid != null) {
+                        // Crear funcion general
                         var valorReferencia = new Array();
                         valorReferencia[0] = new Object();
                         valorReferencia[0].id = instalaciongas.cuentanegociadoraid;
@@ -732,6 +838,7 @@ function cargaDesdeInstalacionGas(formContext, instalaciongasid, commodity) {
                     }
 
                     if (instalaciongas.atos_grupoempresarialid_value != null) {
+                        // Crear funcion general
                         var valorReferencia = new Array();
                         valorReferencia[0] = new Object();
                         valorReferencia[0].id = instalaciongas.atos_grupoempresarialid_value;
@@ -749,6 +856,7 @@ function cargaDesdeInstalacionGas(formContext, instalaciongasid, commodity) {
 
                     if (instalaciongas.condicionpagoid != null) {
                         var valorReferencia = new Array();
+                        // Crear funcion general
                         valorReferencia[0] = new Object();
                         valorReferencia[0].id = instalaciongas.condicionpagoid;
                         valorReferencia[0].name = instalaciongas["condicionpagoid@OData.Community.Display.V1.FormattedValue"];
@@ -820,14 +928,21 @@ function cargaDesdeInstalacionGas(formContext, instalaciongasid, commodity) {
     }
 }
 
+/*
+ * Funcion para filtrar los productos base (ubicado en el primer stage de la oportunidad)
+ * 
+ * @param {*} formContext 
+ */
+function setCustomLookupProductoBase() {
 
-function setCustomLookupProductoBase(formContext) {
     var commodity = formContext.getAttribute("atos_commodity");
     var viewId = "{25986987-4065-A267-4889-637E6438B4E0}";
     var entityName = "atos_tipodeproducto";
     var viewDisplayName = "Productos Base del tipo " + commodity.getText();
 
-    var fetchXml = "<fetch mapping='logical' output-format='xml-platform' >" +
+    /* 223231 +1*/ //var fetchXml = "<fetch mapping='logical' output-format='xml-platform' >" +
+    var fetchXml =
+        "<fetch no-lock='true' >" +
         "<entity name='atos_tipodeproducto'>" +
         "<attribute name='atos_name'/>" +
         "<attribute name='createdon'/>" +
@@ -837,56 +952,64 @@ function setCustomLookupProductoBase(formContext) {
         "<attribute name='atos_tipodeproductoid'/>" +
         "<order descending='false' attribute='atos_name'/>" +
         "<filter type='and'>" +
-        "<condition attribute='atos_commodity' value='" + commodity.getValue() + "' operator='eq'/>" +
-        "<condition attribute='atos_base' value='1' operator='eq'/>" +
-        "<condition attribute='statecode' value='0' operator='eq'/>" +
+        "<condition attribute='atos_commodity' operator='eq' value='" + commodity.getValue() + "' />" +
+        "<condition attribute='atos_base' operator='eq' value='1' />" +
+        "<condition attribute='statecode' operator='eq' value='0' />" +
         "</filter>" +
         "</entity>" +
         "</fetch>";
 
-    var layoutXml = "<grid name='resultset' " +
+    /* 220908 -17
+    var layoutXml = 
+    "<grid name='resultset' " +
         "object='1' " +
         "jump='atos_name' " +
         "select='1' " +
         "icon='1' " +
         "preview='1'>" +
         "<row name='result' " +
+            "id='atos_tipodeproductoid'>" +
+            "<cell name='atos_name' width='150' />" +
+            "<cell name='atos_descripcion' width='150' />" +
+            "<cell name='atos_nombreems' width='150' />" +
+            "<cell name='atos_formula' width='150' />" +
+            "<cell name='createdon' width='150' />" +
+            "disableSorting='1' />" +
+        "</row>" +      
+    "</grid>"; */
+
+    /* 220908 +12 */
+    var layoutXml =
+        "<grid name='resultset' object='1' jump='atos_name' select='1' icon='1' preview='1'>" +
+        "<row name='result' " +
         "id='atos_tipodeproductoid'>" +
-        "<cell name='atos_name' " +
-        "width='150' />" +
-        "<cell name='atos_descripcion' " +
-        "width='150' />" +
-        "<cell name='atos_nombreems' " +
-        "width='150' />" +
-        "<cell name='atos_formula' " +
-        "width='150' />" +
-        "<cell name='createdon' " +
-        "width='150' />" +
+        "<cell name='atos_name' width='150' />" +
+        "<cell name='atos_descripcion' width='150' />" +
+        "<cell name='atos_nombreems' width='150' />" +
+        "<cell name='atos_formula' width='150' />" +
+        "<cell name='createdon' width='150' />" +
         "disableSorting='1' />" +
         "</row>" +
         "</grid>";
+
     //descripcion, nombre formula, formula, fecha de creacion
 
     formContext.getControl("atos_tipodeproductoid").addCustomView(viewId, entityName, viewDisplayName, fetchXml, layoutXml, true);
     formContext.getControl("header_process_atos_tipodeproductoid").addCustomView(viewId, entityName, viewDisplayName, fetchXml, layoutXml, true);
 }
 
-/**
-// <summary>
-// Oculta los campos segun la commodity
-// </summary>
-// <remarks>
-// Si la
-// </remarks>
-*/
-function mostrarcampos(formContext) {
-    if (formContext.getAttribute("atos_commodity").getValue() == 300000000) {
+/*
+ * Oculta los campos segun la commodity
+ */
+function mostrarcampos() {
+
+    if (formContext.getAttribute("atos_commodity").getValue() == POWER) {
         formContext.getControl("atos_usodelgasid").setVisible(false);
         formContext.getControl("atos_tipodepenalizacionid").setVisible(false);
         formContext.getControl("atos_peajeid").setVisible(false);
         formContext.getControl("atos_instalaciongasid").setVisible(false);
     }
-    else if (formContext.getAttribute("atos_commodity").getValue() == 300000001) {
+    else if (formContext.getAttribute("atos_commodity").getValue() == GAS) {
         formContext.getControl("atos_impuestoelectrico").setVisible(false);
         formContext.getControl("atos_instalacionid").setVisible(false);
         formContext.getControl("atos_tarifaid").setVisible(false);
@@ -894,101 +1017,276 @@ function mostrarcampos(formContext) {
         formContext.getControl("atos_subsistemaid").setVisible(false);
         formContext.getControl("atos_precioincluyeimpuestoelectrico").setVisible(false);
     }
-    else {
-
-    }
 }
 
 
+/*
+ * Function from Button "Contrato" Ribbon "Oferta"
+ *
+ * Abre el formulario de nuevo contrato
+ * Si la oferta está creada y el check validado para contrato esta marcado abre el formulario de nuevo contrato indicandole que viene desde la oferta
+ * Si el check validado para contrato no está marcado muestra el mensaje de que es necesario validar la oferta antes.
+ * Modificado para funcionalidad D365 V9
+ * Autor: Lázaro Castro  - 13.11.2020
+ * 
+ * @param {*} primaryControl 
+ */
+function nuevoContrato(primaryControl) {
 
-/**
-// <summary>
-// Abre el formulario de nuevo contrato
-// </summary>
-// <remarks>
-// Si la oferta estÃ¡ creada y el check validado para contrato estÃ¡ marcado abre el formulario de nuevo contrato indicandole que viene desde la oferta<br/>
-// Si el check validado para contrato no estÃ¡ marcado muestra el mensaje de que es necesario validar la oferta antes.
-// Modificado para funcionalidad D365 V9
-// Autor: LÃ¡zaro Castro  - 13.11.2020
-// </remarks>
-*/
-function nuevoContrato(primaryControl) { // forma de obtener el executionContext desde boton por llamado con parÃ¡metro primaryControl
     // debugger;
-    if (primaryControl._entityReference.id["guid"] != null && primaryControl._entityReference.id["guid"] != "") {
-        if (!primaryControl.getAttribute("atos_validadoparacontrato").getIsDirty() && primaryControl.getAttribute("atos_validadoparacontrato").getValue() != null) {
-            if (!primaryControl.getAttribute("atos_validadoparacontrato").getIsDirty() && primaryControl.getAttribute("atos_validadoparacontrato").getValue() == true) {
-                // comprobamos que la oferta esta ganada para lanzar el contrato
-                if (!primaryControl.getAttribute("statuscode").getIsDirty() && primaryControl.getAttribute("statuscode").getValue() == 300000000) {
-                    var entityFormOptions = {};
-                    entityFormOptions["entityName"] = "atos_contrato";
-                    var formParameters = {};
-                    formParameters["llamado_desde"] = "Oferta";
-                    formParameters["llamante_id"] = primaryControl._entityReference.id["guid"];
-                    // Xrm.Utility.openEntityForm("atos_contrato", null, parameters); Deperecado a pasado a XRM.Nvigation.openForm
-                    Xrm.Navigation.openForm(entityFormOptions, formParameters).then(
-                        function (success) {
-                            // console.log(success);
-                        }, function (error) {
-                            Xrm.Navigation.openErrorDialog({ detail: error.message });
-                        });
-                } else {
-                    alert("Es necesario que la oferta este ganada para pasarla a contrato. Revise el Estado de oferta y guarde la oferta");
+    if (primaryControl._entityReference.id["guid"] == null && primaryControl._entityReference.id["guid"] == "") {
+        //alert("Es necesario validar la oferta antes de pasarla a contrato. Revise el campo Validado para contrato");
+
+        var alertStrings = { confirmButtonLabel: "Aceptar", text: "Es necesario validar la oferta antes de pasarla a contrato. Revise el campo Validado para contrato", title: "Notificación" };
+        var alertOptions = { height: 120, width: 260 };
+        Xrm.Navigation.openAlertDialog(alertStrings, alertOptions).then(
+            function (success) {
+                console.log("Alert dialog closed");
+            },
+            function (error) {
+                console.log(error.message);
+            }
+        );
+
+        return;
+    }
+
+    if (!primaryControl.getAttribute("atos_validadoparacontrato").getIsDirty() && primaryControl.getAttribute("atos_validadoparacontrato").getValue() != null) {
+        if (!primaryControl.getAttribute("atos_validadoparacontrato").getIsDirty() && primaryControl.getAttribute("atos_validadoparacontrato").getValue() == true) {
+
+            // comprobamos que la oferta esta ganada para lanzar el contrato
+            if (!primaryControl.getAttribute("statuscode").getIsDirty() && primaryControl.getAttribute("statuscode").getValue() == 300000000) {
+
+                /*
+                                var formParameters = {};
+                                formParameters["llamado_desde"] = "Oferta";
+                                formParameters["llamante_id"] = primaryControl._entityReference.id["guid"];
+                
+                                var entityFormOptions = {};
+                                entityFormOptions["entityName"] = "atos_contrato";
+                */
+                /*                
+                                // Open the form.
+                                Xrm.Navigation.openForm(entityFormOptions, formParameters).then(
+                                    function (success) {
+                                        console.log(success);
+                                    }, function (error) {
+                                        console.log(error);
+                                    }
+                                ); 
+                */
+
+                // Set default values for the account form
+                var formParameters = {};
+                formParameters["llamado_desde"] = "Oferta";                                     /* */
+                formParameters["llamante_id"] = primaryControl._entityReference.id["guid"];     /* */
+
+                formParameters["atos_commodity"] = formContext.getAttribute("atos_commodity").getValue();
+
+                if (formContext.getAttribute("atos_name").getValue() != null) {
+                    var oferta = formContext.getAttribute("atos_name").getValue();
+
+                    formParameters["atos_ofertaid"] = formContext.data.entity.getId();
+                    formParameters["atos_ofertaidname"] = oferta;
+                    formParameters["atos_ofertaidtype"] = "atos_ofertaid";
+                    formParameters["atos_ofertaid_name"] = oferta;
                 }
+
+                if (formContext.getAttribute("atos_cuentanegociadoraid").getValue() != null) {
+                    var cuentanegociadora = formContext.getAttribute("atos_cuentanegociadoraid").getValue();
+
+                    formParameters["atos_cuentanegociadoraid"] = cuentanegociadora[0].id;
+                    formParameters["atos_cuentanegociadoraidname"] = cuentanegociadora[0].name;
+                    formParameters["atos_cuentanegociadoraidtype"] = "atos_cuentanegociadora";
+                    formParameters["atos_cuentanegociadoraid_name"] = cuentanegociadora[0].name;
+                }
+
+                if (formContext.getAttribute("atos_razonsocialid").getValue() != null) {
+                    var razonsocial = formContext.getAttribute("atos_razonsocialid").getValue();
+
+                    formParameters["atos_razonsocialid"] = razonsocial[0].id;
+                    formParameters["atos_razonsocialidname"] = razonsocial[0].name;
+                    formParameters["atos_razonsocialidtype"] = "account";
+                    formParameters["atos_razonsocialid_name"] = razonsocial[0].name;
+                }
+
+                if (formContext.getAttribute("atos_commodity").getValue() == GAS) {
+
+                    if (formContext.getAttribute("atos_instalaciongasid").getValue() != null) {
+                        var instalaciongas = formContext.getAttribute("atos_instalaciongasid").getValue();
+
+                        formParameters["atos_instalaciongasid"] = instalaciongas[0].id;
+                        formParameters["atos_instalaciongasidname"] = instalaciongas[0].name;
+                        formParameters["atos_instalaciongasidtype"] = "atos_instalaciongas";
+                        formParameters["atos_instalaciongasid_name"] = instalaciongas[0].name;
+                    }
+                }
+                else { // POWER
+
+                    if (formContext.getAttribute("atos_instalacionid").getValue() != null) {
+                        var instalacion = formContext.getAttribute("atos_instalacionid").getValue();
+
+                        formParameters["atos_instalacionid"] = instalacion[0].id;
+                        formParameters["atos_instalacionidname"] = instalacion[0].name;
+                        formParameters["atos_instalacionidtype"] = "atos_instalacion";
+                        formParameters["atos_instalacionid_name"] = instalacion[0].name;
+                    }
+                }
+
+                if (formContext.getAttribute("atos_tipodeproductoid").getValue() != null) {
+                    var tipodeproducto = formContext.getAttribute("atos_tipodeproductoid").getValue();
+
+                    formParameters["atos_tipodeproductoid"] = tipodeproducto[0].id;
+                    formParameters["atos_tipodeproductoidname"] = tipodeproducto[0].name;
+                    formParameters["atos_tipodeproductoidtype"] = "atos_tipodeproducto";
+                    formParameters["atos_tipodeproductoid_name"] = tipodeproducto[0].name;
+                }
+
+                // Datos bancarios
+
+                formParameters["atos_formadepago"] = formContext.getAttribute("atos_formadepago").getValue();
+
+                if (formContext.getAttribute("atos_condicionpagoid").getValue() != null) {
+                    var condicionpago = formContext.getAttribute("atos_condicionpagoid").getValue();
+
+                    formParameters["atos_condicionpago"] = condicionpago[0].id;
+                    formParameters["atos_condicionpagoname"] = condicionpago[0].name;
+                    formParameters["atos_condicionpagotype"] = "atos_condiciondepago";
+                    formParameters["atos_condicionpago_name"] = condicionpago[0].name;
+                }
+
+                formParameters["atos_tipodeenvio"] = formContext.getAttribute("atos_tipodeenvio").getValue();
+                formParameters["atos_plazoenviofacturas"] = formContext.getAttribute("atos_plazoenviofacturas").getValue();
+                formParameters["atos_mandatosepa"] = formContext.getAttribute("atos_mandatosepa").getValue();
+                formParameters["atos_swift"] = formContext.getAttribute("atos_swift").getValue();
+                formParameters["atos_iban"] = formContext.getAttribute("atos_iban").getValue();
+                formParameters["atos_entidadbancaria"] = formContext.getAttribute("atos_entidadbancaria").getValue();
+                formParameters["atos_sucursalbancaria"] = formContext.getAttribute("atos_sucursalbancaria").getValue();
+                formParameters["atos_digitocontrol"] = formContext.getAttribute("atos_digitocontrol").getValue();
+                formParameters["atos_cuenta"] = formContext.getAttribute("atos_cuenta").getValue();
+                formParameters["atos_cuentabancaria"] = formContext.getAttribute("atos_cuentabancaria").getValue();
+                formParameters["atos_cuentabancariaapropia"] = formContext.getAttribute("atos_cuentabancariaapropia").getValue();
+
+
+                // Costes por gestion de cierre
+                /* #23251 +3 Begin */
+                formParameters["atos_costegestioncierresmensuales"] = formContext.getAttribute("atos_costegestioncierresmensuales").getValue();;
+                formParameters["atos_costegestioncierrestrimestrales"] = formContext.getAttribute("atos_costegestioncierrestrimestrales").getValue();;
+                formParameters["atos_costegestioncierresanuales"] = formContext.getAttribute("atos_costegestioncierresanuales").getValue();;
+                /* #23251 End */
+                var pageInput = {};
+                pageInput["entityName"] = "atos_contrato";
+                pageInput["pageType"] = "entityrecord";
+                pageInput["formType"] = 2;
+
+                pageInput["data"] = formParameters;
+
+                var navigationOptions = {
+                    target: 1,
+                    height: { value: 100, unit: "%" },
+                    width: { value: 100, unit: "%" },
+                    position: 1
+                };
+
+                // Open the form.
+                Xrm.Navigation.navigateTo(pageInput, navigationOptions).then(
+                    function (success) {
+                        console.log(success);
+                    },
+                    function (error) {
+                        console.log(error);
+                    }
+                );
+
+
+
+            }
+            else {
+                // alert("Es necesario que la oferta este ganada para pasarla a contrato. Revise el Estado de oferta y guarde la oferta");
+
+                var alertStrings = { confirmButtonLabel: "Aceptar", text: "Es necesario que la oferta este ganada para pasarla a contrato. Revise el Estado de oferta y guarde la oferta", title: "Notificación" };
+                var alertOptions = { height: 120, width: 260 };
+                Xrm.Navigation.openAlertDialog(alertStrings, alertOptions).then(
+                    function (success) {
+                        console.log("Alert dialog closed");
+                    },
+                    function (error) {
+                        console.log(error.message);
+                    }
+                );
             }
         }
-    } else {
-        alert("Es necesario validar la oferta antes de pasarla a contrato. Revise el campo Validado para contrato");
     }
 }
 
 
-/**
-// <summary>
-// Comprueba si el campo recibido por parÃ¡metro estÃ¡ vacÃ­o en el formulario
-// </summary>
-*/
-function campoVacio(formContext, campo) {
-    try
-    {
-formContext = formContext.getFormContext();
-    }
-    catch{
+/*
+ * Comprueba si el campo recibido por parámetro está vací­o en el formulario
+ * 
+ * @param {*} campo 
+ * @returns 
+ */
+function campoVacio(campo) {
 
-    }
     if (formContext.getAttribute(campo).getValue() == null ||
         formContext.getAttribute(campo).getValue() == "")
         return true;
+
     return false;
 }
 
 
 /**
-// <summary>
-// Se ejecuta al guardar los datos de la Oferta.
-// </summary>
-// <remarks>
-// Si se ha modificado la fecha de inicio y/o fin de suministro/garantÃ­a/aval, comprueba que son correctas.
-// </remarks>
-*/
+ * Se ejecuta en el OnSave del formulario 
+ * Si se ha modificado la fecha de inicio y/o fin de suministro/garantíaa/aval, comprueba que son correctas.
+ * 
+ * @param {*} executionContext 
+ */
 function Oferta_OnSave(executionContext) {
+
     var formContext = executionContext.getFormContext();
+
     if (formContext.getAttribute("atos_fechainicio").getIsDirty() == true ||
         formContext.getAttribute("atos_fechafin").getIsDirty() == true) {
-        if (compruebaFechas(formContext,"atos_fechainicio", "atos_fechafin", "La fecha de inicio de suministro debe ser menor o igual que la fecha de fin de suministro.", "5") != "")
+
+        /* 23866 +7 */
+        // Intenta corregir falla de fechas por problemas en el campo atos_fechafin que usa TimeZone 0
+        debugger;
+        let fecha = formContext.getAttribute("atos_fechainicio").getValue();
+        let aux = new Date(fecha);
+        let _datetime = new Date(aux.getFullYear(), aux.getMonth(), aux.getDate(), 4, 0, 0);
+        formContext.getAttribute("atos_fechainicio").setValue(_datetime);
+        formContext.getAttribute("atos_supplystartdate").setValue(_datetime);
+        console.log("fecha inicio oferta", _datetime)
+
+        /* 23866 +7 */
+        // Intenta corregir falla de fechas por problemas en el campo atos_fechafin que usa TimeZone 0
+        debugger;
+        fecha = formContext.getAttribute("atos_fechafin").getValue();
+        aux = new Date(fecha);
+        _datetime = new Date(aux.getFullYear(), aux.getMonth(), aux.getDate(), 19, 0, 0);
+        formContext.getAttribute("atos_fechafin").setValue(_datetime);
+        formContext.getAttribute("atos_supplyenddate").setValue(_datetime);
+        console.log("fecha fin oferta", _datetime)
+
+        if (compruebaFechas(formContext, "atos_fechainicio", "atos_fechafin", "La fecha de inicio de suministro debe ser menor o igual que la fecha de fin de suministro.", "5") != "")
+
             if (executionContext.getEventArgs() != null)
                 executionContext.getEventArgs().preventDefault();
     }
 
     if (formContext.getAttribute("atos_fechainiciogarantia").getIsDirty() == true ||
         formContext.getAttribute("atos_fechafingarantia").getIsDirty() == true) {
-        if (compruebaFechas(formContext,"atos_fechainiciogarantia", "atos_fechafingarantia", "La fecha de inicio de garantÃ­a debe ser menor o igual que la fecha de fin de garantÃ­a.", "6") != "")
+        if (compruebaFechas(formContext, "atos_fechainiciogarantia", "atos_fechafingarantia", "La fecha de inicio de garantÃ­a debe ser menor o igual que la fecha de fin de garantÃ­a.", "6") != "")
+
             if (executionContext.getEventArgs() != null)
                 executionContext.getEventArgs().preventDefault();
     }
 
     if (formContext.getAttribute("atos_fechainicioavalprovisional").getIsDirty() == true ||
         formContext.getAttribute("atos_fechafinavalprovisional").getIsDirty() == true) {
-        if (compruebaFechas(formContext,"atos_fechainicioavalprovisional", "atos_fechafinavalprovisional", "La fecha de inicio de aval debe ser menor o igual que la fecha de fin de aval.", "7") != "")
+        if (compruebaFechas(formContext, "atos_fechainicioavalprovisional", "atos_fechafinavalprovisional", "La fecha de inicio de aval debe ser menor o igual que la fecha de fin de aval.", "7") != "")
+
             if (executionContext.getEventArgs() != null)
                 executionContext.getEventArgs().preventDefault();
     }
@@ -996,23 +1294,23 @@ function Oferta_OnSave(executionContext) {
 
 
 
-/**
-// <summary>
-// Habilita/Deshabilita campos de penalizaciÃ³n consumo
-// </summary>
-// <remarks>
-// Si estÃ¡ marcado el check de penalizaciÃ³n consumo, habilita los campos de penalizaciÃ³n y los pone requeridos
-// <ul>
-// <li>atos_importepenalizacion</li>
-// <li>atos_rangoinferiorpenalizacion</li>
-// <li>atos_rangosuperiorpenalizacion</li>
-// </ul>
-// Si no estÃ¡ marcado el check de penalizaciÃ³n consumo, deshabilita los campos de penalizaciÃ³n, los vacÃ­a y los pone no requeridos
-// </remarks>
-*/
+/*
+ * Se ejecuta en el OnLoad del formulario
+* Se ejecuta desde el OnChange de "Penalización Consumo"
+ *
+ * Habilita/Deshabilita campos de penalización consumo
+ * Si está marcado el check de penalización consumo, habilita los campos de penalización y los pone requeridos
+ *      atos_importepenalizacion
+ *      atos_rangoinferiorpenalizacion
+ *      atos_rangosuperiorpenalizacion
+ * de lo contrario, deshabilita los campos de penalización, los vací­a y los pone no requeridos
+ * 
+ * @param {*} executionContext 
+ */
 function penalizacionConsumo(executionContext) {
-    // debugger;
+
     var formContext = executionContext.getFormContext();
+
     if (formContext.getAttribute("atos_penalizacionconsumo").getValue() == true) {
         formContext.getAttribute("atos_importepenalizacion").setRequiredLevel("required");
         formContext.getAttribute("atos_rangoinferiorpenalizacion").setRequiredLevel("required");
@@ -1025,30 +1323,30 @@ function penalizacionConsumo(executionContext) {
         formContext.getControl("atos_penalizacionporcentaje").setDisabled(false);
     }
     else {
-        if (campoVacio(formContext, "atos_importepenalizacion") == false) // Si tiene valor lo vacÃ­a
+        if (campoVacio("atos_importepenalizacion") == false) // Si tiene valor lo vacÃ­a
         {
             formContext.getAttribute("atos_importepenalizacion").setValue(null);
             formContext.getAttribute("atos_importepenalizacion").setSubmitMode("always");
         }
-        if (campoVacio(formContext, "atos_rangoinferiorpenalizacion") == false) // Si tiene valor lo vacÃ­a
+        if (campoVacio("atos_rangoinferiorpenalizacion") == false) // Si tiene valor lo vacÃ­a
         {
             formContext.getAttribute("atos_rangoinferiorpenalizacion").setValue(null);
             formContext.getAttribute("atos_rangoinferiorpenalizacion").setSubmitMode("always");
         }
-        if (campoVacio(formContext, "atos_rangosuperiorpenalizacion") == false) // Si tiene valor lo vacÃ­a
+        if (campoVacio("atos_rangosuperiorpenalizacion") == false) // Si tiene valor lo vacÃ­a
         {
             formContext.getAttribute("atos_rangosuperiorpenalizacion").setValue(null);
             formContext.getAttribute("atos_rangosuperiorpenalizacion").setSubmitMode("always");
         }
-        if (campoVacio(formContext, "atos_tipodepenalizacionid") == false) {
+        if (campoVacio("atos_tipodepenalizacionid") == false) {
             formContext.getAttribute("atos_tipodepenalizacionid").setValue(null);
             formContext.getAttribute("atos_tipodepenalizacionid").setSubmitMode("always");
         }
-        if (campoVacio(formContext, "atos_referenciapenalizacion") == false) {
+        if (campoVacio("atos_referenciapenalizacion") == false) {
             formContext.getAttribute("atos_referenciapenalizacion").setValue(null);
             formContext.getAttribute("atos_referenciapenalizacion").setSubmitMode("always");
         }
-        if (campoVacio(formContext, "atos_penalizacionporcentaje") == false) {
+        if (campoVacio("atos_penalizacionporcentaje") == false) {
             formContext.getAttribute("atos_penalizacionporcentaje").setValue(null);
             formContext.getAttribute("atos_penalizacionporcentaje").setSubmitMode("always");
         }
@@ -1063,36 +1361,26 @@ function penalizacionConsumo(executionContext) {
         formContext.getControl("atos_referenciapenalizacion").setDisabled(true);
         formContext.getControl("atos_penalizacionporcentaje").setDisabled(true);
     }
+
     if (formContext.getAttribute("atos_commodity").getValue() == 300000001) {
-        referenciaPenalizacion(formContext);
+        referenciaPenalizacion();
     }
 }
 
-/**
-// <summary>
-// Habilita/Deshabilita los campos importe penalizaciÃ³n o penalizacion
-// </summary>
-// <remarks>
-// <ul>
-// <li></li>
-// <li></li>
-// <li></li>
-// <li></li>
-// <li></li>
-// </ul>
-// Si el tipo de garantÃ­a no es Sin Garantia habilita los campos de garantÃ­a<br/>
-// Si el tipo de garantÃ­a es Sin GarantÃ­a, deshabilita y vacÃ­a los campos de garantÃ­a
-// </remarks>
-*/
-function referenciaPenalizacion(formContext) {
 
-    try{
-formContext = formContext.getFormContext();
-    }
-    catch{
+/*
+ * Llamado desde en OnChange de "Referencia Penalizacion"
+ *
+ * Habilita/Deshabilita los campos importe penalización
+ * Si el tipo de garantía <> Sin garantía habilita los campos de garantía
+ * de lo contrario, deshabilita y vací­a los campos de garantía
+ * 
+ * @param {*} formContext 
+ * @returns 
+ */
+function referenciaPenalizacion() {
 
-    }
-    if (campoVacio(formContext, "atos_referenciapenalizacion") == true) {
+    if (campoVacio("atos_referenciapenalizacion") == true) {
         formContext.getAttribute("atos_importepenalizacion").setValue(null);
         formContext.getAttribute("atos_importepenalizacion").setSubmitMode("always");
         formContext.getAttribute("atos_importepenalizacion").setRequiredLevel("none");
@@ -1114,11 +1402,11 @@ formContext = formContext.getFormContext();
     }
 
     if (formContext.getAttribute("atos_referenciapenalizacion").getValue() == 300000000) {
-        if (campoVacio(formContext, "atos_penalizacionporcentaje") == false) {
+        if (campoVacio("atos_penalizacionporcentaje") == false) {
             formContext.getAttribute("atos_penalizacionporcentaje").setValue(null);
             formContext.getAttribute("atos_penalizacionporcentaje").setSubmitMode("always");
         }
-        if (campoVacio(formContext, "atos_penalizacionporcentajeinferior") == false) {
+        if (campoVacio("atos_penalizacionporcentajeinferior") == false) {
             formContext.getAttribute("atos_penalizacionporcentajeinferior").setValue(null);
             formContext.getAttribute("atos_penalizacionporcentajeinferior").setSubmitMode("always");
         }
@@ -1131,12 +1419,13 @@ formContext = formContext.getFormContext();
         formContext.getControl("atos_importepenalizacion").setDisabled(false);
         formContext.getControl("atos_importepenalizacioninferior").setDisabled(false);
 
-    } else {
-        if (campoVacio(formContext, "atos_importepenalizacion") == false) {
+    }
+    else {
+        if (campoVacio("atos_importepenalizacion") == false) {
             formContext.getAttribute("atos_importepenalizacion").setValue(null);
             formContext.getAttribute("atos_importepenalizacion").setSubmitMode("always");
         }
-        if (campoVacio(formContext, "atos_importepenalizacioninferior") == false) {
+        if (campoVacio("atos_importepenalizacioninferior") == false) {
             formContext.getAttribute("atos_importepenalizacioninferior").setValue(null);
             formContext.getAttribute("atos_importepenalizacioninferior").setSubmitMode("always");
         }
@@ -1152,23 +1441,24 @@ formContext = formContext.getFormContext();
     }
 }
 
-/**
-// <summary>
-// Habilita/Deshabilita campos de bonificaciÃ³n
-// </summary>
-// <remarks>
-// Si estÃ¡ marcado el check de bonificaciÃ³n consumo, habilita los campos de bonificaciÃ³n y los pone requeridos
-// <ul>
-// <li>atos_importebonificacion</li>
-// <li>atos_rangoinferiorbonificacion</li>
-// <li>atos_rangosuperiorbonificacion</li>
-// </ul>
-// Si no estÃ¡ marcado el check de bonificaciÃ³n consumo, deshabilita los campos de bonificaciÃ³n, los vacÃ­a y los pone no requeridos
-// </remarks>
-*/
+
+/*
+ * Se ejecuta en el OnLoad del formulario 
+ * Se ejecuta en el OnChange del "Bonificacion Consumo" (antes se llamada desde atos_messange.js)
+ * 
+ * Habilita/Deshabilita campos de bonificación
+ * Si estÃ¡ marcado el check de bonificación consumo, habilita los campos de bonificación y los pone requeridos
+ *   atos_importebonificacion
+ *   atos_rangoinferiorbonificacion
+ *   atos_rangosuperiorbonificacion
+ * Si no está marcado el check de bonificación consumo, deshabilita los campos de bonificación, los vací­a y los pone no requeridos
+ * 
+ * @param {*} executionContext 
+ */
 function bonificacionConsumo(executionContext) {
-    // debugger;
+
     var formContext = executionContext.getFormContext();
+
     if (formContext.getAttribute("atos_bonificacionconsumo").getValue() == true) {
         formContext.getAttribute("atos_importebonificacion").setRequiredLevel("required");
         formContext.getAttribute("atos_rangoinferiorbonificacion").setRequiredLevel("required");
@@ -1178,17 +1468,17 @@ function bonificacionConsumo(executionContext) {
         formContext.getControl("atos_rangosuperiorbonificacion").setDisabled(false);
     }
     else {
-        if (campoVacio(formContext, "atos_importebonificacion") == false) // Si tiene valor lo vacÃ­a
+        if (campoVacio("atos_importebonificacion") == false) // Si tiene valor lo vacÃ­a
         {
             formContext.getAttribute("atos_importebonificacion").setValue(null);
             formContext.getAttribute("atos_importebonificacion").setSubmitMode("always");
         }
-        if (campoVacio(formContext, "atos_rangoinferiorbonificacion") == false) // Si tiene valor lo vacÃ­a
+        if (campoVacio("atos_rangoinferiorbonificacion") == false) // Si tiene valor lo vacÃ­a
         {
             formContext.getAttribute("atos_rangoinferiorbonificacion").setValue(null);
             formContext.getAttribute("atos_rangoinferiorbonificacion").setSubmitMode("always");
         }
-        if (campoVacio(formContext, "atos_rangosuperiorbonificacion") == false) // Si tiene valor lo vacÃ­a
+        if (campoVacio("atos_rangosuperiorbonificacion") == false) // Si tiene valor lo vacÃ­a
         {
             formContext.getAttribute("atos_rangosuperiorbonificacion").setValue(null);
             formContext.getAttribute("atos_rangosuperiorbonificacion").setSubmitMode("always");
@@ -1203,28 +1493,22 @@ function bonificacionConsumo(executionContext) {
     }
 }
 
+/*
+ * Se ejecuta en el OnLoad del formulario
+ * Se ejecuta en el OnChange del "Tipo Garantia solicitada al Cliente" 
+ *
+ * Habilita/Deshabilita campos de garantÃçia
+ * Si es una oferta hija deshabilita los campos de garantía
 
-
-/**
-// <summary>
-// Habilita/Deshabilita campos de garantÃ­a
-// </summary>
-// <remarks>
-// Si es una oferta hija deshabilita los campos de garantÃ­a
-// <ul>
-// <li>atos_importegarantiasolicitada</li>
-// <li>atos_fechasolicitudgarantiacliente</li>
-// <li>atos_fecharealizaciongarantiacliente</li>
-// <li>atos_fechainiciogarantia</li>
-// <li>atos_fechafingarantia</li>
-// </ul>
-// Si el tipo de garantÃ­a no es Sin Garantia habilita los campos de garantÃ­a<br/>
-// Si el tipo de garantÃ­a es Sin GarantÃ­a, deshabilita y vacÃ­a los campos de garantÃ­a
-// </remarks>
-*/
+ * Si el tipo de garantía <> Sin garantía habilita los campos de garantía
+ * De lo contrario, deshabilita y vací­a los campos de garantía
+ * 
+ * @param {*} executionContext 
+ */
 function tipoGarantia(executionContext) {
-    // debugger;
+    //debugger;   
     var formContext = executionContext.getFormContext();
+
     if (formContext.getAttribute("atos_ofertapadreid").getValue() != null) {
         formContext.getControl("atos_importegarantiasolicitada").setDisabled(true);
         formContext.getControl("atos_fechasolicitudgarantiacliente").setDisabled(true);
@@ -1241,27 +1525,27 @@ function tipoGarantia(executionContext) {
             formContext.getControl("atos_fechafingarantia").setDisabled(false);
         }
         else {
-            if (campoVacio(formContext, "atos_importegarantiasolicitada") == false) // Si tiene valor lo vacÃ­a
+            if (campoVacio("atos_importegarantiasolicitada") == false) // Si tiene valor lo vacÃ­a
             {
                 formContext.getAttribute("atos_importegarantiasolicitada").setValue(null);
                 formContext.getAttribute("atos_importegarantiasolicitada").setSubmitMode("always");
             }
-            if (campoVacio(formContext, "atos_fechasolicitudgarantiacliente") == false) // Si tiene valor lo vacÃ­a
+            if (campoVacio("atos_fechasolicitudgarantiacliente") == false) // Si tiene valor lo vacÃ­a
             {
                 formContext.getAttribute("atos_fechasolicitudgarantiacliente").setValue(null);
                 formContext.getAttribute("atos_fechasolicitudgarantiacliente").setSubmitMode("always");
             }
-            if (campoVacio(formContext, "atos_fecharealizaciongarantiacliente") == false) // Si tiene valor lo vacÃ­a
+            if (campoVacio("atos_fecharealizaciongarantiacliente") == false) // Si tiene valor lo vacÃ­a
             {
                 formContext.getAttribute("atos_fecharealizaciongarantiacliente").setValue(null);
                 formContext.getAttribute("atos_fechainiciogarantia").setValue(null);
             }
-            if (campoVacio(formContext, "atos_fechainiciogarantia") == false) // Si tiene valor lo vacÃ­a
+            if (campoVacio("atos_fechainiciogarantia") == false) // Si tiene valor lo vacÃ­a
             {
                 formContext.getAttribute("atos_fechainiciogarantia").setValue(null);
                 formContext.getAttribute("atos_fechainiciogarantia").setSubmitMode("always");
             }
-            if (campoVacio(formContext, "atos_fechafingarantia") == false) // Si tiene valor lo vacÃ­a
+            if (campoVacio("atos_fechafingarantia") == false) // Si tiene valor lo vacÃ­a
             {
                 formContext.getAttribute("atos_fechafingarantia").setValue(null);
                 formContext.getAttribute("atos_fechafingarantia").setSubmitMode("always");
@@ -1276,19 +1560,16 @@ function tipoGarantia(executionContext) {
     }
 }
 
-/**
-// <summary>
-// Habilitar modificaciÃ³n de condiciones de pago y datos bancarios para ofertas padre 
-//que vienen de una cuenta negociadora.
-// </summary>
-*/
-function habilitarCondiciones(formContext) {
-    try{
-        formContext = formContext.getFormContext();
-    }
-    catch{
 
-    }
+/*
+ * Se ejecuta desde OfertaOnLoad
+ *
+ * Habilitar modificación de condiciones de pago y datos bancarios para 
+ * ofertas padre que vienen de una cuenta negociadora.
+ * @param {*} formContext 
+ */
+function habilitarCondiciones() {
+
     formContext.getAttribute("atos_formadepago").setRequiredLevel("required");
     formContext.getControl("atos_formadepago").setDisabled(false);
     formContext.getAttribute("atos_condicionpagoid").setRequiredLevel("required");
@@ -1297,41 +1578,35 @@ function habilitarCondiciones(formContext) {
     formContext.getControl("atos_tipodeenvio").setDisabled(false);
     formContext.getAttribute("atos_plazoenviofacturas").setRequiredLevel("required");
     formContext.getControl("atos_plazoenviofacturas").setDisabled(false);
-
     formContext.getControl("atos_mandatosepa").setDisabled(false);
-    domiciliacionBancaria(formContext);
+
+    domiciliacionBancaria();
 }
 
-/**
-// <summary>
-// Borramos el valor del campo mandato sepa
-// </summary>
-*/
-function borrarMandatoSepa(formContext) {
-    try{
-        formContext = formContext.getFormContext();
-    }
-    catch{
 
-    }
+/*
+ * Se ejecuta en el OnChange del "Forma Pago" 
+ * Se ejecuta en el OnChange del "Dias vencimiento Facturas" 
+ * Se ejecuta en el OnChange del "SWITF"
+ * Se ejecuta en el OnChange del "Iban"
+ * Se ejecuta en el OnChange del "Entidad"
+ * Se ejecuta en el OnChange del "Sucursal"
+ * Se ejecuta en el OnChange del "Digito de Control"
+ * Se ejecuta en el OnChange del "Cuenta"
+ * Borramos el valor del campo mandato sepa
+ */
+function borrarMandatoSepa() {
 
     formContext.getAttribute("atos_mandatosepa").setValue("");
     formContext.getAttribute("atos_mandatosepa").setSubmitMode("always");
 }
 
-/**
-// <summary>
-// Si la forma de pago es domiciliaciÃ³n bancaria habilita los campos de la cuenta bancaria
-// </summary>
-*/
-function domiciliacionBancaria(formContext) {
+/*
+ * Se ejecuta en el OnChange del "Forma Pago" 
+ * Si la forma de pago es domiciliación bancaria habilita los campos de la cuenta bancaria
+ */
+function domiciliacionBancaria() {
 
-    try{
-        formContext = formContext.getFormContext();
-    }
-    catch{
-
-    }
     if (formContext.getAttribute("atos_formadepago").getValue() == 300000001) // DomiciliaciÃ³n
     {
         formContext.getAttribute("atos_iban").setRequiredLevel("required");
@@ -1354,37 +1629,38 @@ function domiciliacionBancaria(formContext) {
         formContext.getAttribute("atos_sucursalbancaria").setRequiredLevel("none");
         formContext.getAttribute("atos_digitocontrol").setRequiredLevel("none");
         formContext.getAttribute("atos_cuenta").setRequiredLevel("none");
-        if (campoVacio(formContext, "atos_swift") == false) // Si tiene valor lo vacÃ­a
+
+        if (campoVacio("atos_swift") == false) // Si tiene valor lo vacÃ­a
         {
             formContext.getAttribute("atos_swift").setValue(null);
             formContext.getAttribute("atos_swift").setSubmitMode("always");
         }
-        if (campoVacio(formContext, "atos_iban") == false) // Si tiene valor lo vacÃ­a
+        if (campoVacio("atos_iban") == false) // Si tiene valor lo vacÃ­a
         {
             formContext.getAttribute("atos_iban").setValue(null);
             formContext.getAttribute("atos_iban").setSubmitMode("always");
         }
-        if (campoVacio(formContext, "atos_entidadbancaria") == false) // Si tiene valor lo vacÃ­a
+        if (campoVacio("atos_entidadbancaria") == false) // Si tiene valor lo vacÃ­a
         {
             formContext.getAttribute("atos_entidadbancaria").setValue(null);
             formContext.getAttribute("atos_entidadbancaria").setSubmitMode("always");
         }
-        if (campoVacio(formContext, "atos_sucursalbancaria") == false) // Si tiene valor lo vacÃ­a
+        if (campoVacio("atos_sucursalbancaria") == false) // Si tiene valor lo vacÃ­a
         {
             formContext.getAttribute("atos_sucursalbancaria").setValue(null);
             formContext.getAttribute("atos_sucursalbancaria").setSubmitMode("always");
         }
-        if (campoVacio(formContext, "atos_digitocontrol") == false) // Si tiene valor lo vacÃ­a
+        if (campoVacio("atos_digitocontrol") == false) // Si tiene valor lo vacÃ­a
         {
             formContext.getAttribute("atos_digitocontrol").setValue(null);
             formContext.getAttribute("atos_digitocontrol").setSubmitMode("always");
         }
-        if (campoVacio(formContext, "atos_cuenta") == false) // Si tiene valor lo vacÃ­a
+        if (campoVacio("atos_cuenta") == false) // Si tiene valor lo vacÃ­a
         {
             formContext.getAttribute("atos_cuenta").setValue(null);
             formContext.getAttribute("atos_cuenta").setSubmitMode("always");
         }
-        if (campoVacio(formContext, "atos_cuentabancaria") == false) // Si tiene valor lo vacÃ­a
+        if (campoVacio("atos_cuentabancaria") == false) // Si tiene valor lo vacÃ­a
         {
             formContext.getAttribute("atos_cuentabancaria").setValue(null);
             formContext.getAttribute("atos_cuentabancaria").setSubmitMode("always");
@@ -1398,13 +1674,18 @@ function domiciliacionBancaria(formContext) {
     }
 }
 
+/*
+ * Funciones Generales, Analizar sacastas a otro apartado --------------------------------------------------------
+ */
 
-
-/**
-// <summary>
-// Valida si la cuenta bancaria es correcta o no
-// </summary>
-*/
+/*
+ * Valida si la cuenta bancaria es correcta o no
+ * @param {*} i_entidad 
+ * @param {*} i_oficina 
+ * @param {*} i_digito 
+ * @param {*} i_cuenta 
+ * @returns 
+ */
 function validaCuentaBancaria(i_entidad, i_oficina, i_digito, i_cuenta) {
     // Funcion recibe como parÃ¡metro la entidad, la oficina, 
     // el digito (concatenaciÃ³n del de control entidad-oficina y del de control entidad)
@@ -1480,12 +1761,13 @@ function validaCuentaBancaria(i_entidad, i_oficina, i_digito, i_cuenta) {
     return true;
 }
 
-/**
-// <summary>
-// Calcula el Iban de un nÃºmero de cuenta
-// </summary>
-*/
-function calcularIban(formContext,ccc) {
+
+/*
+ * Calcula el Iban de un número de cuenta
+ * @param {*} formContext 
+ * @param {*} ccc 
+ */
+function calcularIban(formContext, ccc) {
 
     formContext.ui.clearFormNotification("9");
     //Limpiamos el numero de IBAN
@@ -1518,27 +1800,34 @@ function calcularIban(formContext,ccc) {
     formContext.getAttribute("atos_iban").setValue("ES" + digitocontrol);
 }
 
-/**
-// <summary>
-// Elimina los espacios de una cadena
-// </summary>
-*/
+
+/*
+ * Elimina los espacios de una cadena
+
+ * @param {*} myString 
+ * @returns 
+ */
 function trim(myString) {
     return myString.replace(/^\s+/g, '').replace(/\s+$/g, '');
 }
 
-/**
-// <summary>
-// Calcula el Iban si la cuenta bancaria es correcta
-// </summary>
-*/
+
+/*
+ * Se ejecuta en el OnChange del "Entidad"
+ * Se ejecuta en el OnChange del "Sucursal"
+ * Se ejecuta en el OnChange del "Digito de Control"
+ * Se ejecuta en el OnChange del "Cuenta" 
+ *
+ * Calcula el Iban si la cuenta bancaria es correcta
+ * @param {*} formContext 
+ * @returns 
+ */
 function validaCuenta(formContext) {
-    try{
+    try {
         formContext = formContext.getFormContext();
     }
-    catch{
+    catch{ }
 
-    }
     formContext.ui.clearFormNotification();
     var entidad = formContext.getAttribute("atos_entidadbancaria").getValue();
     var oficina = formContext.getAttribute("atos_sucursalbancaria").getValue();
@@ -1551,16 +1840,32 @@ function validaCuenta(formContext) {
         if (entidad.length == 4 && oficina.length == 4 && dc.length == 2 && cuenta.length == 10) {
             validacion = validaCuentaBancaria(entidad, oficina, dc, cuenta);
             if (!validacion)
-                formContext.ui.setFormNotification("Cuenta bancaria incorrecta.", "ERROR", "8"); // alert("Cuenta bancaria incorrecta");
+                formContext.ui.setFormNotification("Cuenta bancaria incorrecta.", "ERROR", "8");
             else
-                calcularIban(formContext,entidad + oficina + dc + cuenta);
+                calcularIban(formContext, entidad + oficina + dc + cuenta);
         }
         else {
             validacion = false;
             formContext.ui.setFormNotification("Cuenta bancaria incorrecta.", "ERROR", "8");
-            //alert("Cuenta bancaria incorrecta.");
         }
 
     }
     return validacion;
 }
+
+
+
+/*
+ * Se ejecuta desde el Ribbon boton de "Reapertura"
+ *
+ * Reabre la oferta llevando al ultimo estado del stage
+ */
+
+/* 16082022 +10 */
+function reabrirOferta() {
+
+    if (!IsEmptyId()) {
+        console.log("Alert dialog reabrirOferta");
+        debugger;
+    }
+}// JavaScript source code
