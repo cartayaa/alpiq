@@ -1,8 +1,15 @@
-﻿/**
-// <summary>
-// Plugin que se ejecuta cuando se crea un nuevo registro en atos_trigger con los valores OfertaMP para accion y account para la entidad.
-// </summary>
- */
+﻿/*
+ File="atos_oferta.js" 
+ Copyright (c) Atos. All rights reserved.
+
+ Plugin que se ejecuta cuando se crea un nuevo registro en atos_trigger con los valores OfertaMP para accion y account para la entidad.
+
+ Fecha 		Codigo  Version Descripcion                                     Autor
+ 05.09.2022 23866   no-lock Incorporacion del No-lock a Consultas           AC
+ 05.09.2022 23866   fecha   Actualiacion del campo atos_fechafin            Ac
+                            por atos_fechafin_tza
+*/
+
 namespace OfertaMP
 {
     using System;
@@ -411,8 +418,11 @@ namespace OfertaMP
             if (_ofertaPadre.Attributes.Contains("atos_fechainicio"))
                 _oferta.Attributes["atos_fechainicio"] = _ofertaPadre.Attributes["atos_fechainicio"];
 
-            if (_ofertaPadre.Attributes.Contains("atos_fechafin"))
-                _oferta.Attributes["atos_fechafin"] = _ofertaPadre.Attributes["atos_fechafin"];
+            /* 23866 -+2 */
+            //if (_ofertaPadre.Attributes.Contains("atos_fechafin"))
+            //    _oferta.Attributes["atos_fechafin"] = _ofertaPadre.Attributes["atos_fechafin"];
+            if (_ofertaPadre.Attributes.Contains("atos_fechafin_tza"))
+                _oferta.Attributes["atos_fechafin_tza"] = _ofertaPadre.Attributes["atos_fechafin_tza"];
 
             if (_ofertaPadre.Attributes.Contains("atos_penalizacionconsumo"))
                 _oferta.Attributes["atos_penalizacionconsumo"] = _ofertaPadre.Attributes["atos_penalizacionconsumo"];
@@ -613,8 +623,11 @@ namespace OfertaMP
             if (_ofertaPadre.Attributes.Contains("atos_fechainicio"))
                 _oferta.Attributes["atos_fechainicio"] = _ofertaPadre.Attributes["atos_fechainicio"];
 
-            if (_ofertaPadre.Attributes.Contains("atos_fechafin"))
-                _oferta.Attributes["atos_fechafin"] = _ofertaPadre.Attributes["atos_fechafin"];
+            /* 23866 -+2 */
+            //if (_ofertaPadre.Attributes.Contains("atos_fechafin"))
+            //    _oferta.Attributes["atos_fechafin"] = _ofertaPadre.Attributes["atos_fechafin"];
+            if (_ofertaPadre.Attributes.Contains("atos_fechafin_tza"))
+                _oferta.Attributes["atos_fechafin_tza"] = _ofertaPadre.Attributes["atos_fechafin_tza"];
 
             if (_ofertaPadre.Attributes.Contains("atos_penalizacionconsumo"))
                 _oferta.Attributes["atos_penalizacionconsumo"] = _ofertaPadre.Attributes["atos_penalizacionconsumo"];
@@ -765,6 +778,8 @@ namespace OfertaMP
             consulta.ColumnSet.AddColumns("atos_name", "atos_instalacionid", "atos_subsistemaid", "atos_sistemaelectricoid", "atos_tarifaid",
                                            "atos_razonsocialid", "atos_lote");
             consulta.Criteria.AddFilter(filtro);
+            /* 23866 +1 NoLock */
+            consulta.NoLock = true;
 
             //Si estamos haciendo una oferta a traves de cuenta negociadora
             //recuperaremos todas las razones sociales que esten relacionadas
@@ -922,6 +937,8 @@ namespace OfertaMP
             QueryExpression consulta = new QueryExpression("atos_instalaciongas");
             consulta.ColumnSet.AddColumns("atos_name", "atos_instalaciongasid", "atos_peajeid", "atos_razonsocialid");
             consulta.Criteria.AddFilter(filtro);
+            /* 23866 +1 NoLock */
+            consulta.NoLock = true;
 
             //Si estamos haciendo una oferta a traves de cuenta negociadora
             //recuperaremos todas las razones sociales que esten relacionadas
