@@ -1,0 +1,5 @@
+C:\Dynamics_DEV\Dynamics CRM\SRC\1.DEV\Alpiq\Plugins\ActDeudaFacturasRS\obj\Debug\ActDeudaFacturasRS.csprojResolveAssemblyReference.cache
+C:\Users\A756555\OneDrive - Atos\Documents\Project-Open\Alpiq\Soluciones\FuentesALPIQ-04-03-2021\Alpiq\Plugins\ActDeudaFacturasRS\obj\Debug\ActDeudaFacturasRS.csprojAssemblyReference.cache
+C:\Users\A756555\OneDrive - Atos\Documents\Project-Open\Alpiq\Soluciones\FuentesALPIQ-04-03-2021\Alpiq\Plugins\ActDeudaFacturasRS\obj\Debug\ActDeudaFacturasRS.csproj.CoreCompileInputs.cache
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\0-readme\Fuentes\FuentesALPIQ-04-03-2021\Alpiq\Plugins\ActDeudaFacturasRS\obj\Debug\ActDeudaFacturasRS.csprojAssemblyReference.cache
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\0-readme\Fuentes\FuentesALPIQ-04-03-2021\Alpiq\Plugins\ActDeudaFacturasRS\obj\Debug\ActDeudaFacturasRS.csproj.CoreCompileInputs.cache
