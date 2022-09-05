@@ -1,8 +1,13 @@
-﻿/**
-// <summary>
-// Plugin para las validaciones de las ofertas. 
-// </summary>
- */
+﻿/*
+ File="atos_oferta.js" 
+ Copyright (c) Atos. All rights reserved.
+
+ Plugin para las validaciones de las ofertas. 
+
+ Fecha 		Codigo  Version Descripcion                                     Autor
+ 05.09.2022 23866   no-lock Incorporacion del No-lock a Consultas
+*/
+
 namespace ValidacionOferta
 {
     using System;
@@ -13,9 +18,6 @@ namespace ValidacionOferta
     using Microsoft.Xrm.Sdk;
     using Microsoft.Xrm.Sdk.Query;
 
-    /// <summary>
-    /// Base class for all Plugins.
-    /// </summary>    
     public class ValidacionOferta : IPlugin
     {
 
@@ -89,7 +91,6 @@ namespace ValidacionOferta
         {
             FilterExpression filtro = new FilterExpression();
             filtro.FilterOperator = LogicalOperator.And;
-
             ConditionExpression condicion1;
             condicion1 = new ConditionExpression();
             condicion1.AttributeName = "atos_historico";
@@ -137,6 +138,8 @@ namespace ValidacionOferta
             QueryExpression consulta = new QueryExpression("atos_instalacion");
             consulta.ColumnSet.AddColumns("atos_name", "atos_sistemaelectricoid", "atos_tarifaid", "atos_lote", "statecode");
             consulta.Criteria.AddFilter(filtro);
+            /* 23866 +1 no-lock */
+            consulta.NoLock = true;
 
             if (_razonsocialId == Guid.Empty)
             {
@@ -215,6 +218,9 @@ namespace ValidacionOferta
             QueryExpression consulta = new QueryExpression("atos_instalaciongas");
             consulta.ColumnSet.AddColumns("atos_name", "atos_usodelgasid", "atos_peajeid", "statecode");
             consulta.Criteria.AddFilter(filtro);
+            /* 23866 +1 no-lock */
+            consulta.NoLock = true;
+
 
             if (_razonsocialId == Guid.Empty)
             {

@@ -16,10 +16,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "ALPIQ-Dynamics.NET4.6.2\Common\Common.csproj", "{9E83D2D7-A389-42CE-9BE8-EF55F2FCC819}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{3D8A3474-115C-4240-A955-5069BBF5A53C}"
-	ProjectSection(SolutionItems) = preProject
-		ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionOferta1\ValidacionOferta.cs = ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionOferta1\ValidacionOferta.cs
-		ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionOferta1\ValidacionOferta.snk = ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionOferta1\ValidacionOferta.snk
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfertaMP", "ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\OfertaMP.csproj", "{679103B5-5BD8-41FB-B6A2-F1C691E9D9B5}"
 EndProject
