@@ -1,0 +1,13 @@
+<fetch>
+  <entity name="atos_bpf_1c3d1c4af29543429ee2b7465a2e6ee8">
+    <attribute name="bpf_atos_ofertaid" />
+    <attribute name="bpf_name" />
+    <attribute name="activestageid" />
+    <attribute name="processid" />
+    <attribute name="statecode" />
+    <attribute name="statuscode" />
+    <filter>
+      <condition attribute="bpf_atos_ofertaid" operator="eq" value="57EC01BD-BE05-498A-A6AE-1CD94C3EB20A" />
+    </filter>
+  </entity>
+</fetch>

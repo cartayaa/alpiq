@@ -1,0 +1,13 @@
+<fetch top="50">
+  <entity name="processstage">
+    <attribute name="processid" />
+    <attribute name="stagecategory" />
+    <attribute name="operationtype" />
+    <attribute name="processstageid" />
+    <attribute name="primaryentitytypecode" />
+    <attribute name="operationid" />
+    <filter>
+      <condition attribute="processid" operator="eq" value="1c3d1c4a-f295-4342-9ee2-b7465a2e6ee8" uiname="Oferta-Pricing" uitype="workflow" />
+    </filter>
+  </entity>
+</fetch>

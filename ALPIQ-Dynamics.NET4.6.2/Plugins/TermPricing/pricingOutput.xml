@@ -1,0 +1,14 @@
+<fetch>
+  <entity name="atos_pricingoutput" >
+    <attribute name="atos_pricingoutputid" />
+    <attribute name="atos_ofertaid" />
+    <attribute name="atos_terminodepricingid" />
+    <attribute name="atos_tipo" />
+    <attribute name="atos_porcentajeoimporte" />
+    <attribute name="statecode" />
+    <attribute name="statuscode" />
+    <filter>
+      <condition attribute="atos_ofertaid" operator="eq" value="e44d8b97-1702-e911-812e-3863bb351d40" uiname="S/S00002-3.0A-PE-20181217-1" uitype="atos_oferta" />
+    </filter>
+  </entity>
+</fetch>
