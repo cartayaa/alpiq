@@ -34,4 +34,6 @@
 
 # Directorios expludos
 /bin
+/release
+/packages
 /obj
