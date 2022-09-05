@@ -31,3 +31,7 @@
 *.out
 *.app
 *.dll
+
+# Directorios expludos
+/bin
+/obj
