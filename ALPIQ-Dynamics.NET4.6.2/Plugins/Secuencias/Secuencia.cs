@@ -1,36 +1,41 @@
-    /**
-// <summary>
-// Plugin para la gestión de secuencias. 
-// </summary>
-// <remarks>
-// La clase principal desde la que se inician los cálculos es Secuencia (en la clase hay ejemplos de construcción de fórmulas)<br/>
-// Las funciones disponibles para utilizar en las fórmulas de secuencias son:<br/>
-// <ul>
-//   <li>Secuencias.Funcion.ToLower  (se aplica sobre el valor de un campo)
-//   <li>Secuencias.Funcion.ToUpper  (se aplica sobre el valor de un campo)
-//   <li>Secuencias.Funcion.PadZero  (se aplica sobre el valor de un campo)
-//   <li>Secuencias.Funcion.PadLeft  (se aplica sobre el valor de un campo)
-//   <li>Secuencias.Funcion.PadRight  (se aplica sobre el valor de un campo)
-//   <li>Secuencias.Funcion.First  (se aplica sobre el valor de un campo)
-//   <li>Secuencias.Funcion.Last  (se aplica sobre el valor de un campo)
-//   <li>Secuencias.Funcion.Substring  (se aplica sobre el valor de un campo)
-//   <li>Secuencias.Funcion.Now   (Global, no aplica a campos)
-//   <li>Secuencias.Funcion.FormatDate  (se aplica sobre el valor de un campo)
-//   <li>Secuencias.Funcion.LlaveDerecha   (Global, no aplica a campos)
-//   <li>Secuencias.Funcion.LlaveIzquierda   (Global, no aplica a campos)
-//   <li>Secuencias.Funcion.Almohadilla  (Global, no aplica a campos)
-//   <li>Secuencias.Funcion.Punto   (Global, no aplica a campos)
-//   <li>Secuencias.Funcion.Barra   (Global, no aplica a campos)
-//   <li>Secuencias.Funcion.Lookup  (se aplica sobre el valor de un campo)
-//   <li>Secuencias.Funcion.Iif  (se aplica sobre el valor de un campo)
-//   <li>Secuencias.Funcion.NVL  (se aplica sobre el valor de un campo)
-//   <li>Secuencias.Funcion.Concatenate  (se aplica sobre el valor de un campo)
-//   <li>Secuencias.Funcion.PreConcatenate   (se aplica sobre el valor de un campo)
-//   <li>Secuencias.Funcion.ConcatIfNotNull  (se aplica sobre el valor de un campo)
-//   <li>Secuencias.Funcion.PreConcatIfNotNull   (se aplica sobre el valor de un campo)
-//   <li>Secuencias.Funcion.Literal  (Global, no aplica a campos)
-// </ul>
-// </remarks>
+/*
+ File="atos_contrato.js" 
+ Copyright (c) Atos. All rights reserved.
+
+ Plugin para la gestión de secuencias. 
+
+ Fecha 		Codigo  Version Descripcion								 		Autor
+ 05/09/2022 23866   no-lock Desbloqueo de consulta                          ACR
+*/
+
+
+/*
+ La clase principal desde la que se inician los cálculos es Secuencia (en la clase hay ejemplos de construcción de fórmulas)<br/>
+ Las funciones disponibles para utilizar en las fórmulas de secuencias son:<br/>
+ <ul>
+   <li>Secuencias.Funcion.ToLower  (se aplica sobre el valor de un campo)
+   <li>Secuencias.Funcion.ToUpper  (se aplica sobre el valor de un campo)
+   <li>Secuencias.Funcion.PadZero  (se aplica sobre el valor de un campo)
+   <li>Secuencias.Funcion.PadLeft  (se aplica sobre el valor de un campo)
+   <li>Secuencias.Funcion.PadRight  (se aplica sobre el valor de un campo)
+   <li>Secuencias.Funcion.First  (se aplica sobre el valor de un campo)
+   <li>Secuencias.Funcion.Last  (se aplica sobre el valor de un campo)
+   <li>Secuencias.Funcion.Substring  (se aplica sobre el valor de un campo)
+   <li>Secuencias.Funcion.Now   (Global, no aplica a campos)
+   <li>Secuencias.Funcion.FormatDate  (se aplica sobre el valor de un campo)
+   <li>Secuencias.Funcion.LlaveDerecha   (Global, no aplica a campos)
+   <li>Secuencias.Funcion.LlaveIzquierda   (Global, no aplica a campos)
+   <li>Secuencias.Funcion.Almohadilla  (Global, no aplica a campos)
+   <li>Secuencias.Funcion.Punto   (Global, no aplica a campos)
+   <li>Secuencias.Funcion.Barra   (Global, no aplica a campos)
+   <li>Secuencias.Funcion.Lookup  (se aplica sobre el valor de un campo)
+   <li>Secuencias.Funcion.Iif  (se aplica sobre el valor de un campo)
+   <li>Secuencias.Funcion.NVL  (se aplica sobre el valor de un campo)
+   <li>Secuencias.Funcion.Concatenate  (se aplica sobre el valor de un campo)
+   <li>Secuencias.Funcion.PreConcatenate   (se aplica sobre el valor de un campo)
+   <li>Secuencias.Funcion.ConcatIfNotNull  (se aplica sobre el valor de un campo)
+   <li>Secuencias.Funcion.PreConcatIfNotNull   (se aplica sobre el valor de un campo)
+   <li>Secuencias.Funcion.Literal  (Global, no aplica a campos)
  */
 namespace Secuencias
 {
@@ -88,8 +93,12 @@ namespace Secuencias
     public class Secuencia : IPlugin
     {
         LocalPluginContext localContext;
+
+
         protected class LocalPluginContext
         {
+            private bool _log = false; /// Indica si se activa o no el log.
+
             internal IServiceProvider ServiceProvider
             {
                 get;
@@ -158,7 +167,8 @@ namespace Secuencias
 
                 if (this.PluginExecutionContext == null)
                 {
-                    this.TracingService.Trace(message);
+                    if (_log == true)
+                        this.TracingService.Trace(message);
                 }
                 else
                 {
@@ -171,33 +181,6 @@ namespace Secuencias
                 }
             }
         }
-
-
-
-        /*
-        private Entity secuencia(String _entidad)
-        {
-            FilterExpression _filtro = new FilterExpression();
-            _filtro.FilterOperator = LogicalOperator.And;
-
-            ConditionExpression _condicion;
-
-            _condicion = new ConditionExpression();
-            _condicion.AttributeName = "atos_entidad";
-            _condicion.Operator = ConditionOperator.Equal;
-            _condicion.Values.Add(_entidad);
-            _filtro.Conditions.Add(_condicion);
-
-            QueryExpression _consulta = new QueryExpression("atos_secuencia");
-            _consulta.ColumnSet.AddColumns("atos_secuenciaid", "atos_entidad", "atos_campo", "atos_formato", 
-                                           "atos_entidadcontador", "atos_campobusqueda", "atos_camporegla", "atos_campocontador");
-            _consulta.Criteria.AddFilter(_filtro);
-            localContext.Trace("Antes de buscar " + _entidad + " en atos_secuencia");
-            EntityCollection _resultado = localContext.OrganizationService.RetrieveMultiple(_consulta);
-            if (_resultado.Entities.Count > 0)
-                return _resultado.Entities[0];
-            return null;
-        }*/
 
         private EntityCollection secuencias(String _entidad)
         {
@@ -217,6 +200,8 @@ namespace Secuencias
                                            "atos_entidadcontador", "atos_campobusqueda", "atos_camporegla", "atos_campocontador",
                                            "atos_controlduplicados");
             _consulta.Criteria.AddFilter(_filtro);
+            /* 23866 +1 */
+            _consulta.NoLock = true;
 
             OrderExpression _orden = new OrderExpression();
             _orden.AttributeName = "atos_orden";
@@ -246,6 +231,8 @@ namespace Secuencias
             QueryExpression _consulta = new QueryExpression(_entidad);
             _consulta.ColumnSet.AddColumns(_campo);
             _consulta.Criteria.AddFilter(_filtro);
+            /* 23866 +1 */
+            _consulta.NoLock = true;
             // AC localContext.Trace("Antes de buscar " + _valor + " en " + _entidad);
             EntityCollection _resultado = localContext.OrganizationService.RetrieveMultiple(_consulta);
             if (_resultado.Entities.Count > 0)
@@ -368,7 +355,7 @@ namespace Secuencias
         // Con ese registro construye el valor de la secuencia.
         // </remarks>
          */
-        public void Execute(IServiceProvider serviceProvider)
+            public void Execute(IServiceProvider serviceProvider)
         {
             if (serviceProvider == null)
             {

@@ -14,3 +14,13 @@ E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Crypt\CryptConsole\obj\Debug\CryptConsole
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Crypt\CryptConsole\obj\Debug\CryptConsole.csproj.CopyComplete
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Crypt\CryptConsole\obj\Debug\CryptConsole.exe
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Crypt\CryptConsole\obj\Debug\CryptConsole.pdb
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Crypt\CryptConsole\bin\Debug\CryptConsole.exe.config
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Crypt\CryptConsole\bin\Debug\CryptConsole.exe
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Crypt\CryptConsole\bin\Debug\CryptConsole.pdb
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Crypt\CryptConsole\bin\Debug\CryptConsole.exe.CodeAnalysisLog.xml
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Crypt\CryptConsole\bin\Debug\CryptConsole.exe.lastcodeanalysissucceeded
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Crypt\CryptConsole\obj\Debug\CryptConsole.csprojAssemblyReference.cache
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Crypt\CryptConsole\obj\Debug\CryptConsole.csproj.CoreCompileInputs.cache
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Crypt\CryptConsole\obj\Debug\CryptConsole.csproj.CopyComplete
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Crypt\CryptConsole\obj\Debug\CryptConsole.exe
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Crypt\CryptConsole\obj\Debug\CryptConsole.pdb

@@ -60,10 +60,9 @@
     <Content Include="atos_cierrejs.js" />
     <Content Include="atos_cierreoferta.js" />
     <Content Include="atos_cobertura-12052022.js" />
-    <Content Include="atos_comun+.js" />
     <Content Include="atos_comun.js" />
     <Content Include="atos_consultora.js" />
-    <Content Include="atos_contacto.js" />
+    <Content Include="atos_contacto-05092022.js" />
     <Content Include="atos_contrato+.js" />
     <Content Include="atos_contrato-1003-2021.js" />
     <Content Include="atos_contrato-1103-2022.js" />

@@ -26,10 +26,13 @@ namespace ValidacionOferta
         private IOrganizationServiceFactory factory;
         private IOrganizationService service;
 
-        private bool _log = false; ///< Indica si se activa o no el log. Esta variable debe inicializarse según el parámetro recibido en el constructor.
-        private String ficherolog = "C:\\Users\\ValidacionOferta.txt";  ///< Fichero de log. Esta variable debe inicializarse según el parámetro recibido en el constructor.
+        private bool _log = false; /// Indica si se activa o no el log. 
+        /* 23866 -1 */
+        // private String ficherolog = "C:\\Users\\ValidacionOferta.txt";  ///< Fichero de log. Esta variable debe inicializarse según el parámetro recibido en el constructor.
         private const Char SEPARADOR = '#'; ///< Constante para el separador a usar en el parámetro que recibe el constructor
         private const String SALTO = "<br/>"; // + Environment.NewLine;
+
+
 
         /**
 		// <summary>
@@ -44,6 +47,7 @@ namespace ValidacionOferta
          */
         public ValidacionOferta(String parametros)
         {
+            /* 23866 -12 
             if (String.IsNullOrEmpty(parametros) == false)
             {
                 String[] arrayPar = parametros.Split(SEPARADOR);
@@ -55,9 +59,74 @@ namespace ValidacionOferta
                     if (arrayPar.Length > 1)
                         ficherolog = arrayPar[1];
                 }
-            }
+            } */
         }
 
+
+        /**
+        // <summary>
+        // Punto de entrada del plugin.
+        // </summary>
+        // <param name="serviceProvider">The service provider.</param>
+        // <remarks>
+        // - Se ejecuta en la creación y modificación de ofertas.
+        // - Realiza las siguiente validaciones:
+        // - La oferta debe tener el campo de instalación informado
+        // - La oferta debe tener el campo de instalación informado
+        // - La instalación debe tener tarifa
+        // - La instalación debe tener sistema eléctrico
+        // - La instalación debe estar activa
+        // - Si la oferta es multipunto repite esas validaciones para cada una de las ofertas hijas
+        // </remarks>
+         */
+        public void Execute(IServiceProvider serviceProvider)
+        {
+
+            tracingService = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
+
+            PluginExecutionContext = (IPluginExecutionContext)serviceProvider.GetService(typeof(IPluginExecutionContext));
+
+            // Obtain the Organization Service factory service from the service provider
+            factory = (IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory));
+
+            // Use the factory to generate the Organization Service.
+            service = factory.CreateOrganizationService(PluginExecutionContext.UserId);
+
+            /* 23866 -1 */
+            // writelog("-----------------------------------------");
+            writelog(DateTime.Now.ToLocalTime().ToString());
+            writelog("Plugin Validaciones de oferta");
+            /* 23866 -1 */
+            // writelog("Mensaje: " + PluginExecutionContext.MessageName);
+            if (PluginExecutionContext.MessageName == "Create")
+            {
+                Entity ef = (Entity)PluginExecutionContext.InputParameters["Target"];
+
+                String nombreOF = " ";
+                if (ef.Attributes.Contains("atos_name"))
+                    nombreOF += ef.Attributes["atos_name"] + " ";
+
+                if (!ef.Attributes.Contains("atos_tipooferta"))
+                    throw new Exception("La oferta" + nombreOF + "no está correctamente definida. No tiene tipo de oferta");
+
+                if (ef.Attributes.Contains("atos_ofertapadreid"))
+                    return; // Si es oferta hija (o suboferta) no validamos ya que se validará en la multipunto
+
+                writelog("Comprueba si es multipunto Tipooferta: " + ((OptionSetValue)ef.Attributes["atos_tipooferta"]).Value.ToString());
+
+                if (((OptionSetValue)ef.Attributes["atos_commodity"]).Value == 300000000)
+                {
+                    //Creacion de ofertas para instalaciones electricas
+                    validarOfertaPower(ef);
+                }
+                else
+                {
+                    //Creacion de ofertas para instalaciones de gas
+                    validarOfertaGas(ef);
+                }
+
+            }
+        }
 
         /**
         // <summary>
@@ -70,9 +139,10 @@ namespace ValidacionOferta
          */
         private void writelog(String texto)
         {
-            //tracingService.Trace(texto);
             if (_log == true)
-                System.IO.File.AppendAllText(ficherolog, texto + "\r\n");
+                //  System.IO.File.AppendAllText(ficherolog, texto + "\r\n");
+                /* 23866 +1 */
+                tracingService.Trace(texto);            
         }
 
         /**
@@ -240,70 +310,6 @@ namespace ValidacionOferta
         }
 
 
-
-        /**
-        // <summary>
-        // Punto de entrada del plugin.
-        // </summary>
-        // <param name="serviceProvider">The service provider.</param>
-        // <remarks>
-        // - Se ejecuta en la creación y modificación de ofertas.
-        // - Realiza las siguiente validaciones:
-        // - La oferta debe tener el campo de instalación informado
-        // - La oferta debe tener el campo de instalación informado
-        // - La instalación debe tener tarifa
-        // - La instalación debe tener sistema eléctrico
-        // - La instalación debe estar activa
-        // - Si la oferta es multipunto repite esas validaciones para cada una de las ofertas hijas
-        // </remarks>
-         */
-        public void Execute(IServiceProvider serviceProvider)
-        {
-
-            tracingService = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
-
-            PluginExecutionContext = (IPluginExecutionContext)serviceProvider.GetService(typeof(IPluginExecutionContext));
-
-            // Obtain the Organization Service factory service from the service provider
-            factory = (IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory));
-
-            // Use the factory to generate the Organization Service.
-            service = factory.CreateOrganizationService(PluginExecutionContext.UserId);
-
-            writelog("-----------------------------------------");
-            writelog(DateTime.Now.ToLocalTime().ToString());
-            writelog("Plugin Validaciones de oferta");
-            writelog("Mensaje: " + PluginExecutionContext.MessageName);
-            if (PluginExecutionContext.MessageName == "Create")
-            {
-                Entity ef = (Entity)PluginExecutionContext.InputParameters["Target"];
-
-                String nombreOF = " ";
-                if (ef.Attributes.Contains("atos_name"))
-                    nombreOF += ef.Attributes["atos_name"] + " ";
-
-                if (!ef.Attributes.Contains("atos_tipooferta")) 
-                    throw new Exception("La oferta" + nombreOF + "no está correctamente definida. No tiene tipo de oferta");
-
-                if (ef.Attributes.Contains("atos_ofertapadreid"))
-                    return; // Si es oferta hija (o suboferta) no validamos ya que se validará en la multipunto
-
-                writelog("Comprueba si es multipunto Tipooferta: " + ((OptionSetValue)ef.Attributes["atos_tipooferta"]).Value.ToString());
-
-                if (((OptionSetValue)ef.Attributes["atos_commodity"]).Value == 300000000)
-                {
-                    //Creacion de ofertas para instalaciones electricas
-                    validarOfertaPower(ef);
-                }
-                else
-                {
-                    //Creacion de ofertas para instalaciones de gas
-                    validarOfertaGas(ef);
-                }
-
-            }
-        }
-
         private void validarOfertaPower (Entity ef)
         {
             if (((OptionSetValue)ef.Attributes["atos_tipooferta"]).Value == 300000000)
@@ -329,6 +335,7 @@ namespace ValidacionOferta
                 writelog("Hay " + _instalaciones.Entities.Count.ToString() + " instalaciones");
                 for (int i = 0; i < _instalaciones.Entities.Count; i++)
                 {
+
                     writelog("validando instalación " + i.ToString());
                     if (_instalaciones.Entities[i].Attributes.Contains("atos_lote"))
                         _nlote++;
@@ -376,7 +383,8 @@ namespace ValidacionOferta
                 String _error = "";
                 String _salto = "";
 
-                writelog("Oferta NO multipunto");
+                /* 23866 -1 */
+                // writelog("Oferta NO multipunto");
 
                 if (!ef.Attributes.Contains("atos_instalacionid"))
                 {
@@ -385,6 +393,7 @@ namespace ValidacionOferta
                 }
                 else
                 {
+                    /* 23866 -1 */
                     writelog("Busca datos de la instalación");
 
                     Entity _instalacion = service.Retrieve("atos_instalacion", ((EntityReference)ef.Attributes["atos_instalacionid"]).Id,

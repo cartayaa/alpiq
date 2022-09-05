@@ -16,6 +16,7 @@
  01.10.2021  23251          Envio de datos de Coste al contrato 
                             (Ribbon) Botón Contrato                         ACR 
  16.08.2022 16082022        Creacion de "Reapertura" en (Ribbon) Contrato   ACR 
+ 05/09/2022 23866           Correccion del campo atos_fechafin              ACR
 */
 
 //#region Variables Funciones Globales 22329

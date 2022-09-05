@@ -2,18 +2,15 @@
  File="atos_contrato.js" 
  Copyright (c) Atos. All rights reserved.
 
-<summary>
  Funciones asociadas a contratos de ALPIQ, entidad personalizada
-</summary>
 
-<remarks>
  Fecha 		Codigo  Version Descripcion								 		Autor
   13.11.2020                Se ejecuta en la llamada para cargar la
                             instalaciÃ³n segun instalacionid.                Lazaro Castro
  10.03.2021  22323          Lectura condiciones de pago cuando es           ACR
                             creacion de un contrato desde oferta
  17.06.221   22323          Documentacion                                   ACR  
-</remarks>                       
+ 05/09/2022 23866           Correccion del campo atos_fechafin              ACR
 */
 
 //#region Variables Funciones Globales 22323

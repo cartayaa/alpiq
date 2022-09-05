@@ -2,17 +2,14 @@
  File="atos_comun.js" 
  Copyright (c) Atos. All rights reserved.
 
-<summary>
  Funciones compartidas entre varios formularios
-</summary>
 
-<remarks>
  Fecha 		Codigo  Version Descripcion                                     Autor
  16/03/2021 223231  1.0.1.1 Cambi el FechXml con sentencia no-lock='true'
  10.03.2021  22323      	Lectura condiciones de pago cuando es       	ACR
                             creacion de un contrato desde oferta
  17.06.221   22323          Documentacion                                   ACR
-</remarks>                       
+ 05/09/2022 23866           Correccion del campo atos_fechafin              ACR
 */
 
 

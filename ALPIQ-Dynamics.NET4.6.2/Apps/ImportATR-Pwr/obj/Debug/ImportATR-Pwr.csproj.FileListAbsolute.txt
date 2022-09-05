@@ -20,3 +20,14 @@ E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Pwr\bin\Debug\ImportATR.ex
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Pwr\bin\Debug\ImportATR.exe
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Pwr\bin\Debug\ImportATR.pdb
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Pwr\obj\Debug\ImportATR-Pwr.csproj.CopyComplete
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Pwr\bin\Debug\ImportATR.exe.config
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Pwr\bin\Debug\ImportATR.exe
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Pwr\bin\Debug\ImportATR.pdb
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Pwr\bin\Debug\ImportATR.exe.CodeAnalysisLog.xml
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Pwr\bin\Debug\ImportATR.exe.lastcodeanalysissucceeded
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Pwr\bin\Debug\Newtonsoft.Json.dll
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Pwr\obj\Debug\ImportATR-Pwr.csprojAssemblyReference.cache
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Pwr\obj\Debug\ImportATR-Pwr.csproj.CoreCompileInputs.cache
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Pwr\obj\Debug\ImportATR-Pwr.csproj.CopyComplete
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Pwr\obj\Debug\ImportATR.exe
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Pwr\obj\Debug\ImportATR.pdb

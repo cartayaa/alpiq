@@ -116,3 +116,6 @@ E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\obj\Debug\OfertaMP
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\obj\Debug\OfertaMP.csproj.CopyComplete
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\obj\Debug\OfertaMP.dll
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\obj\Debug\OfertaMP.pdb
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\obj\Debug\OfertaMP.csprojAssemblyReference.cache
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Debug\Microsoft.Xrm.Sdk.Workflow.dll
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Debug\Microsoft.Xrm.Sdk.Workflow.xml

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ValidacionOferta")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Atos Spain")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ValidacionOferta")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("94531019-4149-485b-aa55-7b08eefea177")]
+[assembly: Guid("c703c2dc-be06-4f16-9b07-abcdf1c47572")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -2,7 +2,8 @@
  File="atos_oferta.js" 
  Copyright (c) Atos. All rights reserved.
 
- Plugin que se ejecuta cuando se crea un nuevo registro en atos_trigger con los valores OfertaMP para accion y account para la entidad.
+ Plugin que se ejecuta cuando se crea un nuevo registro en atos_trigger con 
+ los valores OfertaMP para accion y account para la entidad.
 
  Fecha 		Codigo  Version Descripcion                                     Autor
  05.09.2022 23866   no-lock Incorporacion del No-lock a Consultas           AC
