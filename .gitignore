@@ -1,3 +1,9 @@
+# Directorios de Compilacion
+
+bin/*
+debug/*
+release/*
+obj/*
 # Prerequisites
 *.d
 
