@@ -1955,12 +1955,6 @@
             	Handles retrieving/making use of service metadata information.
             </summary>
         </member>
-        <member name="M:Microsoft.Xrm.Sdk.Client.ServiceMetadataUtility.GetSDKVersionNumberFromAssembly">
-            <summary>
-            Gets version of current assembly which is the version of the SDK
-            </summary>
-            <returns>The version number</returns>
-        </member>
         <member name="M:Microsoft.Xrm.Sdk.Client.ServiceMetadataUtility.AddSecurityBindingToPolicyImporter(System.ServiceModel.Description.WsdlImporter)">
             <summary>
             Returns a list of policy import extensions in the importer parameter and adds a SecurityBindingElementImporter if not already present in the list.
@@ -2359,6 +2353,46 @@
             Sub catalog Id
             </summary>
         </member>
+        <member name="P:Microsoft.Xrm.Sdk.TriggerDefinition.OpenApiOperationIdName">
+            <summary>
+            OpenApi operation id name 
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.DataProcessingModuleExecuteRequest.DataProcessingConfigurationId">
+            <summary>
+            Specify the module to execute
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.DataProcessingModuleExecuteRequest.EndPoints">
+            <summary>
+            Specify the end points to execute
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.DataProcessingModuleExecuteRequest.JobName">
+            <summary>
+            Spark job name
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.DataProcessingModuleExecuteRequest.Script">
+            <summary>
+            Python script for spark job
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.DataProcessingModuleExecuteRequest.JobArguments">
+            <summary>
+            Python job arguments
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.DataProcessingModuleExecuteRequest.ScalarInputs">
+            <summary>
+            Gets or sets parameters for the request.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.DataProcessingModuleExecutionResponse.RunId">
+            <summary>
+            Module Run Id
+            </summary>
+        </member>
         <member name="T:Microsoft.Xrm.Sdk.DateTimeBehaviorConversionRule">
             <summary>
             Class to verify and translate ConversionRule param value from ConvertDateAndTimeBehaviorRequest to the correct type
@@ -2742,6 +2776,11 @@
             List of file pointers which are not in the Org DB
             </summary>
         </member>
+        <member name="P:Microsoft.Xrm.Sdk.EntityFilePointersResponse.IsCmkEnabled">
+            <summary>
+            Whether the CMK is enabled for the organization.
+            </summary>
+        </member>
         <member name="P:Microsoft.Xrm.Sdk.FileSasUrlResponse.FileName">
             <summary>
             Gets or sets the file name.
@@ -2812,6 +2851,11 @@
             Gets or sets the scale group id.
             </summary>
         </member>
+        <member name="P:Microsoft.Xrm.Sdk.UpdatePointersRequest.IsCmkEnabled">
+            <summary>
+            Gets or sets a value indicating whether the CMK is enabled.
+            </summary>
+        </member>
         <member name="P:Microsoft.Xrm.Sdk.UpdatePointersRequest.ExtensionData">
             <summary>
             Gets or sets the extension data.
@@ -2853,12 +2897,27 @@
             Interface for plug-ins to get environment specific information.
             </summary>
         </member>
-        <member name="M:Microsoft.Xrm.Sdk.IEnvironmentService.GetAzureAuthorityHost">
+        <member name="P:Microsoft.Xrm.Sdk.IEnvironmentService.AzureAuthorityHost">
             <summary>
             Gets the Azure authority host of current environment
             </summary>
-            <returns>Azure authority host of current environment</returns>
         </member>
+        <member name="P:Microsoft.Xrm.Sdk.IEnvironmentService.Geo">
+            <summary>
+            Gets the Geo of current environment
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.IEnvironmentService.AzureRegionName">
+            <summary>
+            Gets the Azure region name of current environment
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Sdk.IEnvironmentVariableService">
+            <summary>
+            Interface for plug-ins to fetch environment variable values. Validates using the assembly public key.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Microsoft.Xrm.Sdk.IEnvironmentVariableService.RetrieveEnvironmentVariableValue(System.String)" -->
         <member name="P:Microsoft.Xrm.Sdk.IExecutionContext.Mode">
             <summary>
             Gets mode of the processing.
@@ -2979,54 +3038,11 @@
             Gets the time that the AsyncOperation was created on.
             </summary>
         </member>
-        <member name="P:Microsoft.Xrm.Sdk.IPluginExecutionContext.Stage">
-            <summary>
-            Gets stage of the processing.
-            </summary>
-        </member>
-        <member name="T:Microsoft.Xrm.Sdk.IPluginExecutionContext2">
-            <summary>
-            Extension of IPluginExecutionContext adding support for azure AAD properties
-            </summary>
-        </member>
-        <member name="P:Microsoft.Xrm.Sdk.IPluginExecutionContext2.UserAzureActiveDirectoryObjectId">
-            <summary>
-            Gets azure active directory object Id of user.
-            </summary>
-        </member>
-        <member name="P:Microsoft.Xrm.Sdk.IPluginExecutionContext2.InitiatingUserAzureActiveDirectoryObjectId">
-            <summary>
-            Gets azure active directory object Id of user that initiates web service.
-            </summary>
-        </member>
-        <member name="P:Microsoft.Xrm.Sdk.IPluginExecutionContext2.InitiatingUserApplicationId">
-            <summary>
-            Gets application Id of user that initiates the plugin (for NON-app user .. it is Guid.Empty)
-            </summary>
-        </member>
-        <member name="P:Microsoft.Xrm.Sdk.IPluginExecutionContext2.PortalsContactId">
-            <summary>
-            Gets contactId that got passed for the calls that come from portals client to web service (for NON-portal/Anonymous call, it is guid.Empty)
-            </summary>
-        </member>
-        <member name="P:Microsoft.Xrm.Sdk.IPluginExecutionContext2.IsPortalsClientCall">
-            <summary>
-            Gets a value indicating whether 'True' if the call is originated from Portals client
-            </summary>
-        </member>
         <member name="T:Microsoft.Xrm.Sdk.IFeatureControlService">
             <summary>
             Interface for plug-ins to retrieve FeatureControlSettings
             </summary>
         </member>
-        <member name="T:Microsoft.Xrm.Sdk.IInternalEnvironmentService">
-            <summary>
-            Interface for plug-ins to get environment specific information. For internal use only.
-            </summary>
-        </member>
-        <!-- Badly formed XML comment ignored for member "M:Microsoft.Xrm.Sdk.IInternalEnvironmentService.GetIslandResourceName(System.String,System.String)" -->
-        <!-- Badly formed XML comment ignored for member "M:Microsoft.Xrm.Sdk.IInternalEnvironmentService.GetIslandEndpointName(System.String,System.String,System.String)" -->
-        <!-- Badly formed XML comment ignored for member "M:Microsoft.Xrm.Sdk.IInternalEnvironmentService.GetIslandGeoEndpointName(System.String,System.String,System.String)" -->
         <member name="T:Microsoft.Xrm.Sdk.IKeyVaultClient">
             <summary>
             KeyVault Wrapper to KeyVault API
@@ -3262,6 +3278,51 @@
         <member name="T:Microsoft.Xrm.Sdk.IPluginExceptionProvider">
             <summary>
             Interface for plug-ins to get the exception type
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.IPluginExecutionContext.Stage">
+            <summary>
+            Gets stage of the processing.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Sdk.IPluginExecutionContext2">
+            <summary>
+            Extension of IPluginExecutionContext adding support for azure AAD properties
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.IPluginExecutionContext2.UserAzureActiveDirectoryObjectId">
+            <summary>
+            Gets azure active directory object Id of user.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.IPluginExecutionContext2.InitiatingUserAzureActiveDirectoryObjectId">
+            <summary>
+            Gets azure active directory object Id of user that initiates web service.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.IPluginExecutionContext2.InitiatingUserApplicationId">
+            <summary>
+            Gets application Id of user that initiates the plugin (for NON-app user .. it is Guid.Empty)
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.IPluginExecutionContext2.PortalsContactId">
+            <summary>
+            Gets contactId that got passed for the calls that come from portals client to web service (for NON-portal/Anonymous call, it is guid.Empty)
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.IPluginExecutionContext2.IsPortalsClientCall">
+            <summary>
+            Gets a value indicating whether 'True' if the call is originated from Portals client
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Sdk.IPluginExecutionContext3">
+            <summary>
+            Extension of IPluginExecutionContext2 adding support for authenticated user id property
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.IPluginExecutionContext3.AuthenticatedUserId">
+            <summary>
+            Gets id of the authenticated user
             </summary>
         </member>
         <member name="T:Microsoft.Xrm.Sdk.IProxyPlugin">
@@ -4300,6 +4361,19 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:Microsoft.Xrm.Sdk.PSqlConnectionContext">
+            <summary>
+            PSqlConnectionContext Class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.PSqlConnectionContext.DatabaseName">
+            <summary>
+            Database Name
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.PSqlConnectionContext.ExtensionData">
+            <inheritdoc/>
+        </member>
         <member name="T:Microsoft.Xrm.Sdk.SqlNameMappingOptions">
             <summary>
             Indicates whether the table names and column names in the sql command text are expressed in logical name or display name.
@@ -4479,9 +4553,19 @@
             List of values to be compared to in the condition
             </summary>
         </member>
+        <member name="P:Microsoft.Xrm.Sdk.Query.ConditionExpression.IsReferencedEntityLinkEntity">
+            <summary>
+             Store condition variable between EntityExpression to QueryExpression conversion
+            </summary>
+        </member>
         <member name="P:Microsoft.Xrm.Sdk.Query.FilterExpression.FilterHint">
             <summary>
             Filter hint
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Sdk.Query.FilterExpression.LateMaterialize">
+            <summary>
+            Store state between EntityExpression to QueryExpression conversion
             </summary>
         </member>
         <member name="M:Microsoft.Xrm.Sdk.Query.FilterExpression.AddCondition(System.String,Microsoft.Xrm.Sdk.Query.ConditionOperator,System.Object[])">
@@ -4940,6 +5024,16 @@
             The violation type
             </summary>
         </member>
+        <member name="T:Microsoft.Xrm.Sdk.ValidateSolutionPrerequisitesResult">
+            <summary>
+            results of the solution prerequities validation api
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Sdk.ValidateSolutionStatus">
+            <summary>
+            The status of ValidateSolutionPrerequisites api
+            </summary>
+        </member>
         <member name="T:Microsoft.Xrm.Sdk.DistinctMobileOfflineRelatedEntitiesResponse">
             <summary>
             Initializes a new instance of the <see cref="T:Microsoft.Xrm.Sdk.DistinctMobileOfflineRelatedEntitiesResponse"/> class
@@ -5148,6 +5242,16 @@
             <param name="type"></param>
             <param name="referenceType"></param>
             <returns></returns>
+        </member>
+        <member name="T:Microsoft.Xrm.Sdk.UpgradeCurrencyTypeStatus">
+            <summary>
+            UpgradeCurrencyType Status
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Sdk.UpgradeCurrencyTypeTable">
+            <summary>
+            UpgradeCurrencyType Table
+            </summary>
         </member>
         <member name="T:Microsoft.Xrm.Sdk.UserLicenseInfo">
             <summary>

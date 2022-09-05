@@ -3,3 +3,5 @@ C:\Repos\ALPIQ-Dynamics.NET4.6.2\JavaScripts\obj\Debug\JavaScripts.csproj.Sugges
 C:\Repos\ALPIQ-Dynamics.NET4.6.2\JavaScripts\obj\Debug\JavaScripts.csproj.CoreCompileInputs.cache
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\JavaScripts\obj\Debug\JavaScripts.csprojAssemblyReference.cache
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\JavaScripts\obj\Debug\JavaScripts.csproj.CoreCompileInputs.cache
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\JavaScripts\obj\Debug\JavaScripts.csprojAssemblyReference.cache
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\JavaScripts\obj\Debug\JavaScripts.csproj.CoreCompileInputs.cache

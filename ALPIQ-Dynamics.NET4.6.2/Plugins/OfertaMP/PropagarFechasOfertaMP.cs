@@ -83,7 +83,9 @@ namespace OfertaMP
                     //Comprobar si hay información que propagar.
                     if (!(ofertaModificada.Contains("atos_nombreoferta") || ofertaModificada.Contains("atos_fechalimitepresentacionoferta") ||
                         ofertaModificada.Contains("atos_fechainicio") || ofertaModificada.Contains("atos_duracionmeses") ||
-                            ofertaModificada.Contains("atos_fechafin")   || ofertaModificada.Contains("atos_fechafinvigenciaoferta") ||
+                            /* 23866 -+2 */
+                            //ofertaModificada.Contains("atos_fechafin")   || ofertaModificada.Contains("atos_fechafinvigenciaoferta") ||
+                            ofertaModificada.Contains("atos_fechafin_tza") || ofertaModificada.Contains("atos_fechafinvigenciaoferta") ||
                             ofertaModificada.Contains("atos_impuestoelectrico") || ofertaModificada.Contains("atos_congelacionpreciosente") ||
                             ofertaModificada.Contains("atos_congelacionpreciosentp") || ofertaModificada.Contains("atos_renovaciontacita") ||
                             ofertaModificada.Contains("atos_gestionatr") || 
@@ -96,7 +98,9 @@ namespace OfertaMP
 
                     tracingService.Trace(String.Format("Se ha modificado atos_nombreoferta:{0}, tipoOferta:{1}, fecha ini suministro:{2}, fecha fin suministro:{3}, fecha fin vigencia:{4}, , fecha limite presentacion oferta:{5}",
                         ofertaModificada.Contains("atos_nombreoferta"), tipoOferta.ToString(), ofertaModificada.Contains("atos_fechainicio"),
-                        ofertaModificada.Contains("atos_fechafin"), ofertaModificada.Contains("atos_fechafinvigenciaoferta"), ofertaModificada.Contains("atos_fechalimitepresentacionoferta")));
+                        /* 23866 -+2 */
+                        //ofertaModificada.Contains("atos_fechafin"), ofertaModificada.Contains("atos_fechafinvigenciaoferta"), ofertaModificada.Contains("atos_fechalimitepresentacionoferta")));
+                        ofertaModificada.Contains("atos_fechafin_tza"), ofertaModificada.Contains("atos_fechafinvigenciaoferta"), ofertaModificada.Contains("atos_fechalimitepresentacionoferta")));
 
                     EntityCollection ofertasHijas = obtenerSubOfertas(ofertaModificada.Id);
 
@@ -151,10 +155,18 @@ namespace OfertaMP
                         {
                             ofertaMod.Attributes.Add("atos_fechainicio", ofertaModificada.Attributes["atos_fechainicio"]);
                         }
-                        if (ofertaModificada.Contains("atos_fechafin"))
+
+                        /* 23866 -4 */
+                        //if (ofertaModificada.Contains("atos_fechafin"))
+                        //{
+                        //    ofertaMod.Attributes.Add("atos_fechafin", ofertaModificada.Attributes["atos_fechafin"]);
+                        //}
+                        /* 23866 +4 */
+                        if (ofertaModificada.Contains("atos_fechafin_tza"))
                         {
-                            ofertaMod.Attributes.Add("atos_fechafin", ofertaModificada.Attributes["atos_fechafin"]);
+                            ofertaMod.Attributes.Add("atos_fechafin_tza", ofertaModificada.Attributes["atos_fechafin_tza"]);
                         }
+
                         if (ofertaModificada.Contains("atos_fechaaceptacionoferta"))
                         {
                             ofertaMod.Attributes.Add("atos_fechaaceptacionoferta", ofertaModificada.Attributes["atos_fechaaceptacionoferta"]);
