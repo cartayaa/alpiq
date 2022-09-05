@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webclientes.ws.atos.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="WebClientesImplService" targetNamespace="http://webclientes.ws.atos.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://webclientes.ws.atos.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="accesoWebPublica" type="tns:accesoWebPublica" />
+      <xs:element name="accesoWebPublicaResponse" type="tns:accesoWebPublicaResponse" />
+      <xs:element name="getPdfFactura" type="tns:getPdfFactura" />
+      <xs:element name="getPdfFacturaResponse" type="tns:getPdfFacturaResponse" />
+      <xs:element name="solicitudFactura" type="tns:solicitudFactura" />
+      <xs:element name="solicitudFacturaResponse" type="tns:solicitudFacturaResponse" />
+      <xs:element name="solicitudMedidas" type="tns:solicitudMedidas" />
+      <xs:element name="solicitudMedidasResponse" type="tns:solicitudMedidasResponse" />
+      <xs:complexType name="getPdfFactura">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getPdfFacturaResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="accesoWebPublica">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="accesoWebPublicaResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="solicitudMedidas">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="solicitudMedidasResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="solicitudFactura">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="solicitudFacturaResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="accesoWebPublicaResponse">
+    <wsdl:part name="parameters" element="tns:accesoWebPublicaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPdfFacturaResponse">
+    <wsdl:part name="parameters" element="tns:getPdfFacturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="solicitudFactura">
+    <wsdl:part name="parameters" element="tns:solicitudFactura" />
+  </wsdl:message>
+  <wsdl:message name="accesoWebPublica">
+    <wsdl:part name="parameters" element="tns:accesoWebPublica" />
+  </wsdl:message>
+  <wsdl:message name="getPdfFactura">
+    <wsdl:part name="parameters" element="tns:getPdfFactura" />
+  </wsdl:message>
+  <wsdl:message name="solicitudFacturaResponse">
+    <wsdl:part name="parameters" element="tns:solicitudFacturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="solicitudMedidasResponse">
+    <wsdl:part name="parameters" element="tns:solicitudMedidasResponse" />
+  </wsdl:message>
+  <wsdl:message name="solicitudMedidas">
+    <wsdl:part name="parameters" element="tns:solicitudMedidas" />
+  </wsdl:message>
+  <wsdl:portType name="WebClientes">
+    <wsdl:operation name="getPdfFactura">
+      <wsdl:input name="getPdfFactura" message="tns:getPdfFactura" />
+      <wsdl:output name="getPdfFacturaResponse" message="tns:getPdfFacturaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="accesoWebPublica">
+      <wsdl:input name="accesoWebPublica" message="tns:accesoWebPublica" />
+      <wsdl:output name="accesoWebPublicaResponse" message="tns:accesoWebPublicaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="solicitudMedidas">
+      <wsdl:input name="solicitudMedidas" message="tns:solicitudMedidas" />
+      <wsdl:output name="solicitudMedidasResponse" message="tns:solicitudMedidasResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="solicitudFactura">
+      <wsdl:input name="solicitudFactura" message="tns:solicitudFactura" />
+      <wsdl:output name="solicitudFacturaResponse" message="tns:solicitudFacturaResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebClientesImplServiceSoapBinding" type="tns:WebClientes">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getPdfFactura">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getPdfFactura">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getPdfFacturaResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="accesoWebPublica">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="accesoWebPublica">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="accesoWebPublicaResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="solicitudFactura">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="solicitudFactura">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="solicitudFacturaResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="solicitudMedidas">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="solicitudMedidas">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="solicitudMedidasResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebClientesImplService">
+    <wsdl:port name="WebClientesImplPort" binding="tns:WebClientesImplServiceSoapBinding">
+      <soap:address location="http://172.24.58.132:8083/acciona_ws_web_clientes/WebClientes" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
