@@ -380,9 +380,11 @@ namespace Secuencias
 
             //Ac localContext.Trace(string.Format(CultureInfo.InvariantCulture, "Entered {0}.Execute()", this.GetType().ToString()));
 
-            localContext.Trace(string.Format("Plugin Secuencias {0}", DateTime.Now.ToLocalTime().ToString()));
+            // 1108-2022 -1 */
+            // localContext.Trace(string.Format("Plugin Secuencias {0}", DateTime.Now.ToLocalTime().ToString()));
 
-            localContext.Trace("Mensaje: " + localContext.PluginExecutionContext.MessageName);
+            /* PRO-XXX -1 */
+            //localContext.Trace("Mensaje: " + localContext.PluginExecutionContext.MessageName);
 
             if (localContext.PluginExecutionContext.MessageName != "Create")
                 return;
