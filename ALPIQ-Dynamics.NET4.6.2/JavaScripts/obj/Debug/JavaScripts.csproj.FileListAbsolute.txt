@@ -1,0 +1,5 @@
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\JavaScripts\obj\Debug\JavaScripts.csproj.AssemblyReference.cache
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\JavaScripts\obj\Debug\JavaScripts.csproj.SuggestedBindingRedirects.cache
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\JavaScripts\obj\Debug\JavaScripts.csproj.CoreCompileInputs.cache
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\JavaScripts\obj\Debug\JavaScripts.csprojAssemblyReference.cache
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\JavaScripts\obj\Debug\JavaScripts.csproj.CoreCompileInputs.cache
