@@ -167,17 +167,17 @@ namespace Secuencias
 
                 if (this.PluginExecutionContext == null)
                 {
-                    if (_log == true)
-                        this.TracingService.Trace(message);
+                    this.TracingService.Trace(message);
                 }
                 else
                 {
-                    //AC this.TracingService.Trace(
-                    //AC     "{0}, Correlation Id: {1}, Initiating User: {2}",
-                    //AC message,
-                    //AC this.PluginExecutionContext.CorrelationId,
-                    //AC this.PluginExecutionContext.InitiatingUserId);
-                    this.TracingService.Trace("{0}", message);
+                    if (_log == true)
+                        //AC this.TracingService.Trace(
+                        //AC     "{0}, Correlation Id: {1}, Initiating User: {2}",
+                        //AC message,
+                        //AC this.PluginExecutionContext.CorrelationId,
+                        //AC this.PluginExecutionContext.InitiatingUserId);
+                        this.TracingService.Trace("{0}", message);
                 }
             }
         }

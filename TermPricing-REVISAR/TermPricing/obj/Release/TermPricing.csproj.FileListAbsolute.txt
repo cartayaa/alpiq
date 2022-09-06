@@ -1,0 +1,33 @@
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\TermPricing\TermPricing\TermPricing\bin\Release\TermPricing.dll
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\TermPricing\TermPricing\TermPricing\bin\Release\TermPricing.pdb
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\TermPricing\TermPricing\TermPricing\bin\Release\Microsoft.Crm.Sdk.Proxy.dll
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\TermPricing\TermPricing\TermPricing\bin\Release\Microsoft.Xrm.Sdk.dll
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\TermPricing\TermPricing\TermPricing\bin\Release\Microsoft.Crm.Sdk.Proxy.xml
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\TermPricing\TermPricing\TermPricing\bin\Release\Microsoft.Xrm.Sdk.xml
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\TermPricing\TermPricing\TermPricing\obj\Release\TermPricing.csprojAssemblyReference.cache
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\TermPricing\TermPricing\TermPricing\obj\Release\TermPricing.csproj.CoreCompileInputs.cache
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\TermPricing\TermPricing\TermPricing\obj\Release\TermPricing.csproj.CopyComplete
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\TermPricing\TermPricing\TermPricing\obj\Release\TermPricing.dll
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\TermPricing\TermPricing\TermPricing\obj\Release\TermPricing.pdb
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\TermPricing\TermPricing\bin\Release\TermPricing.dll
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\TermPricing\TermPricing\bin\Release\TermPricing.pdb
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\TermPricing\TermPricing\bin\Release\Microsoft.Crm.Sdk.Proxy.dll
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\TermPricing\TermPricing\bin\Release\Microsoft.Xrm.Sdk.dll
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\TermPricing\TermPricing\bin\Release\Microsoft.Crm.Sdk.Proxy.xml
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\TermPricing\TermPricing\bin\Release\Microsoft.Xrm.Sdk.xml
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\TermPricing\TermPricing\obj\Release\TermPricing.csprojAssemblyReference.cache
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\TermPricing\TermPricing\obj\Release\TermPricing.csproj.CoreCompileInputs.cache
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\TermPricing\TermPricing\obj\Release\TermPricing.csproj.CopyComplete
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\TermPricing\TermPricing\obj\Release\TermPricing.dll
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\TermPricing\TermPricing\obj\Release\TermPricing.pdb
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\a TSF\TermPricing-0110-2021\TermPricing\bin\Release\TermPricing.dll
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\a TSF\TermPricing-0110-2021\TermPricing\bin\Release\TermPricing.pdb
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\a TSF\TermPricing-0110-2021\TermPricing\bin\Release\Microsoft.Crm.Sdk.Proxy.dll
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\a TSF\TermPricing-0110-2021\TermPricing\bin\Release\Microsoft.Xrm.Sdk.dll
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\a TSF\TermPricing-0110-2021\TermPricing\bin\Release\Microsoft.Crm.Sdk.Proxy.xml
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\a TSF\TermPricing-0110-2021\TermPricing\bin\Release\Microsoft.Xrm.Sdk.xml
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\a TSF\TermPricing-0110-2021\TermPricing\obj\Release\TermPricing.csprojAssemblyReference.cache
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\a TSF\TermPricing-0110-2021\TermPricing\obj\Release\TermPricing.csproj.CoreCompileInputs.cache
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\a TSF\TermPricing-0110-2021\TermPricing\obj\Release\TermPricing.csproj.CopyComplete
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\a TSF\TermPricing-0110-2021\TermPricing\obj\Release\TermPricing.dll
+C:\PROYECTOS\Project-Open\Alpiq\Soluciones\PRE-PRO\a TSF\TermPricing-0110-2021\TermPricing\obj\Release\TermPricing.pdb

@@ -1,0 +1,12 @@
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\TermPricing-0110-2021\TermPricing\bin\Debug\TermPricing.dll
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\TermPricing-0110-2021\TermPricing\bin\Debug\TermPricing.pdb
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\TermPricing-0110-2021\TermPricing\bin\Debug\TermPricing.dll.CodeAnalysisLog.xml
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\TermPricing-0110-2021\TermPricing\bin\Debug\TermPricing.dll.lastcodeanalysissucceeded
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\TermPricing-0110-2021\TermPricing\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\TermPricing-0110-2021\TermPricing\bin\Debug\Microsoft.Xrm.Sdk.dll
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\TermPricing-0110-2021\TermPricing\bin\Debug\Microsoft.Xrm.Sdk.xml
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\TermPricing-0110-2021\TermPricing\obj\Debug\TermPricing-1208-2022.csproj.CoreCompileInputs.cache
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\TermPricing-0110-2021\TermPricing\obj\Debug\TermPricing-1208-2022.csproj.CopyComplete
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\TermPricing-0110-2021\TermPricing\obj\Debug\TermPricing.dll
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\TermPricing-0110-2021\TermPricing\obj\Debug\TermPricing.pdb
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\TermPricing-0110-2021\TermPricing\obj\Debug\TermPricing-1208-2022.csprojAssemblyReference.cache

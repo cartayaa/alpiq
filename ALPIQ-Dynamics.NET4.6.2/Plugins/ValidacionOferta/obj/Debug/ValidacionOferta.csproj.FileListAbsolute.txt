@@ -23,6 +23,7 @@ E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionOferta\bin\Debug\
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionOferta\bin\Debug\System.Text.Json.xml
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionOferta\bin\Debug\System.Threading.Tasks.Extensions.xml
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionOferta\bin\Debug\System.ValueTuple.xml
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionOferta\obj\Debug\ValidacionOferta.csprojAssemblyReference.cache
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionOferta\obj\Debug\ValidacionOferta.csproj.CoreCompileInputs.cache
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionOferta\obj\Debug\ValidacionOferta.csproj.CopyComplete
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionOferta\obj\Debug\ValidacionOferta.dll

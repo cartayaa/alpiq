@@ -1,0 +1,13 @@
+<fetch top="50">
+  <entity name="atos_oferta">
+    <attribute name="atos_nombreoferta" />
+    <attribute name="atos_tipooferta" />
+    <attribute name="processid" />
+    <attribute name="stageid" />
+    <attribute name="statecode" />
+    <attribute name="statuscode" />
+    <filter>
+      <condition attribute="atos_ofertaid" operator="eq" value="57EC01BD-BE05-498A-A6AE-1CD94C3EB20A" />
+    </filter>
+  </entity>
+</fetch>

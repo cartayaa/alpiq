@@ -93,6 +93,7 @@ E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Debug\OfertaMP
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Debug\Microsoft.Xrm.Sdk.dll
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Debug\Microsoft.Xrm.Sdk.Workflow.dll
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Debug\System.Buffers.dll
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Debug\System.Memory.dll
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Debug\System.Numerics.Vectors.dll
@@ -104,6 +105,7 @@ E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Debug\System.V
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Debug\Microsoft.Crm.Sdk.Proxy.xml
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Debug\Microsoft.Xrm.Sdk.xml
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Debug\Microsoft.Xrm.Sdk.Workflow.xml
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Debug\System.Buffers.xml
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Debug\System.Memory.xml
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Debug\System.Numerics.Vectors.xml
@@ -112,10 +114,8 @@ E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Debug\System.T
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Debug\System.Text.Json.xml
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Debug\System.Threading.Tasks.Extensions.xml
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Debug\System.ValueTuple.xml
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\obj\Debug\OfertaMP.csprojAssemblyReference.cache
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\obj\Debug\OfertaMP.csproj.CoreCompileInputs.cache
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\obj\Debug\OfertaMP.csproj.CopyComplete
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\obj\Debug\OfertaMP.dll
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\obj\Debug\OfertaMP.pdb
-E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\obj\Debug\OfertaMP.csprojAssemblyReference.cache
-E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Debug\Microsoft.Xrm.Sdk.Workflow.dll
-E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Debug\Microsoft.Xrm.Sdk.Workflow.xml
