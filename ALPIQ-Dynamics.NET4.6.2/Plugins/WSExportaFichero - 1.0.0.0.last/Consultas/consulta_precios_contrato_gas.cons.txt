@@ -1,0 +1,27 @@
+<fetch mapping='logical'>
+<entity name="atos_contrato" >
+	<filter type='and'>
+		<condition attribute='atos_contratoid' operator='eq' value='#ID_PR#'/>
+	</filter>
+<filter type='and'>
+		<condition attribute='atos_commodity' operator='eq' value='300000001'/>
+	</filter>
+	<link-entity name="atos_tipodepenalizacion" from="atos_tipodepenalizacionid" to="atos_tipodepenalizacionid" link-type="outer" alias="TIPOPENALIZACION" >
+                <attribute name="atos_name"/>
+            </link-entity>
+    <attribute name="atos_bonificacionconsumo" />
+    <attribute name="atos_name" />
+    <attribute name="atos_fechainiciovigenciaprecios" />
+    <attribute name="atos_importepenalizacion" />
+    <attribute name="atos_importebonificacion" />
+    <attribute name="atos_penalizacionconsumo" />
+    <attribute name="atos_precioalquilerequipo" />
+    <attribute name="atos_preciomensualserviciolectura" />
+    <attribute name="atos_rangoinferiorbonificacion" />
+    <attribute name="atos_rangoinferiorpenalizacion" />
+    <attribute name="atos_rangosuperiorbonificacion" />
+    <attribute name="atos_rangosuperiorpenalizacion" />
+	<attribute name="atos_penalizacionporcentaje" />
+	<attribute name="atos_referenciapenalizacion" />
+  </entity>
+</fetch>

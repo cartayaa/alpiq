@@ -224,6 +224,8 @@ namespace TermPricing
             Log.writelog("1 pricingInputCollection " + _fechaInicioOferta.ToLocalTime().ToShortDateString() + " - " + _fechaFinOferta.ToLocalTime().ToShortDateString(), _traza);
 
             QueryExpression _consulta = new QueryExpression("atos_pricinginput");
+            /* 23866 +1 nolock */
+            _consulta.NoLock = true;
                 Log.writelog("2 pricingInputCollection");
             FilterExpression _filtro = new FilterExpression();
                 _filtro.FilterOperator = LogicalOperator.And;

@@ -1,0 +1,2 @@
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Pwr\obj\Release\ImportATR-Pwr.csprojAssemblyReference.cache
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Pwr\obj\Release\ImportATR-Pwr.csproj.CoreCompileInputs.cache

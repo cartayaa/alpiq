@@ -1,0 +1,1 @@
+c_cups:atos_cups20;c_fec_ini:atos_fechainiciovigenciapeaje;c_cod_tarifa:atos_peajeid

@@ -289,8 +289,7 @@ namespace ValidacionOferta
             consulta.ColumnSet.AddColumns("atos_name", "atos_usodelgasid", "atos_peajeid", "statecode");
             consulta.Criteria.AddFilter(filtro);
             /* 23866 +1 no-lock */
-            consulta.NoLock = true;
-
+            consulta.NoLock = true;       
 
             if (_razonsocialId == Guid.Empty)
             {

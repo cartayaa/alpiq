@@ -1,0 +1,2 @@
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\JavaScripts\obj\Release\JavaScripts.csprojAssemblyReference.cache
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\JavaScripts\obj\Release\JavaScripts.csproj.CoreCompileInputs.cache

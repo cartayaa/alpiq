@@ -1,0 +1,66 @@
+<fetch>
+  <entity name="atos_tipodeproducto">
+    <attribute name="atos_valorvi9" />
+    <attribute name="atos_valorvi8" />
+    <attribute name="atos_valorvi7" />
+    <attribute name="atos_valorvi6" />
+    <attribute name="atos_valorvi5" />
+    <attribute name="atos_valorvi4" />
+    <attribute name="atos_valorvi3" />
+    <attribute name="atos_valorvi2" />
+    <attribute name="atos_valorvi10" />
+    <attribute name="atos_valorvi1" />
+    <attribute name="atos_unidadv9" />
+    <attribute name="atos_unidadv8" />
+    <attribute name="atos_unidadv7" />
+    <attribute name="atos_unidadv6" />
+    <attribute name="atos_unidadv5" />
+    <attribute name="atos_unidadv4" />
+    <attribute name="atos_unidadv3" />
+    <attribute name="atos_unidadv2" />
+    <attribute name="atos_unidadv10" />
+    <attribute name="atos_unidadv1" />
+    <attribute name="atos_tipodecalculov9" />
+    <attribute name="atos_tipodecalculov8" />
+    <attribute name="atos_tipodecalculov7" />
+    <attribute name="atos_tipodecalculov6" />
+    <attribute name="atos_tipodecalculov5" />
+    <attribute name="atos_tipodecalculov4" />
+    <attribute name="atos_tipodecalculov3" />
+    <attribute name="atos_tipodecalculov2" />
+    <attribute name="atos_tipodecalculov10" />
+    <attribute name="atos_tipodecalculov1" />
+    <attribute name="atos_nombrevi9" />
+    <attribute name="atos_nombrevi8" />
+    <attribute name="atos_nombrevi7" />
+    <attribute name="atos_nombrevi6" />
+    <attribute name="atos_nombrevi5" />
+    <attribute name="atos_nombrevi4" />
+    <attribute name="atos_nombrevi3" />
+    <attribute name="atos_nombrevi2" />
+    <attribute name="atos_nombrevi10" />
+    <attribute name="atos_nombrevi1" />
+    <attribute name="atos_nombreems" />
+    <attribute name="atos_name" />
+    <attribute name="atos_mostrareninformev9" />
+    <attribute name="atos_mostrareninformev8" />
+    <attribute name="atos_mostrareninformev7" />
+    <attribute name="atos_mostrareninformev6" />
+    <attribute name="atos_mostrareninformev5" />
+    <attribute name="atos_mostrareninformev4" />
+    <attribute name="atos_mostrareninformev3" />
+    <attribute name="atos_mostrareninformev2" />
+    <attribute name="atos_mostrareninformev10" />
+    <attribute name="atos_mostrareninformev1" />
+	<attribute name="atos_formula" />	
+  <filter type="and">
+      <condition attribute='atos_tipodeproductoid' operator='eq' value='#ID_PR#'/>
+    </filter>
+<link-entity name="atos_prelacion" from="atos_prelacionid" to="atos_prelacionid" link-type="outer" alias="PRELACION">
+      <attribute name="atos_codigo" />
+    </link-entity>
+<link-entity name="atos_modalidaddeproducto" from="atos_modalidaddeproductoid" to="atos_modalidaddeproductoid" link-type="outer" alias="MODALIDAD">
+      <attribute name="atos_name" />
+    </link-entity>
+  </entity>
+</fetch>

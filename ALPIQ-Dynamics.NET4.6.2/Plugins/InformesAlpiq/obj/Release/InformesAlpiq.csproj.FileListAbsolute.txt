@@ -1,0 +1,2 @@
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\InformesAlpiq\obj\Release\InformesAlpiq.csprojAssemblyReference.cache
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\InformesAlpiq\obj\Release\InformesAlpiq.csproj.CoreCompileInputs.cache

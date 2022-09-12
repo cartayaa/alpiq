@@ -1,0 +1,43 @@
+<fetch mapping='logical'>
+	<entity name='account'>
+		<attribute name='atos_numerodedocumento'/>
+		<attribute name='name'/>
+		<attribute name='atos_codigoduns'/> <!--Añadido-->
+		<attribute name='atos_empresadelgrupo'/>
+
+		<attribute name='atos_rsdireccionconcatenada'/>
+		<filter type='and'>
+			<condition attribute='accountid' operator='eq' value='#ID_PR#'/>
+		</filter>
+		<link-entity name='atos_cnae' from='atos_cnaeid' to='atos_cnaeid' alias='CNAE' link-type='outer'>
+			<attribute name='atos_name'/>
+		</link-entity>
+		<link-entity name='atos_cuentanegociadora' from='atos_cuentanegociadoraid' to='atos_cuentanegociadoraid' alias='CTANEGOCIADORA' link-type='outer'>
+			<attribute name='atos_name'/>
+		</link-entity>
+		<link-entity name='contact' from='contactid' to='primarycontactid' alias='CONTACTO' link-type='outer'>
+			<attribute name='fullname'/>
+			<attribute name='emailaddress1'/>
+			<attribute name='fax'/>
+			<attribute name='telephone1'/>
+		</link-entity>
+
+		<link-entity name='atos_codigopostal' from='atos_codigopostalid' to='atos_rscodigopostalid' alias='RSCPOSTAL' link-type='outer'>
+			<attribute name='atos_name' />
+		</link-entity>
+		<link-entity name='atos_pais' from='atos_paisid' to='atos_rspaisid' alias='RSPAIS' link-type='outer'>
+			<attribute name='atos_name' />
+			<attribute name='atos_codigoiso' />
+		</link-entity>
+		<link-entity name='atos_provincia' from='atos_provinciaid' to='atos_rsprovinciaid' alias='RSPROVINCIA' link-type='outer'>
+			<attribute name='atos_name' />
+		</link-entity>
+		<link-entity name='atos_municipio' from='atos_municipioid' to='atos_rsmunicipioid' alias='RSMUNICIPIO' link-type='outer'>
+			<attribute name='atos_name' />
+		</link-entity>
+		<link-entity name='atos_poblacion' from='atos_poblacionid' to='atos_rspoblacionid' alias='RSPOBLACION' link-type='outer'>
+			<attribute name='atos_name' />
+		</link-entity>
+
+	</entity>
+</fetch>

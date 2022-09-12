@@ -1,0 +1,22 @@
+<fetch mapping='logical'>
+  <entity name="atos_instalaciongas" >
+	<filter type='and'>
+			<condition attribute='atos_instalaciongasid' operator='eq' value='#ID_PR#'/>
+	</filter>
+    <attribute name="atos_cups20" />
+    <attribute name="atos_consumomes1" />
+    <attribute name="atos_consumomes2" />
+    <attribute name="atos_consumomes3" />
+    <attribute name="atos_consumomes4" />
+    <attribute name="atos_consumomes5" />
+    <attribute name="atos_consumomes6" />
+    <attribute name="atos_consumomes7" />
+    <attribute name="atos_consumomes8" />
+    <attribute name="atos_consumomes9" />
+    <attribute name="atos_consumomes10" />
+    <attribute name="atos_consumomes11" />
+    <attribute name="atos_consumomes12" />
+    <attribute name="atos_consumoanual" />
+	<attribute name="atos_fechainicioenvioprevisiones" />
+  </entity>
+</fetch>

@@ -1,0 +1,23 @@
+<fetch  mapping='logical' >
+	<entity name="atos_prelacion">
+		<attribute name="atos_codigo"/>
+		<attribute name="atos_name"/>
+		<attribute name="atos_orden1"/>
+		<attribute name="atos_orden2"/>
+		<attribute name="atos_orden3"/>
+		<attribute name="atos_orden4"/>
+		<attribute name="atos_orden5"/>
+		<attribute name="atos_orden6"/>
+		<attribute name="atos_orden7"/>
+		<attribute name="atos_orden8"/>
+		<attribute name="atos_orden9"/>
+		<attribute name="atos_orden10"/>
+		<attribute name="atos_orden11"/>
+		<attribute name="atos_orden12"/>
+		<attribute name="atos_orden13"/>
+		<attribute name="atos_orden14"/>
+		<filter type='and'>
+			<condition attribute='atos_prelacionid' operator='eq' value='#ID_PR#'/>
+		</filter>
+	</entity>
+</fetch>

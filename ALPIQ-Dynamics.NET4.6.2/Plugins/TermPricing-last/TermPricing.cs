@@ -1,4 +1,5 @@
-﻿// <copyright file="Plugin.cs" company="Licence Owner">
+﻿/* ver. 1.0.1.0 */
+// <copyright file="Plugin.cs" company="Licence Owner">
 // Copyright (c) 2015 All Rights Reserved
 // </copyright>
 // <author>Licence Owner</author>
@@ -935,14 +936,12 @@ namespace TermPricing
                     if (_oferta.Attributes.Contains("atos_fechainicio"))
                         _pricingInput.Attributes["atos_fechainicioaplicacion"] = _oferta.Attributes["atos_fechainicio"];
 
-                    /*if (_ofpre.Attributes.Contains("atos_fechafinvigenciaoferta"))
-                        _pricingInput.Attributes["atos_fechafinvigencia"] = _ofpre.Attributes["atos_fechafinvigenciaoferta"];
-                    else*/
                     if (_oferta.Attributes.Contains("atos_fechafin"))
                         _pricingInput.Attributes["atos_fechafinvigencia"] = _oferta.Attributes["atos_fechafin"];
 
                     if (_oferta.Attributes.Contains("atos_fechafin"))
                         _pricingInput.Attributes["atos_fechafinaplicacion"] = _oferta.Attributes["atos_fechafin"];
+
 
                     _pricingInput.Attributes["atos_sistemaelectricoid"] = new EntityReference("atos_sistemaelectrico", ((EntityReference)_oferta.Attributes["atos_sistemaelectricoid"]).Id);
                     _pricingInput.Attributes["atos_tarifaid"] = new EntityReference("atos_tarifa", ((EntityReference)_oferta.Attributes["atos_tarifaid"]).Id);
@@ -1000,7 +999,7 @@ namespace TermPricing
 
             //Log.writelog("CREATE_pricinginputCollection 5 " + _tipoproductoid.ToString(), true);
             Entity _tipoProducto = context.OrganizationService.Retrieve("atos_tipodeproducto", _tipoproductoid, new ColumnSet(true));
-            Log.writelog(string.Format("\t\tRecupera el tipo de Producto: {0}", _tipoProducto.ToString()), true);
+            //Log.writelog(string.Format("\t\tRecupera el tipo de Producto: {0}", _tipoProducto.ToString()), true);
 
             //Log.writelog("Antes de construyeFormulas", true);
             // Copiamos los pricinginput
@@ -1019,15 +1018,12 @@ namespace TermPricing
                             ((TermPricing)formula.ComponentesFormula[i]).NombreEms);
                     Log.writelog(msg);
 
-                    // DEBUG Log.writelog("TermPricing: " + formula.ComponentesFormula[i].NombreComponente + " " + ((TermPricing)formula.ComponentesFormula[i]).NombreEms, true);
-                    //Entity _pricingInput = new Entity("atos_pricinginput");
-
                     EntityCollection _pricingInputColl = formula.pricingInputCollection(i, context.OrganizationService, _oferta, _oferta);
-                    Log.writelog("Encontrados " + _pricingInputColl.Entities.Count.ToString() + " pricinginputs para " + formula.ComponentesFormula[i].NombreComponente);
+                    //Log.writelog("Encontrados " + _pricingInputColl.Entities.Count.ToString() + " pricinginputs para " + formula.ComponentesFormula[i].NombreComponente);
 
                     for (int j = 0; j < _pricingInputColl.Entities.Count; j++)
                     {
-                        Entity _pricingInput     = new Entity("atos_pricinginput");
+                        Entity _pricingInput = new Entity("atos_pricinginput");
                         Entity _pricingInputbase = _pricingInputColl.Entities[j];
 
                         if (_pricingInputbase.Attributes.Contains("atos_porcentajeoimporte"))
@@ -1253,6 +1249,8 @@ namespace TermPricing
         private EntityCollection GET_OfertasHijas(Entity ofertaPadre, LocalPluginContext context)
         {
             QueryExpression _consulta = new QueryExpression("atos_oferta");
+            /* 23866 +1 */
+            _consulta.NoLock = true;
                 _consulta.ColumnSet = new ColumnSet(true); //AC
             FilterExpression _filtro = new FilterExpression();  
                 _filtro.FilterOperator = LogicalOperator.And;
@@ -1273,6 +1271,8 @@ namespace TermPricing
         private EntityCollection GET_OfertaPricing(Entity oferta, LocalPluginContext context)
         {
             QueryExpression _consulta = new QueryExpression("atos_bpf_1c3d1c4af29543429ee2b7465a2e6ee8");
+            /* 23866 +1 */
+            _consulta.NoLock = true;
             FilterExpression _filtro = new FilterExpression();
                 _filtro.FilterOperator = LogicalOperator.And;
             ConditionExpression _condicion = new ConditionExpression();
@@ -1336,7 +1336,7 @@ namespace TermPricing
                 // SOLO DEBUG Log.writelog(string.Format("\t\tOferta hija: {0}{1} - {2}", i, _resultado.Entities[i]["atos_name"], _ofertaHija.Id), true);
                 // LOG ANTERIOR Log.writelog(string.Format("\t\tOferta hija: {0}-{1}", i, _resultado.Entities[i]["atos_name"]), true);
                 /*------*/
-                msg = _resultado.Entities[i].Attributes.Contains("atos_name") ? _resultado.Entities[i].Attributes["atos_name"].ToString() : String.Empty;
+            msg = _resultado.Entities[i].Attributes.Contains("atos_name") ? _resultado.Entities[i].Attributes["atos_name"].ToString() : String.Empty;
                 msg = string.Format("\t\tOferta hija: {0}-{1}", i, msg);
                 // DEBUG Log.writelog(string.Format("\tOferta hija: {0}-{1}", i, msg), true);
                 /*------*/

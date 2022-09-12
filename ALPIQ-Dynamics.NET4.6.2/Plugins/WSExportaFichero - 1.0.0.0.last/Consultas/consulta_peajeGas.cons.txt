@@ -1,0 +1,10 @@
+<fetch mapping="logical">
+  <entity name="atos_instalaciongas">
+      <attribute name="atos_cups20" />
+	  <attribute name="atos_peajeid" />
+      <attribute name="atos_fechainiciovigenciapeaje" />
+	<filter type='and'>
+		<condition attribute='atos_instalaciongasid' operator='eq' value='#ID_PR#'/>
+	</filter>
+  </entity>
+</fetch>

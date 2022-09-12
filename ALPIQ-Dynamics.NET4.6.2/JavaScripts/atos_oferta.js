@@ -707,7 +707,7 @@ function cargaDesdeInstalacion(formContext, instalacionid, commodity) {
 
 
 /*
- * Carga datos desde la instalaciÃ³n gas relacionada
+ * Carga datos desde la instalaciónn gas relacionada
  * 
  * Accede a la instalación gas con el identificador recibido por parámetro
  * y rellena los campos de la oferta a partir de los siguientes campos de la instalación

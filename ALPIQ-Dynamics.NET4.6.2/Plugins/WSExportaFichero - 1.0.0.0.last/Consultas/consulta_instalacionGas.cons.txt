@@ -1,0 +1,52 @@
+<fetch mapping='logical'>
+	<entity name='atos_instalaciongas'>
+		<attribute name='atos_cups20'/>
+		<attribute name='atos_codigoinstalacion'/>
+		<attribute name='atos_codigocontratoatr'/>
+		<attribute name='atos_name'/>
+		<attribute name='atos_fechainiciovigencia'/>
+		<attribute name='atos_fechafinvigencia'/>			
+		<attribute name='atos_presionsalida'/>
+		<attribute name='atos_reqqd'/>
+		<attribute name='atos_reqqh'/>
+		<attribute name='atos_reqestimatedqa'/>
+		<attribute name='atos_cogeneracion'/>
+		<attribute name='atos_porcentajecogeneracion'/>
+		<attribute name='atos_instalaciontelemedida'/>
+		<attribute name='atos_porcentajeusodelgas1'/>
+		<attribute name='atos_porcentajeusodelgas2'/>
+		<attribute name='atos_porcentajeusodelgas3'/>
+
+		<filter type='and'>
+			<condition attribute='atos_instalaciongasid' operator='eq' value='#ID_PR#'/>
+		</filter>
+		<link-entity name='atos_tablasatrgas' from='atos_tablasatrgasid' to='atos_usodelgasid' alias='USO' link-type='outer'>
+			<attribute name='atos_descripcion' />
+		</link-entity>
+		<link-entity name='atos_tablasatrgas' from='atos_tablasatrgasid' to='atos_usodelgas2id' alias='USO2' link-type='outer'>
+			<attribute name='atos_descripcion' />
+		</link-entity>
+		<link-entity name='atos_tablasatrgas' from='atos_tablasatrgasid' to='atos_usodelgas3id' alias='USO3' link-type='outer'>
+			<attribute name='atos_descripcion' />
+		</link-entity>
+		<link-entity name='atos_reddeubicacion' from='atos_reddeubicacionid' to='atos_reddeubicacionid' alias='REDUBIC' link-type='outer'>
+			<attribute name='atos_name' />
+		</link-entity>
+
+		<link-entity name='atos_zonadegas' from='atos_zonadegasid' to='atos_zonadegasid' alias='ZONA' link-type='outer'>
+			<attribute name='atos_name' />
+		</link-entity>
+		<link-entity name='atos_provincia' from='atos_provinciaid' to='atos_instalacionprovinciaid' alias='PROVINCIADIRINST' link-type='outer'>
+			<attribute name='atos_codigoprovincia' />
+		</link-entity>
+		<link-entity name='atos_municipio' from='atos_municipioid' to='atos_instalacionmunicipioid' alias='MUNICIPIO' link-type='outer'>
+			<attribute name='atos_name' />
+		</link-entity>
+		<link-entity name='account' from='accountid' to='atos_razonsocialid' alias='CLIENTE' link-type='outer'>
+			<attribute name='atos_numerodedocumento'/>
+		</link-entity>
+				<link-entity name='atos_tablasatrgas' from='atos_tablasatrgasid' to='atos_distribuidoraid' alias='DISTRIBUIDORA' link-type='outer'>
+			<attribute name='atos_codigo' />
+		</link-entity>
+	</entity>
+</fetch>

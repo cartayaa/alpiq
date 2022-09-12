@@ -1,4 +1,14 @@
-﻿using System;
+﻿/*
+ File="PropagarFechasOfertaMP : IPlugin" 
+ Copyright (c) Atos. All rights reserved.
+
+ Plugin que se ejecuta cuando se crea un nuevo registro en atos_trigger con 
+ los valores OfertaMP para accion y account para la entidad.
+
+ Fecha 		Codigo  Version Descripcion                                     Autor
+ 05.09.2022 23866   no-lock Incorporacion del No-lock a Consultas           AC
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -83,9 +93,7 @@ namespace OfertaMP
                     //Comprobar si hay información que propagar.
                     if (!(ofertaModificada.Contains("atos_nombreoferta") || ofertaModificada.Contains("atos_fechalimitepresentacionoferta") ||
                         ofertaModificada.Contains("atos_fechainicio") || ofertaModificada.Contains("atos_duracionmeses") ||
-                            /* 23866 -+2 */
-                            //ofertaModificada.Contains("atos_fechafin")   || ofertaModificada.Contains("atos_fechafinvigenciaoferta") ||
-                            ofertaModificada.Contains("atos_fechafin_tza") || ofertaModificada.Contains("atos_fechafinvigenciaoferta") ||
+                            ofertaModificada.Contains("atos_fechafin")   || ofertaModificada.Contains("atos_fechafinvigenciaoferta") ||
                             ofertaModificada.Contains("atos_impuestoelectrico") || ofertaModificada.Contains("atos_congelacionpreciosente") ||
                             ofertaModificada.Contains("atos_congelacionpreciosentp") || ofertaModificada.Contains("atos_renovaciontacita") ||
                             ofertaModificada.Contains("atos_gestionatr") || 
@@ -98,9 +106,7 @@ namespace OfertaMP
 
                     tracingService.Trace(String.Format("Se ha modificado atos_nombreoferta:{0}, tipoOferta:{1}, fecha ini suministro:{2}, fecha fin suministro:{3}, fecha fin vigencia:{4}, , fecha limite presentacion oferta:{5}",
                         ofertaModificada.Contains("atos_nombreoferta"), tipoOferta.ToString(), ofertaModificada.Contains("atos_fechainicio"),
-                        /* 23866 -+2 */
-                        //ofertaModificada.Contains("atos_fechafin"), ofertaModificada.Contains("atos_fechafinvigenciaoferta"), ofertaModificada.Contains("atos_fechalimitepresentacionoferta")));
-                        ofertaModificada.Contains("atos_fechafin_tza"), ofertaModificada.Contains("atos_fechafinvigenciaoferta"), ofertaModificada.Contains("atos_fechalimitepresentacionoferta")));
+                        ofertaModificada.Contains("atos_fechafin"), ofertaModificada.Contains("atos_fechafinvigenciaoferta"), ofertaModificada.Contains("atos_fechalimitepresentacionoferta")));
 
                     EntityCollection ofertasHijas = obtenerSubOfertas(ofertaModificada.Id);
 
@@ -156,15 +162,9 @@ namespace OfertaMP
                             ofertaMod.Attributes.Add("atos_fechainicio", ofertaModificada.Attributes["atos_fechainicio"]);
                         }
 
-                        /* 23866 -4 */
-                        //if (ofertaModificada.Contains("atos_fechafin"))
-                        //{
-                        //    ofertaMod.Attributes.Add("atos_fechafin", ofertaModificada.Attributes["atos_fechafin"]);
-                        //}
-                        /* 23866 +4 */
-                        if (ofertaModificada.Contains("atos_fechafin_tza"))
+                        if (ofertaModificada.Contains("atos_fechafin"))
                         {
-                            ofertaMod.Attributes.Add("atos_fechafin_tza", ofertaModificada.Attributes["atos_fechafin_tza"]);
+                            ofertaMod.Attributes.Add("atos_fechafin", ofertaModificada.Attributes["atos_fechafin"]);
                         }
 
                         if (ofertaModificada.Contains("atos_fechaaceptacionoferta"))
@@ -254,6 +254,8 @@ namespace OfertaMP
             try
             {
                 QueryExpression consulta = new QueryExpression("atos_oferta");
+                /* 23866 1+ */
+                consulta.NoLock = true;
                 consulta.Criteria.AddCondition("atos_ofertaid", ConditionOperator.Equal, pOfertaId);
                 LinkEntity join = new LinkEntity("atos_oferta","atos_oferta", "atos_ofertapadreid", "atos_ofertaid",JoinOperator.Natural);
                 join.Columns.AddColumn("atos_nombreoferta");

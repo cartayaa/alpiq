@@ -1,0 +1,63 @@
+<fetch mapping='logical'>
+	<entity name='atos_instalacion'>
+		<attribute name='atos_codigocontratoatr'/>
+		<attribute name='atos_cups20'/>
+		<attribute name='atos_cups22'/>
+		<attribute name='atos_name'/>
+		<attribute name='atos_fechainiciovigencia'/>
+		<attribute name='atos_fechafinvigencia'/>
+		<attribute name='atos_potenciacontratada1'/>
+		<attribute name='atos_potenciacontratada2'/>
+		<attribute name='atos_potenciacontratada3'/>
+		<attribute name='atos_potenciacontratada4'/>
+		<attribute name='atos_potenciacontratada5'/>
+		<attribute name='atos_potenciacontratada6'/>
+		<attribute name='atos_potenciamaxima1'/>
+		<attribute name='atos_potenciamaxima2'/>
+		<attribute name='atos_potenciamaxima3'/>
+		<attribute name='atos_potenciamaxima4'/>
+		<attribute name='atos_potenciamaxima5'/>
+		<attribute name='atos_potenciamaxima6'/>
+		<attribute name='atos_potenciamaximacontratada'/>
+		<attribute name='atos_tension'/>
+		<attribute name='atos_oficinacontabledir3'/>
+		<attribute name='atos_oficinacontabledescripcion'/>
+		<attribute name='atos_organogestordir3'/>
+		<attribute name='atos_organogestordescripcion'/>
+		<attribute name='atos_unidadtramitadoradir3'/>
+		<attribute name='atos_unidadtramitadoradescripcion'/>
+		<attribute name='atos_organoproponentedir3'/>
+		<attribute name='atos_organoproponentedescripcion'/>
+        <attribute name='atos_porcentajeperdidaspactadas'/>
+		<attribute name='atos_instalaciontelemedida'/>
+
+
+		<filter type='and'>
+			<condition attribute='atos_instalacionid' operator='eq' value='#ID_PR#'/>
+		</filter>
+		<link-entity name='account' from='accountid' to='atos_razonsocialid' alias='CLIENTE' link-type='outer'>
+			<attribute name='atos_numerodedocumento'/>
+		</link-entity>
+		<link-entity name='atos_distribuidora' from='atos_distribuidoraid' to='atos_distribuidoraid' alias='DISTRIBUIDORA' link-type='outer'>
+			<attribute name='atos_codigoocsum'/>
+		</link-entity>
+
+		<link-entity name='atos_distribuidora' from='atos_distribuidoraid' to='atos_subdistribuidoraid' alias='SUBDISTRIBUIDORA' link-type='outer'>
+			<attribute name='atos_codigoocsum'/>
+		</link-entity>
+		<link-entity name='atos_unidadprogramacion' from='atos_unidadprogramacionid' to='atos_unidadprogramacionid' alias='UPROGRAMACION' link-type='outer'>
+			<attribute name='atos_name'/>
+		</link-entity>
+		<link-entity name='atos_tarifa' from='atos_tarifaid' to='atos_tarifaid' alias='TARIFA' link-type='outer'>
+			<attribute name='atos_tarifaems'/>
+		</link-entity>
+		<link-entity name='contact' from='contactid' to='atos_contactoinstalacionid' alias='CONTACTO' link-type='outer'>
+			<attribute name='fullname'/>
+		</link-entity>
+
+		<link-entity name='atos_provincia' from='atos_provinciaid' to='atos_instalacionprovinciaid' alias='PROVINCIADIRINST' link-type='outer'>
+			<attribute name='atos_codigoprovincia' />
+		</link-entity>
+		
+	</entity>
+</fetch>

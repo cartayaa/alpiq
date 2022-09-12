@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuracion>
+	<servicio nombre="processSend" nombreInterface="CONTRACTFORMULA"
+			url = "BD0DC3C65F903E38E50FE163F3E2BCA2972024DB065914D91CACAC3F8BE436EBB52FABD0980A577CA77BD163D3C701B2812F8C0A79379F8C763D6A61F5508692"
+			usuario = "0C36B2FC3F1053B3B7F905D863EC86F3" pass = "0B8AFE1CDA64616E645129D715E5D8D9"
+			comercializadora = "Alpiq"
+			entornoWS = "pre"
+			secured = "true"
+			claveEncriptacion = "33lCd3d3Pr334"  
+			numMaxIntentos ="3"/>
+	<log volcarXml="true" frecuenciaLog="yyyyMMdd" nombreLog="Formulas" prefijoLog="Alpiq_Exportaciones_" subCarpetaLog="Formulas/" camponameLog="atos_name" />
+</configuracion>

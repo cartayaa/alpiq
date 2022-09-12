@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1433
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSExportaFichero", "WSExportaFichero.csproj", "{A1F9E25A-AA0D-4E93-B1B8-AE6F283A5901}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1F9E25A-AA0D-4E93-B1B8-AE6F283A5901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1F9E25A-AA0D-4E93-B1B8-AE6F283A5901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1F9E25A-AA0D-4E93-B1B8-AE6F283A5901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1F9E25A-AA0D-4E93-B1B8-AE6F283A5901}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E1E1F63-44CF-4BA2-9795-2FF963DC7EB1}
+	EndGlobalSection
+EndGlobal

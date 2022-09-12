@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://send.ws.atos.com/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AtosService" targetNamespace="http://send.ws.atos.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="https://ecp-test.alpiq.com/ECP.WebServices/AtosService.svc?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://send.ws.atos.com/Imports">
+      <xsd:import schemaLocation="https://ecp-test.alpiq.com/ECP.WebServices/AtosService.svc?xsd=xsd0" namespace="http://send.ws.atos.com/" />
+      <xsd:import schemaLocation="https://ecp-test.alpiq.com/ECP.WebServices/AtosService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://ecp-test.alpiq.com/ECP.WebServices/AtosService.svc?xsd=xsd2" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="AtosRequest">
+    <wsdl:part name="parameters" element="tns:processSend" />
+  </wsdl:message>
+  <wsdl:message name="AtosResponse">
+    <wsdl:part name="parameters" element="tns:processSendResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AtosService">
+    <wsdl:operation name="processSend">
+      <wsdl:input wsaw:Action="processSend" name="AtosRequest" message="tns:AtosRequest" />
+      <wsdl:output wsaw:Action="" name="AtosResponse" message="tns:AtosResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="AtosService">
+    <wsdl:port name="BasicHttpBinding_AtosService" binding="i0:BasicHttpBinding_AtosService">
+      <soap:address location="http://alpecpapp1vt.argon.corp.ch:4431/ECP.WebServices/AtosService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpsBinding_AtosService" binding="i0:BasicHttpsBinding_AtosService">
+      <soap:address location="https://ecp-test.alpiq.com/ECP.WebServices/AtosService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

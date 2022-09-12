@@ -1,6 +1,0 @@
-E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\ClassLibrary1\obj\Debug\CierreOfertaCoefApun.csprojAssemblyReference.cache
-E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\ClassLibrary1\obj\Debug\CierreOfertaCoefApun.csproj.CoreCompileInputs.cache
-E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ClassLibrary1\obj\Debug\CierreOfertaCoefApun.csprojAssemblyReference.cache
-E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ClassLibrary1\obj\Debug\CierreOfertaCoefApun.csproj.CoreCompileInputs.cache
-E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\CierreOfertaCoefApun\obj\Debug\CierreOfertaCoefApun.csprojAssemblyReference.cache
-E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\CierreOfertaCoefApun\obj\Debug\CierreOfertaCoefApun.csproj.CoreCompileInputs.cache

@@ -27,11 +27,11 @@ E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Gas\obj\Debug\ImportATR-Ga
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Gas\bin\Debug\ImportATR.exe.config
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Gas\bin\Debug\ImportATR.exe
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Gas\bin\Debug\ImportATR.pdb
-E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Gas\bin\Debug\ImportATR.exe.CodeAnalysisLog.xml
-E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Gas\bin\Debug\ImportATR.exe.lastcodeanalysissucceeded
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Gas\bin\Debug\Newtonsoft.Json.dll
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Gas\obj\Debug\ImportATR-Gas.csprojAssemblyReference.cache
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Gas\obj\Debug\ImportATR-Gas.csproj.CoreCompileInputs.cache
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Gas\obj\Debug\ImportATR-Gas.csproj.CopyComplete
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Gas\obj\Debug\ImportATR.exe
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Gas\obj\Debug\ImportATR.pdb
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Gas\bin\Debug\ImportATR.exe.CodeAnalysisLog.xml
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Gas\bin\Debug\ImportATR.exe.lastcodeanalysissucceeded

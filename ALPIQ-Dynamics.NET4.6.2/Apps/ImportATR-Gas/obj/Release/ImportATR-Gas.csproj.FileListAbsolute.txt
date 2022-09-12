@@ -1,0 +1,2 @@
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Gas\obj\Release\ImportATR-Gas.csprojAssemblyReference.cache
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Apps\ImportATR-Gas\obj\Release\ImportATR-Gas.csproj.CoreCompileInputs.cache

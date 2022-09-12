@@ -1,0 +1,31 @@
+<fetch mapping='logical'>
+<entity name="atos_contrato" >
+
+	<filter type='and'>
+		<condition attribute='atos_contratoid' operator='eq' value='#ID_PR#'/>
+	</filter>
+<filter type='and'>
+		<condition attribute='atos_commodity' operator='eq' value='300000000'/>
+	</filter>
+    <attribute name="atos_porcentajeexencion" />
+    <attribute name="atos_baseimponibleexencion" />
+    <attribute name="atos_bonificacionconsumo" />
+    <attribute name="atos_caeid" />
+    <attribute name="atos_cie" />
+    <attribute name="atos_consumomaximoconexencion" />
+    <attribute name="atos_name" />
+    <attribute name="atos_fechafinexencionie" />
+    <attribute name="atos_fechainicioexencionie" />
+    <attribute name="atos_fechainiciovigenciaprecios" />
+    <attribute name="atos_importepenalizacion" />
+    <attribute name="atos_importebonificacion" />
+    <attribute name="atos_penalizacionconsumo" />
+    <attribute name="atos_precioalquilerequipo" />
+    <attribute name="atos_preciomensualserviciolectura" />
+    <attribute name="atos_rangoinferiorbonificacion" />
+    <attribute name="atos_rangoinferiorpenalizacion" />
+    <attribute name="atos_rangosuperiorbonificacion" />
+    <attribute name="atos_rangosuperiorpenalizacion" />
+    <attribute name="atos_tipoexencionie" />
+  </entity>
+</fetch>

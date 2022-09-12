@@ -1,0 +1,27 @@
+<fetch mapping='logical'>
+  <entity name="atos_pricingoutput" >
+	<filter type='and'>
+			<condition attribute='atos_pricingoutputid' operator='eq' value='#ID_PR#'/>
+	</filter>
+    <attribute name="atos_name" />
+    <attribute name="atos_contratoid" />
+    <attribute name="atos_fechafinaplicacion" />
+    <attribute name="atos_fechainicioaplicacion" />
+    <attribute name="atos_p1" />
+    <attribute name="atos_p2" />
+    <attribute name="atos_p3" />
+    <attribute name="atos_p4" />
+    <attribute name="atos_p5" />
+    <attribute name="atos_p6" />
+    <attribute name="atos_terminodepricingid" />
+    <attribute name="atos_terminoems" />
+    <attribute name="atos_tipo" />
+    <link-entity name="atos_terminodepricing" from="atos_terminodepricingid" to="atos_terminodepricingid" link-type="outer" alias="TERMINOPRICING" >
+      <attribute name="atos_terminoems" />
+      <attribute name="atos_denominacionbreve" />
+    </link-entity>
+    <link-entity name="atos_contrato" from="atos_contratoid" to="atos_contratoid" link-type="outer" alias="CONTRATO" >
+      <attribute name="atos_name" />
+    </link-entity>
+  </entity>
+</fetch>

@@ -1,0 +1,34 @@
+<fetch>
+  <entity name="atos_puntomedida" >
+	<filter type='and'>
+			<condition attribute='atos_puntomedidaid' operator='eq' value='#ID_PR#'/>
+	</filter>
+    <attribute name="atos_name" />
+    <attribute name="atos_instalacionid" />
+    <attribute name="atos_codigopuntomedida" />
+    <attribute name="atos_tipopuntomedidaid" />
+    <attribute name="atos_modolecturaid" />
+    <attribute name="atos_funcionpuntomedidaid" />
+    <attribute name="atos_fechavigor" />
+    <attribute name="atos_fechaalta" />
+    <attribute name="atos_direccionpuntomedida" />
+    <attribute name="atos_direccionenlace" />
+    <attribute name="atos_claveacceso" />
+    <attribute name="atos_telefonotelemedida" />
+    <attribute name="atos_estadotelefonoid" />
+    <attribute name="atos_tipoequipomedidaid" />
+    <attribute name="atos_tipopropiedadaparatoid" />
+    <attribute name="atos_importealquilerequipo_base" />
+    <attribute name="atos_extraccionlecturasid" />
+    <attribute name="atos_tipoaparatoid" />
+    <attribute name="atos_marcaaparatoid" />
+    <link-entity name="atos_instalacion" from="atos_instalacionid" to="atos_instalacionid" link-type="outer" alias="INSTALACION" >
+      <attribute name="atos_cups20" />
+    </link-entity>
+
+    <link-entity name="atos_tipopuntomedida" from="atos_tipopuntomedidaid" to="atos_tipopuntomedidaid" link-type="outer" alias="TIPOPUNTOMEDIDA" >
+      <attribute name="atos_codigo" />
+    </link-entity>
+
+  </entity>
+</fetch>

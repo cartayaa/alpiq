@@ -1,0 +1,90 @@
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\WSExportaFichero - 0804-2022.dll.config
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\WSExportaFichero - 0804-2022.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\WSExportaFichero - 0804-2022.pdb
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Rest.ClientRuntime.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Xrm.Sdk.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Xrm.Sdk.Workflow.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Xrm.Tooling.Connector.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\Newtonsoft.Json.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\System.Buffers.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\System.Memory.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\System.Numerics.Vectors.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\System.Text.Encodings.Web.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\System.Text.Json.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\System.ValueTuple.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Crm.Sdk.Proxy.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Xrm.Sdk.Deployment.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Xrm.Sdk.Workflow.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Xrm.Tooling.Connector.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\Newtonsoft.Json.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\System.Buffers.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\System.Memory.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\System.Numerics.Vectors.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\System.Text.Encodings.Web.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\System.Text.Json.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\bin\Debug\System.ValueTuple.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\obj\Debug\WSExportaFichero - 0804-2022.csproj.AssemblyReference.cache
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\obj\Debug\WSExportaFichero___0804_2022.Properties.Resources.resources
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\obj\Debug\WSExportaFichero - 0804-2022.csproj.GenerateResource.cache
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\obj\Debug\WSExportaFichero - 0804-2022.csproj.CoreCompileInputs.cache
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\obj\Debug\WSExportaFichero - 0804-2022.csproj.CopyComplete
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\obj\Debug\WSExportaFichero - 0804-2022.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WSExportaFichero - 0804-2022\obj\Debug\WSExportaFichero - 0804-2022.pdb
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\WSExportaFichero - 0804-2022.dll.config
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\WSExportaFichero - 0804-2022.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\WSExportaFichero - 0804-2022.pdb
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Rest.ClientRuntime.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Xrm.Sdk.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Xrm.Sdk.Workflow.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Xrm.Tooling.Connector.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\Newtonsoft.Json.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\System.Buffers.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\System.Memory.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\System.Numerics.Vectors.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\System.Text.Encodings.Web.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\System.Text.Json.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\System.ValueTuple.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Crm.Sdk.Proxy.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Xrm.Sdk.Deployment.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Xrm.Sdk.Workflow.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\Microsoft.Xrm.Tooling.Connector.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\Newtonsoft.Json.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\System.Buffers.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\System.Memory.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\System.Numerics.Vectors.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\System.Text.Encodings.Web.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\System.Text.Json.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\bin\Debug\System.ValueTuple.xml
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\obj\Debug\WSExportaFichero - 0804-2022.csproj.AssemblyReference.cache
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\obj\Debug\WSExportaFichero___0804_2022.Properties.Resources.resources
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\obj\Debug\WSExportaFichero - 0804-2022.csproj.GenerateResource.cache
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\obj\Debug\WSExportaFichero - 0804-2022.csproj.CoreCompileInputs.cache
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\obj\Debug\WSExportaFichero - 0804-2022.csproj.CopyComplete
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\obj\Debug\WSExportaFichero - 0804-2022.dll
+C:\Repos\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 0804-2022\obj\Debug\WSExportaFichero - 0804-2022.pdb

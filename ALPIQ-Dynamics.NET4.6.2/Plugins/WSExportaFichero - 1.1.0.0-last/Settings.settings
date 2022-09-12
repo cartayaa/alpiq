@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WSExportaFichero.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="WSExportaFichero_ServicioFacturadorPre_AtosService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ecp-test.alpiq.com:4431/ECP.WebServices-NoAuth/AtosService.svc</Value>
+    </Setting>
+    <Setting Name="WSExportaFichero_ServicioFacturadorNoAuthSecuredPre_AtosService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://ecp-test.alpiq.com/ECP.WebServices-NoAuth/AtosService.svc</Value>
+    </Setting>
+    <Setting Name="WSExportaFichero_ServicioFacturadorAuthSecuredPre_AtosService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://ecp-test.alpiq.com/ECP.WebServices/AtosService.svc</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

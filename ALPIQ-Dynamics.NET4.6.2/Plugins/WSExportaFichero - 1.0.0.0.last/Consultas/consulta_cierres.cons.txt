@@ -1,0 +1,27 @@
+<fetch mapping='logical'>
+  <entity name="atos_cierre" >
+  	<filter type='and'>
+		<condition attribute='atos_cierreid' operator='eq' value='#ID_PR#'/>
+	</filter>
+
+    <attribute name="atos_name" />
+    <attribute name="atos_contratoid" />
+    <attribute name="atos_costegestioncierre" />
+    <attribute name="atos_fechacierre" />
+    <attribute name="atos_fechafincierre" />
+    <attribute name="atos_fechainiciocierre" />   
+    <attribute name="atos_preciop1" />
+    <attribute name="atos_preciop2" />
+    <attribute name="atos_preciop3" />
+    <attribute name="atos_preciop4" />
+    <attribute name="atos_preciop5" />
+    <attribute name="atos_preciop6" />
+    <attribute name="atos_valorcierre" />
+    <attribute name="atos_variable" />
+    <attribute name="atos_porcentajecierre" />
+    <attribute name="atos_energiacierre" />
+    <link-entity name="atos_pricingoutput" from="atos_pricingoutputid" to="atos_variable" link-type="outer" alias="PricingOutput" >
+      <attribute name="atos_terminoems" />
+    </link-entity>
+  </entity>
+</fetch>

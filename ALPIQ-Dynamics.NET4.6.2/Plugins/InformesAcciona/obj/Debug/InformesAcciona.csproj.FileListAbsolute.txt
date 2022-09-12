@@ -2,3 +2,5 @@ C:\Repos\ALPIQ-Dynamics.NET4.6.2\Plugins\InformesAcciona\obj\Debug\InformesAccio
 C:\Repos\ALPIQ-Dynamics.NET4.6.2\Plugins\InformesAcciona\obj\Debug\InformesAcciona.csproj.CoreCompileInputs.cache
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\InformesAcciona\obj\Debug\InformesAcciona.csprojAssemblyReference.cache
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\InformesAcciona\obj\Debug\InformesAcciona.csproj.CoreCompileInputs.cache
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\InformesAcciona\obj\Debug\InformesAcciona.csprojAssemblyReference.cache
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\InformesAcciona\obj\Debug\InformesAcciona.csproj.CoreCompileInputs.cache

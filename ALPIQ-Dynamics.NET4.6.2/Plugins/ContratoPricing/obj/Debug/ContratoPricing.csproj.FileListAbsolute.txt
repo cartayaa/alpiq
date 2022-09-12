@@ -64,3 +64,7 @@ E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\ContratoPricing\obj\Debug\Contrat
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\ContratoPricing\obj\Debug\ContratoPricing.csproj.CopyComplete
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\ContratoPricing\obj\Debug\ContratoPricing.dll
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\ContratoPricing\obj\Debug\ContratoPricing.pdb
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ContratoPricing\obj\Debug\ContratoPricing.csprojAssemblyReference.cache
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ContratoPricing\obj\Debug\ContratoPricing.csproj.CoreCompileInputs.cache
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ContratoPricing\obj\Debug\ContratoPricing.dll
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ContratoPricing\obj\Debug\ContratoPricing.pdb

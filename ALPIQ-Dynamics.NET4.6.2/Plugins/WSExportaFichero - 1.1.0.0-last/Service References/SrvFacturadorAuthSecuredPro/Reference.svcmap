@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ffd2b965-39d2-4da1-9341-4c88e0194c41" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://ecp-test.alpiq.com/ECP.WebServices/AtosService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AtosService.wsdl" MetadataType="Wsdl" ID="963001ce-431e-49a5-9c09-f35e0f70cca5" SourceId="1" SourceUrl="https://ecp-test.alpiq.com/ECP.WebServices/AtosService.svc?wsdl" />
+    <MetadataFile FileName="AtosService1.wsdl" MetadataType="Wsdl" ID="fdbd0039-5e7d-418e-b142-7838842ef3ea" SourceId="1" SourceUrl="https://ecp-test.alpiq.com/ECP.WebServices/AtosService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="AtosService.xsd" MetadataType="Schema" ID="21990ac4-1eba-40ec-8489-e29bc3a9df46" SourceId="1" SourceUrl="https://ecp-test.alpiq.com/ECP.WebServices/AtosService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AtosService1.xsd" MetadataType="Schema" ID="149f4f21-84c5-46b9-a077-fa31990ad70c" SourceId="1" SourceUrl="https://ecp-test.alpiq.com/ECP.WebServices/AtosService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AtosService.disco" MetadataType="Disco" ID="a93e7cc9-07df-4970-a7ce-3709ab9a3b05" SourceId="1" SourceUrl="https://ecp-test.alpiq.com/ECP.WebServices/AtosService.svc?disco" />
+    <MetadataFile FileName="AtosService2.xsd" MetadataType="Schema" ID="13b01e34-7588-480b-b788-87acf7330b8f" SourceId="1" SourceUrl="https://ecp-test.alpiq.com/ECP.WebServices/AtosService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

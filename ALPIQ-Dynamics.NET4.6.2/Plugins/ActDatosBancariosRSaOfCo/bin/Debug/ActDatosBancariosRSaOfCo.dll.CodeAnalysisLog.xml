@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2017\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="15.0">
+ <Targets>
+  <Target Name="E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ActDatosBancariosRSaOfCo\bin\Debug\ActDatosBancariosRSaOfCo.dll">
+   <Modules>
+    <Module Name="actdatosbancariosrsaofco.dll">
+     <Namespaces>
+      <Namespace Name="ActDatosBancariosRSaOfCo">
+       <Types>
+        <Type Name="PluginBase" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor(System.Type)" Kind="Method" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="ExcludedInSource" Created="2022-09-06 17:09:58Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z">
+             <Notes>
+              <User Name="[SuppressMessage]">
+               <Note Id="7" />
+              </User>
+             </Notes>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ChildClassName" Kind="Property" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="ExcludedInSource" Created="2022-09-06 17:09:58Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z">
+             <Notes>
+              <User Name="[SuppressMessage]">
+               <Note Id="9" />
+              </User>
+             </Notes>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Execute(System.IServiceProvider)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="CrmVSSolution411.NewProj.PluginBase+LocalPluginContext.Trace(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="ExcludedInSource" Created="2022-09-06 17:09:58Z" FixCategory="DependsOnFix" LastSeen="0001-01-01 00:00:00Z">
+             <Notes>
+              <User Name="[SuppressMessage]">
+               <Note Id="8" />
+              </User>
+             </Notes>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="PluginBase+LocalPluginContext" Kind="Class" Accessibility="Family" ExternallyVisible="True">
+         <Members>
+          <Member Name="#OrganizationService" Kind="Property" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="ExcludedInSource" Created="2022-09-06 17:09:58Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z">
+             <Notes>
+              <User Name="[SuppressMessage]">
+               <Note Id="6" />
+              </User>
+             </Notes>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ServiceProvider" Kind="Property" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="ExcludedInSource" Created="2022-09-06 17:09:58Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z">
+             <Notes>
+              <User Name="[SuppressMessage]">
+               <Note Id="5" />
+              </User>
+             </Notes>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Notes>
+  <User Name="[SuppressMessage]">
+   <Note Id="5" Modified="2022-09-06 17:09:59Z">LocalPluginContext</Note>
+   <Note Id="6" Modified="2022-09-06 17:09:59Z">LocalPluginContext</Note>
+   <Note Id="7" Modified="2022-09-06 17:09:59Z">PluginBase</Note>
+   <Note Id="8" Modified="2022-09-06 17:09:59Z">Execute</Note>
+   <Note Id="9" Modified="2022-09-06 17:09:59Z">PluginBase</Note>
+  </User>
+ </Notes>
+ <Rules>
+  <Rule TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811">
+   <Name>Avoid uncalled private code</Name>
+   <Description>There is uncalled code that is not externally visible and is not a known runtime entry point. If this violation fires in error, please send a problem report to the Visual Studio Code Analysis team.</Description>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182264.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303">
+   <Name>Do not pass literals as localized parameters</Name>
+   <Description>Literal strings that are embedded in source code are difficult to localize. Avoid passing literal strings as arguments in circumstances where a localized string is generally expected.</Description>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182187.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="15.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

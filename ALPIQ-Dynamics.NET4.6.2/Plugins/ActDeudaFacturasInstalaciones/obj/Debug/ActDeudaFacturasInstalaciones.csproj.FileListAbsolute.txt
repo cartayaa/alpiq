@@ -87,3 +87,5 @@ E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ActDeudaFacturasInstalacion
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ActDeudaFacturasInstalaciones\obj\Debug\ActDeudaFacturasInstalaciones.csproj.CopyComplete
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ActDeudaFacturasInstalaciones\obj\Debug\ActDeudaFacturasInstalaciones.dll
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ActDeudaFacturasInstalaciones\obj\Debug\ActDeudaFacturasInstalaciones.pdb
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ActDeudaFacturasInstalaciones\bin\Debug\ActDeudaFacturasInstalaciones.dll.CodeAnalysisLog.xml
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ActDeudaFacturasInstalaciones\bin\Debug\ActDeudaFacturasInstalaciones.dll.lastcodeanalysissucceeded

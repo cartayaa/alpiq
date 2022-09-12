@@ -1,0 +1,1 @@
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionRazonSocial\obj\Release\ValidacionRazonSocial.csproj.CoreCompileInputs.cache

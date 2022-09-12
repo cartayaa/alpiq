@@ -1,0 +1,16 @@
+<fetch mapping='logical'>
+  <entity name="atos_instalacion" >
+	<filter type='and'>
+			<condition attribute='atos_instalacionid' operator='eq' value='#ID_PR#'/>
+	</filter>
+    <attribute name="atos_cups20" />
+    <attribute name="atos_consumoestimadoanual1" />
+    <attribute name="atos_consumoestimadoanual2" />
+    <attribute name="atos_consumoestimadoanual3" />
+    <attribute name="atos_consumoestimadoanual4" />
+    <attribute name="atos_consumoestimadoanual5" />
+    <attribute name="atos_consumoestimadoanual6" />
+    <attribute name="atos_consumoestimadototalanual" />
+    <attribute name="atos_fechainicioenvioprevisiones" />
+  </entity>
+</fetch>

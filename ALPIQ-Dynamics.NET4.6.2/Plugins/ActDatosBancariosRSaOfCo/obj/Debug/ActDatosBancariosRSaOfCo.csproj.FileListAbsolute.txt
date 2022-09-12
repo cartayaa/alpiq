@@ -88,3 +88,5 @@ E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ActDatosBancariosRSaOfCo\ob
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ActDatosBancariosRSaOfCo\obj\Debug\ActDatosBancariosRSaOfCo.csproj.CopyComplete
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ActDatosBancariosRSaOfCo\obj\Debug\ActDatosBancariosRSaOfCo.dll
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ActDatosBancariosRSaOfCo\obj\Debug\ActDatosBancariosRSaOfCo.pdb
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ActDatosBancariosRSaOfCo\bin\Debug\ActDatosBancariosRSaOfCo.dll.CodeAnalysisLog.xml
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ActDatosBancariosRSaOfCo\bin\Debug\ActDatosBancariosRSaOfCo.dll.lastcodeanalysissucceeded

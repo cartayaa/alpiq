@@ -1,0 +1,3 @@
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 1.0.0.0.last\obj\Debug\WSExportaFichero - 1.0.0.0-last.csprojAssemblyReference.cache
+E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\WorkflowSteps\WSExportaFichero - 1.0.0.0.last\obj\Debug\WSExportaFichero - 1.0.0.0-last.csproj.CoreCompileInputs.cache
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\WSExportaFichero - 1.0.0.0.last\obj\Debug\WSExportaFichero - 1.0.0.0-last.csproj.CoreCompileInputs.cache

@@ -1,0 +1,98 @@
+<fetch mapping='logical'>
+  <entity name="atos_contrato">
+    <attribute name="atos_commodity" />
+    <attribute name="atos_alquilerequipo" />
+    <attribute name="atos_aplicacoeficienteperdidas" />
+    <attribute name="atos_aplicaimpuesto" />
+    <attribute name="atos_atrincluidoenelcontrato" />
+    <attribute name="atos_condicionpagoid" />
+    <attribute name="atos_congelacionpreciosente" />
+    <attribute name="atos_congelacionpreciosentp" />
+    <attribute name="atos_consultoraid" />
+    <attribute name="atos_cups" />
+    <attribute name="atos_cuentabancaria" />
+    <attribute name="atos_fechafincontrato" />
+    <attribute name="atos_fechafindefinitiva" />
+    <attribute name="atos_fechafirmacontrato" />
+    <attribute name="atos_fechainiciocoeficienteperdidas" />
+    <attribute name="atos_fechainiciocontrato" />
+    <attribute name="atos_fechainiciointerrumpibilidad" />
+    <attribute name="atos_fechainicioefectiva" />
+    <attribute name="atos_formadepago" />
+    <attribute name="atos_impuestoelectrico" />
+    <attribute name="atos_interrumpibilidadincluida" />
+    <attribute name="atos_matrizhorariaid" />
+    <attribute name="atos_name" />
+    <attribute name="atos_nombrecontrato" />
+    <attribute name="atos_numerodocumento" />
+    <attribute name="atos_permitefacturaagrupada" />
+    <attribute name="atos_precisiondecimalesoferta" />
+    <attribute name="atos_tipodeenvio" />
+    <attribute name="atos_tipodeproductoid" />
+    <attribute name="atos_tipoliquidacion" />
+    <attribute name="atos_swift" />
+    <attribute name="atos_estadocontrato" />
+    <attribute name="atos_numeropedido" />
+	<attribute name="atos_grupofacturacion" />
+	<attribute name="atos_numclicsmensual" />
+	<attribute name="atos_numclicstrimestral" />
+	<attribute name="atos_numclicsanual" />
+    
+	<filter type='and'>
+		<condition attribute='atos_contratoid' operator='eq' value='#ID_PR#'/>
+	</filter>
+	<filter type='and'>
+		<condition attribute='atos_commodity' operator='eq' value='300000000'/>
+	</filter>
+    <link-entity name="atos_instalacion" from="atos_instalacionid" to="atos_instalacionid" link-type="outer" alias="INSTALACION">
+
+        <attribute name="atos_consumoestimadototalanual" />
+	<attribute name="atos_cogeneracion" />
+	<attribute name="atos_puntodesocorro" />
+        <attribute name="atos_nombreenviofacturas" />
+	<attribute name="atos_facturaciondireccionconcatenada" />
+	<attribute name="atos_facturacioncodigopostalid" />
+	<attribute name="atos_facturacionpoblacionid" />
+	<attribute name="atos_facturacionmunicipioid" />
+	<attribute name="atos_facturacionprovinciaid" />
+		<link-entity name="atos_provincia" from="atos_provinciaid" to="atos_facturacionprovinciaid" link-type="outer" alias="PROVFACT">
+			<attribute name="atos_codigoprovincia" />
+		</link-entity>
+	<attribute name="atos_facturacionccaaid" />
+        <attribute name="atos_facturacionpaisid" />
+		<link-entity name="atos_pais" from="atos_paisid" to="atos_facturacionpaisid" link-type="outer" alias="PAISFACT">
+			<attribute name="atos_codigoiso" />
+		</link-entity>
+        
+        <attribute name="atos_instalaciondireccionconcatenada" />
+	<attribute name="atos_instalacioncodigopostalid" />
+	<attribute name="atos_instalacionpoblacionid" />
+	<attribute name="atos_instalacionmunicipioid" />
+	<attribute name="atos_instalacionprovinciaid" />
+		<link-entity name="atos_provincia" from="atos_provinciaid" to="atos_instalacionprovinciaid" link-type="outer" alias="PROVINST">
+			<attribute name="atos_codigoprovincia" />
+		</link-entity>
+	<attribute name="atos_instalacionccaaid" />    
+        <attribute name="atos_instalacionpaisid" />
+		<link-entity name="atos_pais" from="atos_paisid" to="atos_instalacionpaisid" link-type="outer" alias="PAISINST">
+			<attribute name="atos_codigoiso" />
+		</link-entity>
+    
+    </link-entity>
+    <link-entity name="atos_contrato" from="atos_contratoid" to="atos_contratomultipuntoid" link-type="outer" alias="CONTRATOPADRE">
+      <attribute name="atos_name" />
+      <attribute name="atos_nombrecontrato" />
+      <attribute name="atos_codigocontratofirmado" />
+    </link-entity>
+    <link-entity name="atos_tarifa" from="atos_tarifaid" to="atos_tarifaid" link-type="outer" alias="TARIFA">
+			<attribute name="atos_numeroperiodos" />
+    </link-entity>
+ 
+    <link-entity name="account" from="accountid" to="atos_razonsocialid" link-type="outer" alias="CLIENTE">  
+        <link-entity name="contact" from="contactid" to="primarycontactid" link-type="outer" alias="CONTACTO">
+          <attribute name="emailaddress1" />
+          <attribute name="fullname" />
+        </link-entity>
+    </link-entity>
+  </entity>
+</fetch>

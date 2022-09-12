@@ -64,3 +64,7 @@ E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionRazonSocial\obj\Debug\V
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionRazonSocial\obj\Debug\ValidacionRazonSocial.dll
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionRazonSocial\obj\Debug\ValidacionRazonSocial.pdb
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionRazonSocial\obj\Debug\ValidacionRazonSocial.csprojAssemblyReference.cache
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionRazonSocial\obj\Debug\ValidacionRazonSocial.csprojAssemblyReference.cache
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionRazonSocial\obj\Debug\ValidacionRazonSocial.csproj.CoreCompileInputs.cache
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionRazonSocial\obj\Debug\ValidacionRazonSocial.dll
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionRazonSocial\obj\Debug\ValidacionRazonSocial.pdb

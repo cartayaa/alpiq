@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="arg0">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="xml" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="comercializadora" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="arg0" nillable="true" type="arg0" />
+  <xs:element name="return" nillable="true" type="xs:string" />
+</xs:schema>

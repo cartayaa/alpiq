@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://send.ws.atos.com/" elementFormDefault="qualified" targetNamespace="http://send.ws.atos.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://ecp-test.alpiq.com/ECP.WebServices/AtosService.svc?xsd=xsd2" />
+  <xs:element name="processSend">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="arg0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="processSendResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="return" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

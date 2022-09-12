@@ -117,3 +117,6 @@ E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\Secuencias\obj\Debug\Secuen
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\Secuencias\obj\Debug\Secuencias.csproj.CopyComplete
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\Secuencias\obj\Debug\Secuencias.dll
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\Secuencias\obj\Debug\Secuencias.pdb
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\Secuencias\obj\Debug\Secuencias.csprojAssemblyReference.cache
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\Secuencias\bin\Debug\Secuencias.dll.CodeAnalysisLog.xml
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\Secuencias\bin\Debug\Secuencias.dll.lastcodeanalysissucceeded

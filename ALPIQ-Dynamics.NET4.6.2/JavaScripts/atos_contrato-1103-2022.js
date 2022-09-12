@@ -371,9 +371,7 @@ function cargaDesdeOferta1(ofertaid) {
         '    <attribute name="atos_rangosuperiorbonificacion" />' +
 
         '    <attribute name="atos_fechainicio" />' +
-        /* 23866 -+1 */
-        //'    <attribute name="atos_fechafin" />' +        
-        '    <attribute name="atos_fechafin_tza" />' +
+        '    <attribute name="atos_fechafin" />' +        
         '    <attribute name="atos_fecharealizacionavalprovisional" />' +
         '    <attribute name="atos_fechainicioavalprovisional" />' +
         '    <attribute name="atos_fechafinavalprovisional" />' +
@@ -701,9 +699,7 @@ function successCallbackOferta(result) {                                        
         //#region * Fecha Inicio Contrato, Fin Contrato, Inicio Efectica, Fin Definitiva
 
         var starDate = new Date(oferta.atos_fechainicio);
-        /* 23866 -+1 */
-        // var endDate = new Date(oferta.atos_fechafin);
-        var endDate = new Date(oferta.atos_fechafin_tza);
+        var endDate = new Date(oferta.atos_fechafin);
 
         if (oferta.atos_fechainicio != null) {
             /*22339*/           // formContext.getAttribute("atos_fechainiciocontrato").setValue(new Date(oferta.atos_fechainicio.substr(0, 10)));
@@ -720,9 +716,7 @@ function successCallbackOferta(result) {                                        
             formContext.getAttribute("atos_fechainicioefectiva").setSubmitMode("always");
         }
 
-        /* 23866 -+1 */
-        //if (oferta.atos_fechafin != null) {
-        if (oferta.atos_fechafin_tza != null) {
+        if (oferta.atos_fechafin != null) {
             /*22339*/           // formContext.getAttribute("atos_fechafincontrato").setValue(new Date(oferta.atos_fechafin.substr(0, 10)));
             formContext.getAttribute("atos_fechafincontrato").setValue(endDate);        /* 22339 */
             formContext.getAttribute("atos_fechafincontrato").setSubmitMode("always");

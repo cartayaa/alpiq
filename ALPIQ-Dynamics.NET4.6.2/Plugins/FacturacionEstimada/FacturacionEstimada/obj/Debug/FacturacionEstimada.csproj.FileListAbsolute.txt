@@ -1,4 +1,0 @@
-E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\FacturacionEstimada\FacturacionEstimada\obj\Debug\FacturacionEstimada.csprojAssemblyReference.cache
-E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\FacturacionEstimada\FacturacionEstimada\obj\Debug\FacturacionEstimada.csproj.CoreCompileInputs.cache
-E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\FacturacionEstimada\FacturacionEstimada\obj\Debug\FacturacionEstimada.csprojAssemblyReference.cache
-E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\FacturacionEstimada\FacturacionEstimada\obj\Debug\FacturacionEstimada.csproj.CoreCompileInputs.cache

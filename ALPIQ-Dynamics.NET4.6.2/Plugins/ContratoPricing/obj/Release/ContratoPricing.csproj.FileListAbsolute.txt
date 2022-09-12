@@ -1,0 +1,2 @@
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ContratoPricing\obj\Release\ContratoPricing.csprojAssemblyReference.cache
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ContratoPricing\obj\Release\ContratoPricing.csproj.CoreCompileInputs.cache

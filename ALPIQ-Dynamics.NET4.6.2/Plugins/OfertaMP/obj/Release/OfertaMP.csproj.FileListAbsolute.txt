@@ -4,6 +4,7 @@ E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Release\Oferta
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Release\Microsoft.Crm.Sdk.Proxy.dll
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Release\Microsoft.Xrm.Sdk.dll
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Release\Microsoft.Xrm.Sdk.Workflow.dll
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Release\System.Buffers.dll
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Release\System.Memory.dll
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Release\System.Numerics.Vectors.dll
@@ -15,6 +16,7 @@ E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Release\System
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Release\Microsoft.Crm.Sdk.Proxy.xml
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Release\Microsoft.Xrm.Sdk.xml
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Release\Microsoft.Xrm.Sdk.Workflow.xml
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Release\System.Buffers.xml
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Release\System.Memory.xml
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\OfertaMP\bin\Release\System.Numerics.Vectors.xml

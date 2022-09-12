@@ -1,0 +1,15 @@
+<fetch mapping='logical'>
+ <entity name="atos_cobertura" >
+	<filter type='and'>
+		<condition attribute='atos_coberturaid' operator='eq' value='#ID_PR#'/>
+	</filter>
+    <attribute name="atos_contratoid" />
+    <attribute name="atos_fechafinvigenciacobertura" />
+    <attribute name="atos_fechainiciovigenciacobertura" />
+    <attribute name="atos_feecobertura" />
+    <attribute name="atos_energiacobertura" />
+    <attribute name="atos_name" />
+    <attribute name="atos_precioreferencia" />
+  </entity>
+
+</fetch>

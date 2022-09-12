@@ -27,3 +27,4 @@ E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionOferta\obj\Releas
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionOferta\obj\Release\ValidacionOferta.csproj.CopyComplete
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionOferta\obj\Release\ValidacionOferta.dll
 E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionOferta\obj\Release\ValidacionOferta.pdb
+E:\Repos\Alpiq\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\ValidacionOferta\obj\Release\ValidacionOferta.csprojAssemblyReference.cache
