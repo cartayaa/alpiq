@@ -1,0 +1,19 @@
+<fetch top="15" distinct="true" no-lock="true">
+  <entity name="atos_oferta">
+    <attribute name="atos_ofertaid" />
+    <attribute name="atos_nombreoferta" />
+    <attribute name="atos_ofertapadreid" />
+    <attribute name="atos_tipooferta" />
+    <attribute name="stageid" />
+    <filter type="or">
+      <condition attribute="atos_ofertaid" operator="eq" value="{759D3B4D-5896-4A08-819B-747EC96091EA}" uiname="S/N00097-2.5-20220912-1" uitype="atos_oferta" />
+      <condition attribute="atos_ofertapadreid" operator="eq" value="{759D3B4D-5896-4A08-819B-747EC96091EA}" uiname="S/N00097-2.5-20220912-1" uitype="atos_oferta" />
+    </filter>
+    <filter type="or">
+      <condition attribute="atos_tipooferta" operator="eq" value="300000000" />
+      <condition attribute="atos_tipooferta" operator="eq" value="300000001" />
+      <condition attribute="atos_tipooferta" operator="eq" value="300000002" />
+    </filter>
+    <order attribute="atos_tipooferta" />
+  </entity>
+</fetch>

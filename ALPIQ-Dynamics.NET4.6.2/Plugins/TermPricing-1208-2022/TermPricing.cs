@@ -333,8 +333,8 @@ namespace TermPricing
                         #region CERRAR
                         logger.Info("CERRAR");
 
-                        //if (_oferta.Attributes.Contains("atos_ofertapadreid") && TipoOferta == OFERTA)
-                        if (TipoOferta == OFERTA)
+                        if (_oferta.Attributes.Contains("atos_ofertapadreid") && TipoOferta == OFERTA)
+                        //if (TipoOferta == OFERTA)
                             return;
 
                         if (_oferta.Attributes.Contains("atos_tipodecalculo"))

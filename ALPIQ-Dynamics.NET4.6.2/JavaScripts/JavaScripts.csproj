@@ -63,7 +63,6 @@
     <Content Include="atos_comun.js" />
     <Content Include="atos_consultora.js" />
     <Content Include="atos_contacto-05092022.js" />
-    <Content Include="atos_contrato+.js" />
     <Content Include="atos_contrato-1003-2021.js" />
     <Content Include="atos_contrato-1103-2022.js" />
     <Content Include="atos_contrato-1304-2021.js" />
