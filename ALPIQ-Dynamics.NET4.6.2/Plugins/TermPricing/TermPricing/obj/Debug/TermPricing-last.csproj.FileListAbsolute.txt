@@ -9,3 +9,6 @@ E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\TermPricing-last\TermPricing\obj\
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\TermPricing-last\TermPricing\obj\Debug\TermPricing-last.csproj.CopyComplete
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\TermPricing-last\TermPricing\obj\Debug\TermPricing.dll
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\TermPricing-last\TermPricing\obj\Debug\TermPricing.pdb
+C:\Users\carta\Source\Repos\cartayaa\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\TermPricing\TermPricing\obj\Debug\TermPricing-last.csproj.AssemblyReference.cache
+C:\Users\carta\Source\Repos\cartayaa\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\TermPricing\TermPricing\obj\Debug\TermPricing-last.csproj.CoreCompileInputs.cache
+C:\Users\carta\Source\Repos\cartayaa\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\TermPricing\TermPricing\obj\Debug\TermPricing.pdb

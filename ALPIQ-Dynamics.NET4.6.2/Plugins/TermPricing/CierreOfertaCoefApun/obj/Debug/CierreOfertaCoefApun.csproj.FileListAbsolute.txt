@@ -1,0 +1,2 @@
+C:\Users\carta\Source\Repos\cartayaa\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\TermPricing\CierreOfertaCoefApun\obj\Debug\CierreOfertaCoefApun.csproj.AssemblyReference.cache
+C:\Users\carta\Source\Repos\cartayaa\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\TermPricing\CierreOfertaCoefApun\obj\Debug\CierreOfertaCoefApun.csproj.CoreCompileInputs.cache

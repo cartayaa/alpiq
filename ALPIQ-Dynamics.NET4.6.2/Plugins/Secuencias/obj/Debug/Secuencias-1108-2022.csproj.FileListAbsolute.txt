@@ -28,3 +28,6 @@ E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\Secuencias-1108-2022\obj\Debug\Se
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\Secuencias-1108-2022\obj\Debug\Secuencias-1108-2022.csproj.CopyComplete
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\Secuencias-1108-2022\obj\Debug\Secuencias.dll
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\Plugins\Secuencias-1108-2022\obj\Debug\Secuencias.pdb
+C:\Users\carta\source\repos\cartayaa\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\Secuencias\obj\Debug\Secuencias-1108-2022.csproj.AssemblyReference.cache
+C:\Users\carta\source\repos\cartayaa\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\Secuencias\obj\Debug\Secuencias-1108-2022.csproj.CoreCompileInputs.cache
+C:\Users\carta\source\repos\cartayaa\alpiq\ALPIQ-Dynamics.NET4.6.2\Plugins\Secuencias\obj\Debug\Secuencias.pdb

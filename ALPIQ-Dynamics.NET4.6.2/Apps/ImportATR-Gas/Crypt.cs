@@ -18,6 +18,8 @@ namespace CryptDecrypt
             return Convert.ToBase64String(System.Text.Encoding.Unicode.GetBytes(p_secretKey));
         }*/
 
+        // CAMBIO 1
+
         private static String EncryptInternal(String p_InputString, String p_SecretKey)
         {
             try

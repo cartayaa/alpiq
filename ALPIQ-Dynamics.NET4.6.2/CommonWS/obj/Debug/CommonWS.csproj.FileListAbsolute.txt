@@ -57,3 +57,4 @@ E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\CommonWS\obj\Debug\CommonWS.csproj.CoreCo
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\CommonWS\obj\Debug\CommonWS.csproj.CopyComplete
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\CommonWS\obj\Debug\CommonWS.dll
 E:\Repos\ALPIQ\ALPIQ-Dynamics.NET4.6.2\CommonWS\obj\Debug\CommonWS.pdb
+C:\Users\carta\Source\Repos\cartayaa\alpiq\ALPIQ-Dynamics.NET4.6.2\CommonWS\obj\Debug\CommonWS.pdb

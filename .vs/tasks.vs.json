@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-Secuencias",
+      "appliesTo": "ALPIQ-Dynamics.NET4.6.2/Plugins/Secuencias/",
+      "type": "launch"
+    }
+  ]
+}
